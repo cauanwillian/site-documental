@@ -88,6 +88,26 @@ export default function Home() {
           </div>
         </section>
       ))}
+      <section className="mb-14" aria-label="Pautas em pesquisa">
+        <h2 className="text-2xl font-semibold">Pautas em pesquisa</h2>
+        <p className="mt-3 mb-5 max-w-3xl text-sm leading-relaxed text-stone-600">
+          Estes temas aguardam material original para registros separados. Não
+          são citações verificadas, casos publicados ou conclusões jurídicas.
+        </p>
+        <ul className="grid gap-4 md:grid-cols-2">
+          {data.researchAgenda.map((topic) => (
+            <li
+              key={topic.id}
+              className="rounded-lg border border-dashed border-stone-300 p-5"
+            >
+              <h3 className="text-sm font-semibold">{topic.title}</h3>
+              <p className="mt-3 text-xs leading-relaxed text-stone-500">
+                {topic.requirements}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
       <section className="mb-14 grid gap-10 md:grid-cols-[1fr_1.5fr]">
         <div>
           <p className="text-xs uppercase tracking-wider text-teal-800">

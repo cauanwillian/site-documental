@@ -23,7 +23,7 @@ Importe este repositório, selecione a branch `main` e o preset Next.js. Instala
 
 Edite `src/data/archive.json`. Contém pessoas, casos, categorias, status jurídicos, eventos, fontes e datas editoriais. IDs referenciados devem existir. Slugs devem ser únicos e próprios para URLs. Datas usam `YYYY-MM-DD` ou `YYYY-MM` quando apenas mês e ano foram fornecidos. `statusId` representa o status da decisão na data `statusAsOf`, sem inferir o estado processual atual.
 
-O arquivo contém 20 registros publicados com textos e referências conferidos pelo responsável editorial. `verificationMethod: "publisher-confirmed"` registra essa origem; não indica consulta independente pela ferramenta. As notícias institucionais são distinguidas de acórdãos e reportagens. Os portais genéricos (`scope: "research"`) ficam separados das referências específicas (`scope: "case"`). Os exemplos demonstrativos foram removidos.
+O arquivo contém 25 registros publicados com textos e referências conferidos pelo responsável editorial. `verificationMethod: "publisher-confirmed"` registra essa origem; não indica consulta independente pela ferramenta. As notícias institucionais são distinguidas de acórdãos e reportagens. Os portais genéricos (`scope: "research"`) ficam separados das referências específicas (`scope: "case"`). Os exemplos demonstrativos foram removidos.
 
 Para publicar um caso real, conclua a pesquisa, registre URLs dos documentos específicos nas fontes, preencha `personIds`, `sourceIds`, `statusId` e a cronologia, e altere `placeholder` para `false`. Fontes devem incluir título, instituição, URL do documento, natureza primária/secundária e data da consulta. Não publique alegações apenas com links genéricos para portais. Atualize os textos editoriais e contadores da Home quando houver conteúdo verificado. Prefira fontes primárias e contextualize recursos, anulações e limites das decisões. Os eventos devem informar suas próprias fontes.
 
@@ -50,3 +50,11 @@ A seção `falas-controversas` contém cinco páginas temáticas. `statements` p
 ## Mulheres e adolescentes
 
 Os dois registros da categoria `mulheres-adolescentes` estão na seção de falas controversas. `condenacao-civil` distingue a indenização por danos morais de uma condenação criminal. O ano das ofensas a Maria do Rosário (`2014`) fica na cronologia; a data de julgamento não foi fornecida e permanece nula, sem usar a data do endereço da notícia como substituto. A fala sobre adolescentes venezuelanas preserva apenas a expressão enviada e a precisão mensal (`2022-10`), junto da resposta de Bolsonaro. O vídeo sem título/canal/minutagem é rotulado como referência de vídeo secundária, sem afirmar origem ou integralidade.
+
+## Gestão, instituições e novas fontes
+
+O desfecho das rachadinhas foi atualizado para `rejeicao-denuncia`, com data `2022-05` e referência da Agência Brasil, preservando as anulações de provas como contexto. Isso não é condenação nem absolvição de mérito. Os novos registros sobre Yanomami e CPI são institucionais, sem atribuir responsabilidade criminal individual. A condenação pela trama golpista é explicitamente separada da autoria pessoal dos atos de vandalismo de 8 de janeiro.
+
+As posições atribuídas ao livro de Flávio (2017) aparecem com a resposta da assessoria, sem inventar citações ou páginas. A menção ao lobby de Eduardo em documentos aparece com sua negativa de recebimento de recursos. As fontes de Carlos e os portais institucionais foram reutilizados sem duplicação.
+
+`periodOverview` é uma síntese editorial separada da cronologia de eventos. `researchAgenda` reúne cinco pautas para material original, sem publicar transcrições, datas ou resultados processuais não fornecidos. As pautas aparecem na Home com indicação explícita de pesquisa, fora do catálogo, dos perfis e do contador de registros publicados.

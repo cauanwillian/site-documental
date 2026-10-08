@@ -16,7 +16,7 @@ test("published cases, combined filters and primary sources", async ({
     page.getByText("VERSÃO DEMONSTRATIVA", { exact: false }),
   ).toHaveCount(0);
   await page.getByRole("link", { name: "Explorar o arquivo" }).click();
-  await expect(page.getByText("20 registros encontrados")).toBeVisible();
+  await expect(page.getByText("25 registros encontrados")).toBeVisible();
   await page
     .getByLabel("Pessoa", { exact: true })
     .selectOption("jair-bolsonaro");
@@ -56,11 +56,11 @@ test("published cases, combined filters and primary sources", async ({
     }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Limpar filtros" }).click();
-  await expect(page.getByText("20 registros encontrados")).toBeVisible();
+  await expect(page.getByText("25 registros encontrados")).toBeVisible();
   await page.goto("/pessoas/jair-bolsonaro/");
   await expect(
     page.getByRole("main").getByRole("heading", { level: 3 }),
-  ).toHaveCount(10);
+  ).toHaveCount(11);
   await page.goto("/pessoas/eduardo-bolsonaro/");
   await expect(
     page.getByRole("link", { name: /Coação no curso do processo/ }),
@@ -88,7 +88,7 @@ test("published cases, combined filters and primary sources", async ({
     page.getByText("Condenação definitiva", { exact: true }),
   ).toBeVisible();
   await expect(page.locator("main ol > li").first()).toContainText(
-    "junho de 2026",
+    "outubro de 2026",
   );
   expect(errors).toEqual([]);
 });
@@ -166,7 +166,7 @@ test("financial section preserves requests, caveats, missing dates and instituti
   await page.goto("/casos/rachadinhas-na-alerj/");
   await expect(
     page.getByRole("heading", {
-      name: "Anulações de provas e decisões processuais",
+      name: "Denúncia rejeitada",
       exact: true,
     }),
   ).toBeVisible();
@@ -350,6 +350,75 @@ test("civil damages remain distinct from criminal conviction and public accusati
   for (const route of [
     "/casos/ofensas-maria-do-rosario/",
     "/casos/declaracao-adolescentes-venezuelanas/",
+  ]) {
+    await page.goto(route);
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= window.innerWidth,
+      ),
+    ).toBeTruthy();
+  }
+});
+
+test("procedural outcome, institutional caveats and editorial period overview", async ({
+  page,
+}) => {
+  await page.goto("/casos/rachadinhas-na-alerj/");
+  await expect(
+    page.getByRole("heading", { name: "Denúncia rejeitada", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Decisão registrada: maio de 2022"),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("list", { name: "Fontes do caso" }).getByRole("link"),
+  ).toHaveAttribute("href", /agenciabrasil.ebc.com.br/);
+  await page.goto("/casos/eduardo-lobby-documentos-eua/");
+  await expect(
+    page.getByText("Eduardo Bolsonaro negou ter recebido recursos.", {
+      exact: true,
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByText(
+      "A menção em documentos não comprova recebimento de dinheiro.",
+      { exact: false },
+    ),
+  ).toBeVisible();
+  await page.goto("/casos/livro-flavio-bolsonaro-2017/");
+  await expect(
+    page.getByText(
+      "A assessoria afirma que a obra defende valores democráticos e conservadores.",
+    ),
+  ).toBeVisible();
+  await page.goto("/casos/tentativa-de-golpe-de-estado/");
+  await expect(
+    page.getByText(
+      "Não significa que Jair Bolsonaro tenha praticado pessoalmente cada ato de vandalismo",
+      { exact: false },
+    ),
+  ).toBeVisible();
+  await page.goto("/timeline/");
+  await expect(
+    page
+      .getByRole("region", { name: "Visão editorial por períodos" })
+      .locator("dt"),
+  ).toHaveCount(10);
+  await page.goto("/");
+  await expect(
+    page
+      .getByRole("region", { name: "Pautas em pesquisa" })
+      .getByRole("listitem"),
+  ).toHaveCount(5);
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const route of [
+    "/",
+    "/timeline/",
+    "/casos/crise-humanitaria-yanomami/",
+    "/casos/gestao-pandemia-cpi-covid/",
+    "/casos/ataques-instituicoes-8-janeiro/",
+    "/casos/livro-flavio-bolsonaro-2017/",
+    "/casos/eduardo-lobby-documentos-eua/",
   ]) {
     await page.goto(route);
     expect(

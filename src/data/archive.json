@@ -181,6 +181,11 @@
       "id": "condenacao-civil",
       "name": "Condenação civil por danos morais",
       "description": "Decisão de responsabilidade civil e indenização por danos morais. Não equivale a condenação criminal; não presume trânsito em julgado."
+    },
+    {
+      "id": "rejeicao-denuncia",
+      "name": "Denúncia rejeitada",
+      "description": "Decisão de não receber uma denúncia. Não equivale a condenação ou a absolvição de mérito; seu alcance depende dos fundamentos e da data da decisão."
     }
   ],
   "sources": [
@@ -285,7 +290,7 @@
     {
       "id": "senado",
       "name": "Senado",
-      "url": "https://www.senado.leg.br/",
+      "url": "https://www12.senado.leg.br/",
       "kind": "primary",
       "purpose": "Portal institucional para pesquisa; não comprova os placeholders.",
       "updatedAt": "2026-10-08",
@@ -578,6 +583,66 @@
       "accessedAt": null,
       "verificationMethod": "publisher-confirmed",
       "editoriallyConfirmedAt": "2026-10-08"
+    },
+    {
+      "id": "uol-relatorio-yanomami",
+      "name": "UOL",
+      "institution": "UOL",
+      "kind": "secondary",
+      "title": "Relatório sobre a crise Yanomami — reportagem especial enviada",
+      "url": "https://noticias.uol.com.br/reportagens-especiais/relatorio-yanomamis.htm",
+      "scope": "case",
+      "documentType": "news-report",
+      "purpose": "Referência fornecida e conferida pelo responsável editorial.",
+      "updatedAt": "2026-10-08",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-08"
+    },
+    {
+      "id": "folha-livro-flavio-2017",
+      "name": "Folha de S.Paulo",
+      "institution": "Folha de S.Paulo",
+      "kind": "secondary",
+      "title": "Livro de Flávio sobre Jair Bolsonaro: ditadura, Ustra e urnas — referência enviada",
+      "url": "https://www1.folha.uol.com.br/poder/2026/10/em-livro-sobre-bolsonaro-flavio-nega-golpe-militar-elogia-ustra-e-questiona-urnas.shtml",
+      "scope": "case",
+      "documentType": "news-report",
+      "purpose": "Referência fornecida e conferida pelo responsável editorial.",
+      "updatedAt": "2026-10-08",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-08"
+    },
+    {
+      "id": "ebc-rachadinhas-desfecho-2022",
+      "name": "Agência Brasil / EBC",
+      "institution": "Agência Brasil / EBC",
+      "kind": "secondary",
+      "title": "Justiça do Rio arquiva processo de caso de supostas rachadinhas — referência enviada",
+      "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2022-05/justica-do-rio-arquiva-processo-de-caso-de-supostas-rachadinhas",
+      "scope": "case",
+      "documentType": "news-report",
+      "purpose": "Referência fornecida e conferida pelo responsável editorial.",
+      "updatedAt": "2026-10-08",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-08"
+    },
+    {
+      "id": "uol-documentos-lobby-eduardo",
+      "name": "UOL — coluna de Mariana Sanches",
+      "institution": "UOL — coluna de Mariana Sanches",
+      "kind": "secondary",
+      "title": "Documento sobre fundo de Trump contra o STF cita lobby de Eduardo — referência enviada",
+      "url": "https://noticias.uol.com.br/colunas/mariana-sanches/2026/10/06/documento-sobre-fundo-secreto-de-trump-contra-o-stf-cita-lobby-de-eduardo.htm",
+      "scope": "case",
+      "documentType": "news-report",
+      "purpose": "Referência fornecida e conferida pelo responsável editorial.",
+      "updatedAt": "2026-10-08",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-08"
     }
   ],
   "cases": [
@@ -604,9 +669,9 @@
       "sectionId": "decisoes",
       "institutionalSubjects": [],
       "contextualSourceIds": [],
-      "legalCaveat": "",
+      "legalCaveat": "A condenação de 2025 registrada neste caso trata da trama golpista. Não significa que Jair Bolsonaro tenha praticado pessoalmente cada ato de vandalismo nos ataques de 8 de janeiro de 2023.",
       "sourceNote": "",
-      "relatedCaseIds": []
+      "relatedCaseIds": ["ataques-instituicoes-8-janeiro"]
     },
     {
       "id": "reuniao-com-embaixadores",
@@ -685,13 +750,13 @@
       "slug": "rachadinhas-na-alerj",
       "title": "Rachadinhas na Alerj",
       "summary": "Suspeita de apropriação de parte dos salários de assessores parlamentares, envolvendo Flávio Bolsonaro e Fabrício Queiroz.",
-      "body": "Suspeita de apropriação de parte dos salários de assessores parlamentares, envolvendo Flávio Bolsonaro e Fabrício Queiroz.",
+      "body": "Segundo o material editorial, em maio de 2022 o Tribunal de Justiça do Rio de Janeiro rejeitou a denúncia no caso das rachadinhas, após anulações de provas pelo STJ e pelo STF. O registro preserva a suspeita inicialmente divulgada e esse desfecho processual. Não infere a situação processual posterior.",
       "personIds": ["flavio-bolsonaro", "fabricio-queiroz"],
       "categoryId": "financeiro",
-      "statusId": "anulacao-provas",
-      "statusAsOf": null,
-      "statusScope": "reported-procedural-event",
-      "sourceIds": [],
+      "statusId": "rejeicao-denuncia",
+      "statusAsOf": "2022-05",
+      "statusScope": "historical-decision",
+      "sourceIds": ["ebc-rachadinhas-desfecho-2022"],
       "contextualSourceIds": ["folha-historico-flavio"],
       "placeholder": false,
       "updatedAt": "2026-10-08",
@@ -700,8 +765,8 @@
       "defenseNote": null,
       "sectionId": "financas-maquina-publica",
       "institutionalSubjects": [],
-      "legalCaveat": "O caso sofreu anulações de provas e decisões processuais. Este registro não apresenta Flávio Bolsonaro como condenado e não afirma o estado processual atual.",
-      "sourceNote": "Referências de contexto não comprovam isoladamente todos os detalhes deste registro. Consulte o material editorial e o alcance de cada link.",
+      "legalCaveat": "O caso sofreu anulações de provas e decisões processuais, com rejeição da denúncia informada em maio de 2022. Este registro não apresenta Flávio Bolsonaro como condenado. Rejeição de denúncia não é aqui descrita como absolvição de mérito.",
+      "sourceNote": "A referência da Agência Brasil trata do desfecho processual. O histórico da Folha permanece apenas como referência de contexto.",
       "relatedCaseIds": ["loja-de-chocolates"],
       "editorialNumber": 5
     },
@@ -835,7 +900,7 @@
       "slug": "abin-paralela",
       "title": "Abin paralela",
       "summary": "A PF indiciou Carlos Bolsonaro em junho de 2025 na investigação sobre uso ilegal da agência de inteligência para monitorar autoridades, jornalistas e adversários.",
-      "body": "A PF indiciou Carlos Bolsonaro em junho de 2025 na investigação sobre uso ilegal da agência de inteligência para monitorar autoridades, jornalistas e adversários.",
+      "body": "A Polícia Federal indiciou Carlos Bolsonaro e outros investigados em junho de 2025, conforme o material editorial. A apuração apontou suspeitas de utilização da Agência Brasileira de Inteligência para monitoramento irregular de autoridades, jornalistas e adversários. Não é uma condenação criminal.",
       "personIds": ["carlos-bolsonaro"],
       "categoryId": "maquina-publica",
       "statusId": "indiciamento",
@@ -1180,6 +1245,134 @@
         }
       ],
       "otherEpisodes": []
+    },
+    {
+      "id": "crise-humanitaria-yanomami",
+      "slug": "crise-humanitaria-yanomami",
+      "title": "Crise humanitária Yanomami",
+      "summary": "Reportagens documentaram alertas oficiais sobre o avanço do garimpo ilegal e falhas de resposta durante o Governo Bolsonaro.",
+      "body": "Segundo o material editorial, uma apuração do UOL identificou relatório da Funai encaminhado ao Ministério da Justiça em agosto de 2022. Isso fundamenta críticas à gestão e à omissão institucional, sem dispensar a apuração de responsabilidades individuais.",
+      "personIds": [],
+      "sectionId": "gestao-instituicoes",
+      "categoryId": "povos-tradicionais",
+      "statusId": "controversia",
+      "statusAsOf": "2022-08",
+      "statusScope": "editorial-context",
+      "sourceIds": ["uol-relatorio-yanomami"],
+      "contextualSourceIds": [],
+      "placeholder": false,
+      "updatedAt": "2026-10-08",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Texto e referências fornecidos e conferidos pelo responsável editorial. As páginas externas não foram consultadas independentemente nesta publicação.",
+      "defenseNote": null,
+      "institutionalSubjects": [
+        "Governo Bolsonaro",
+        "Funai",
+        "Ministério da Justiça"
+      ],
+      "legalCaveat": "Críticas à gestão e à omissão institucional não substituem a apuração de responsabilidades individuais. Este registro não atribui uma condenação criminal a Jair Bolsonaro.",
+      "sourceNote": "Agosto de 2022 se refere ao encaminhamento do relatório informado pela edição. Não foi fornecida a íntegra do relatório oficial; a referência é a reportagem do UOL.",
+      "relatedCaseIds": []
+    },
+    {
+      "id": "gestao-pandemia-cpi-covid",
+      "slug": "gestao-pandemia-cpi-covid",
+      "title": "Gestão da pandemia e CPI da Covid",
+      "summary": "A CPI investigou a atuação do governo federal na pandemia, incluindo tratamentos sem eficácia comprovada, negociações de vacinas, desinformação e condutas administrativas.",
+      "body": "O material editorial também destaca a demora e as disputas políticas em torno da vacinação. As conclusões da CPI são distintas de condenações criminais. Não foram fornecidos links para o relatório da CPI ou documentos específicos dessas conclusões.",
+      "personIds": [],
+      "sectionId": "gestao-instituicoes",
+      "categoryId": "pandemia-saude",
+      "statusId": "investigacao",
+      "statusAsOf": null,
+      "statusScope": "editorial-context",
+      "sourceIds": [],
+      "contextualSourceIds": [],
+      "placeholder": false,
+      "updatedAt": "2026-10-08",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Texto e referências fornecidos e conferidos pelo responsável editorial. As páginas externas não foram consultadas independentemente nesta publicação.",
+      "defenseNote": null,
+      "institutionalSubjects": ["Governo federal", "CPI da Pandemia"],
+      "legalCaveat": "O registro trata de uma apuração parlamentar. Conclusões e recomendações de uma CPI não equivalem a condenações criminais ou à responsabilização individual automática.",
+      "sourceNote": "",
+      "relatedCaseIds": ["covaxin", "falas-pandemia-vacinas-mortes"]
+    },
+    {
+      "id": "ataques-instituicoes-8-janeiro",
+      "slug": "ataques-instituicoes-8-janeiro",
+      "title": "Ataques às instituições e 8 de janeiro",
+      "summary": "O histórico inclui a contestação do sistema eleitoral, articulações investigadas após a derrota de 2022 e os ataques às sedes dos Três Poderes em janeiro de 2023.",
+      "body": "Este registro apresenta o contexto institucional informado pelo responsável editorial e remete aos casos específicos sobre a reunião com embaixadores e a condenação pela trama golpista.",
+      "personIds": ["jair-bolsonaro"],
+      "sectionId": "gestao-instituicoes",
+      "categoryId": "debate-publico",
+      "statusId": "controversia",
+      "statusAsOf": "2023-01-08",
+      "statusScope": "editorial-context",
+      "sourceIds": ["stf-penas-tentativa-golpe-2025"],
+      "contextualSourceIds": [],
+      "placeholder": false,
+      "updatedAt": "2026-10-08",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Texto e referências fornecidos e conferidos pelo responsável editorial. As páginas externas não foram consultadas independentemente nesta publicação.",
+      "defenseNote": null,
+      "institutionalSubjects": [],
+      "legalCaveat": "A condenação de Jair Bolsonaro em 2025 trata da trama golpista. Isso não significa que ele tenha praticado pessoalmente cada ato de vandalismo ocorrido em 8 de janeiro.",
+      "sourceNote": "A notícia do STF é referência para a condenação pela trama golpista, não comprovação isolada de participação pessoal em cada ato dos ataques.",
+      "relatedCaseIds": [
+        "tentativa-de-golpe-de-estado",
+        "reuniao-com-embaixadores",
+        "bicentenario-da-independencia"
+      ]
+    },
+    {
+      "id": "livro-flavio-bolsonaro-2017",
+      "slug": "livro-flavio-bolsonaro-2017",
+      "title": "Livro de Flávio sobre Jair Bolsonaro — 2017",
+      "summary": "Em um livro de 2017 sobre o pai, Flávio Bolsonaro negou a caracterização de 1964 como golpe militar, elogiou Ustra e questionou a confiabilidade das urnas eletrônicas.",
+      "body": "As posições descritas são o resumo do material editorial enviado, referenciado por reportagem da Folha. Não foram enviados trechos literais, páginas da obra ou transcrições integrais; não são criadas citações diretas.",
+      "personIds": ["flavio-bolsonaro"],
+      "sectionId": "controversias-filhos",
+      "categoryId": "ditadura-tortura",
+      "statusId": "controversia",
+      "statusAsOf": "2017",
+      "statusScope": "editorial-context",
+      "sourceIds": ["folha-livro-flavio-2017"],
+      "contextualSourceIds": [],
+      "placeholder": false,
+      "updatedAt": "2026-10-08",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Texto e referências fornecidos e conferidos pelo responsável editorial. As páginas externas não foram consultadas independentemente nesta publicação.",
+      "defenseNote": "A assessoria afirma que a obra defende valores democráticos e conservadores.",
+      "institutionalSubjects": [],
+      "legalCaveat": "O registro documenta posições públicas e críticas, não uma condenação criminal de Flávio Bolsonaro.",
+      "sourceNote": "2017 se refere ao ano do livro informado pela edição, não à data da reportagem de outubro de 2026.",
+      "relatedCaseIds": []
+    },
+    {
+      "id": "eduardo-lobby-documentos-eua",
+      "slug": "eduardo-lobby-documentos-eua",
+      "title": "Eduardo Bolsonaro: lobby e documentos nos Estados Unidos",
+      "summary": "Em outubro de 2026, reportagem do UOL identificou documentos sobre um programa norte-americano de financiamento de ações relacionadas ao Judiciário brasileiro que mencionavam o trabalho de lobby de Eduardo Bolsonaro.",
+      "body": "O registro se refere à menção em documentos descrita pelo responsável editorial. A reportagem foi enviada como referência, sem afirmar que Eduardo tenha recebido recursos do programa.",
+      "personIds": ["eduardo-bolsonaro"],
+      "sectionId": "controversias-filhos",
+      "categoryId": "debate-publico",
+      "statusId": "controversia",
+      "statusAsOf": "2026-10",
+      "statusScope": "editorial-context",
+      "sourceIds": ["uol-documentos-lobby-eduardo"],
+      "contextualSourceIds": [],
+      "placeholder": false,
+      "updatedAt": "2026-10-08",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Texto e referências fornecidos e conferidos pelo responsável editorial. As páginas externas não foram consultadas independentemente nesta publicação.",
+      "defenseNote": "Eduardo Bolsonaro negou ter recebido recursos.",
+      "institutionalSubjects": [],
+      "legalCaveat": "A menção em documentos não comprova recebimento de dinheiro. Este registro não afirma repasse de recursos a Eduardo Bolsonaro.",
+      "sourceNote": "Foi informado mês e ano da reportagem. Não são criadas datas para recebimento de dinheiro, pois esse recebimento não é comprovado pelo material.",
+      "relatedCaseIds": ["eduardo-bolsonaro-coacao-no-curso-do-processo"]
     }
   ],
   "timeline": [
@@ -1440,6 +1633,71 @@
       "placeholder": false,
       "verificationMethod": "publisher-confirmed",
       "eventType": "public-statement"
+    },
+    {
+      "id": "rachadinhas-rejeicao-2022",
+      "caseId": "rachadinhas-na-alerj",
+      "date": "2022-05",
+      "datePrecision": "month",
+      "title": "Denúncia das rachadinhas rejeitada pelo TJRJ",
+      "description": "Desfecho informado após anulações de provas pelo STJ e STF. Não é condenação de Flávio.",
+      "statusId": "rejeicao-denuncia",
+      "sourceIds": ["ebc-rachadinhas-desfecho-2022"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "documented-context"
+    },
+    {
+      "id": "yanomami-relatorio-2022",
+      "caseId": "crise-humanitaria-yanomami",
+      "date": "2022-08",
+      "datePrecision": "month",
+      "title": "Relatório da Funai encaminhado ao Ministério da Justiça",
+      "description": "Marco do relatório informado pela edição e descrito na reportagem enviada, sem atribuir condenação individual.",
+      "statusId": "controversia",
+      "sourceIds": ["uol-relatorio-yanomami"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "documented-context"
+    },
+    {
+      "id": "ataques-8-janeiro-2023",
+      "caseId": "ataques-instituicoes-8-janeiro",
+      "date": "2023-01-08",
+      "datePrecision": "day",
+      "title": "Ataques às sedes dos Três Poderes",
+      "description": "Marco contextual; não atribui a Jair Bolsonaro a prática pessoal de cada ato de vandalismo. Não foi enviada referência específica sobre os atos desse dia.",
+      "statusId": "controversia",
+      "sourceIds": [],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "documented-context"
+    },
+    {
+      "id": "livro-flavio-2017",
+      "caseId": "livro-flavio-bolsonaro-2017",
+      "date": "2017",
+      "datePrecision": "year",
+      "title": "Livro de Flávio sobre Jair Bolsonaro",
+      "description": "Ano da obra informado pela edição, distinto da publicação da reportagem sobre ela.",
+      "statusId": "controversia",
+      "sourceIds": ["folha-livro-flavio-2017"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "documented-context"
+    },
+    {
+      "id": "eduardo-lobby-documentos-2026",
+      "caseId": "eduardo-lobby-documentos-eua",
+      "date": "2026-10",
+      "datePrecision": "month",
+      "title": "Reportagem sobre documentos que mencionam lobby de Eduardo",
+      "description": "Mês da reportagem. Eduardo negou ter recebido recursos; menção em documentos não comprova pagamento.",
+      "statusId": "controversia",
+      "sourceIds": ["uol-documentos-lobby-eduardo"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "documented-context"
     }
   ],
   "sections": [
@@ -1457,6 +1715,105 @@
       "id": "falas-controversas",
       "name": "Falas controversas de Jair Bolsonaro",
       "notice": "As datas são as datas das declarações, não das reportagens que as reuniram. Citações, contexto e críticas são apresentados separadamente; o registro de uma controvérsia não equivale a condenação criminal."
+    },
+    {
+      "id": "gestao-instituicoes",
+      "name": "Gestão pública e crises institucionais",
+      "notice": "Críticas à gestão, conclusões parlamentares e responsabilidades individuais são planos distintos. Controvérsias institucionais não são automaticamente condenações pessoais."
+    },
+    {
+      "id": "controversias-filhos",
+      "name": "Controvérsias específicas dos filhos de Bolsonaro",
+      "notice": "As referências, respostas dos envolvidos e limites de cada informação são apresentados em cada registro. Menção em documentos não comprova recebimento de recursos."
+    }
+  ],
+  "periodOverview": [
+    {
+      "period": "2003–2014",
+      "summary": "Ofensas a Maria do Rosário e declarações sobre violência sexual.",
+      "verificationMethod": "publisher-confirmed"
+    },
+    {
+      "period": "2016",
+      "summary": "Homenagem a Brilhante Ustra durante o impeachment.",
+      "verificationMethod": "publisher-confirmed"
+    },
+    {
+      "period": "2017",
+      "summary": "Falas sobre quilombolas, mulheres e minorias; livro de Flávio sobre Jair.",
+      "verificationMethod": "publisher-confirmed"
+    },
+    {
+      "period": "2018",
+      "summary": "Revelação de movimentações financeiras envolvendo Fabrício Queiroz.",
+      "verificationMethod": "publisher-confirmed"
+    },
+    {
+      "period": "2019–2020",
+      "summary": "Controvérsias sobre rachadinhas, cheques, meio ambiente e políticas indígenas.",
+      "verificationMethod": "publisher-confirmed"
+    },
+    {
+      "period": "2020–2021",
+      "summary": "Declarações sobre a covid-19, vacinas e mortes; CPI da Pandemia.",
+      "verificationMethod": "publisher-confirmed"
+    },
+    {
+      "period": "2022",
+      "summary": "Ataques ao sistema eleitoral, reunião com embaixadores, 7 de Setembro e fala sobre adolescentes venezuelanas.",
+      "verificationMethod": "publisher-confirmed"
+    },
+    {
+      "period": "2023",
+      "summary": "Inelegibilidade eleitoral, revelações sobre joias e repercussão da crise Yanomami.",
+      "verificationMethod": "publisher-confirmed"
+    },
+    {
+      "period": "2024–2025",
+      "summary": "Continuidade das investigações sobre a Abin e condenação de Jair Bolsonaro pela trama golpista.",
+      "verificationMethod": "publisher-confirmed"
+    },
+    {
+      "period": "2026",
+      "summary": "Pedido de arquivamento do inquérito das joias, condenação de Eduardo Bolsonaro e novas controvérsias eleitorais.",
+      "verificationMethod": "publisher-confirmed"
+    }
+  ],
+  "researchAgenda": [
+    {
+      "id": "fraquejada",
+      "title": "Expressão “fraquejada”: contexto da declaração a documentar",
+      "personId": "jair-bolsonaro",
+      "publicationState": "research-only",
+      "requirements": "Vídeo ou transcrição original, data e contexto exatos, referência específica e resposta do envolvido quando disponível."
+    },
+    {
+      "id": "ataques-verbais",
+      "title": "Ataques verbais a adversários e jornalistas: episódios a individualizar",
+      "personId": "jair-bolsonaro",
+      "publicationState": "research-only",
+      "requirements": "Vídeo ou transcrição original, data e contexto exatos, referência específica e resposta do envolvido quando disponível."
+    },
+    {
+      "id": "homossexualidade",
+      "title": "Manifestações sobre homossexualidade: transcrições a documentar",
+      "personId": "jair-bolsonaro",
+      "publicationState": "research-only",
+      "requirements": "Vídeo ou transcrição original, data e contexto exatos, referência específica e resposta do envolvido quando disponível."
+    },
+    {
+      "id": "eduardo-ai5",
+      "title": "Referências de Eduardo ao AI-5: fala e contexto a documentar",
+      "personId": "eduardo-bolsonaro",
+      "publicationState": "research-only",
+      "requirements": "Vídeo ou transcrição original, data e contexto exatos, referência específica e resposta do envolvido quando disponível."
+    },
+    {
+      "id": "eduardo-fechamento-stf",
+      "title": "Referências de Eduardo ao fechamento do STF: fala e contexto a documentar",
+      "personId": "eduardo-bolsonaro",
+      "publicationState": "research-only",
+      "requirements": "Vídeo ou transcrição original, data e contexto exatos, referência específica e resposta do envolvido quando disponível."
     }
   ]
 }
