@@ -16,7 +16,7 @@ test("published cases, combined filters and primary sources", async ({
     page.getByText("VERSÃO DEMONSTRATIVA", { exact: false }),
   ).toHaveCount(0);
   await page.getByRole("link", { name: "Explorar o arquivo" }).click();
-  await expect(page.getByText("18 registros encontrados")).toBeVisible();
+  await expect(page.getByText("20 registros encontrados")).toBeVisible();
   await page
     .getByLabel("Pessoa", { exact: true })
     .selectOption("jair-bolsonaro");
@@ -56,11 +56,11 @@ test("published cases, combined filters and primary sources", async ({
     }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Limpar filtros" }).click();
-  await expect(page.getByText("18 registros encontrados")).toBeVisible();
+  await expect(page.getByText("20 registros encontrados")).toBeVisible();
   await page.goto("/pessoas/jair-bolsonaro/");
   await expect(
     page.getByRole("main").getByRole("heading", { level: 3 }),
-  ).toHaveCount(8);
+  ).toHaveCount(10);
   await page.goto("/pessoas/eduardo-bolsonaro/");
   await expect(
     page.getByRole("link", { name: /Coação no curso do processo/ }),
@@ -222,7 +222,7 @@ test("statements preserve quotes, speech dates and source scope", async ({
   await page
     .getByLabel("Seção", { exact: true })
     .selectOption("falas-controversas");
-  await expect(page.getByText("3 registros encontrados")).toBeVisible();
+  await expect(page.getByText("5 registros encontrados")).toBeVisible();
   await page
     .getByRole("link", { name: /Pandemia, vacinas e mortes por covid-19/ })
     .click();
@@ -285,6 +285,71 @@ test("statements preserve quotes, speech dates and source scope", async ({
     "/casos/falas-pandemia-vacinas-mortes/",
     "/casos/falas-povos-indigenas-racismo/",
     "/casos/homenagem-ustra-impeachment/",
+  ]) {
+    await page.goto(route);
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= window.innerWidth,
+      ),
+    ).toBeTruthy();
+  }
+});
+
+test("civil damages remain distinct from criminal conviction and public accusations", async ({
+  page,
+}) => {
+  await page.goto("/casos/");
+  await page
+    .getByLabel("Seção", { exact: true })
+    .selectOption("falas-controversas");
+  await page
+    .getByLabel("Categoria", { exact: true })
+    .selectOption("mulheres-adolescentes");
+  await expect(page.getByText("2 registros encontrados")).toBeVisible();
+  await page
+    .getByLabel("Status jurídico", { exact: true })
+    .selectOption("condenacao-civil");
+  await expect(
+    page.getByText("1 registro encontrado", { exact: true }),
+  ).toBeVisible();
+  await page.getByRole("link", { name: /Ofensas a Maria do Rosário/ }).click();
+  await expect(
+    page.getByRole("heading", {
+      name: "Condenação civil por danos morais",
+      exact: true,
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByText(
+      "A condenação informada é civil, por danos morais, e não criminal.",
+      { exact: false },
+    ),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Decisão registrada: data não informada"),
+  ).toBeVisible();
+  await expect(page.locator("main ol > li").first()).toContainText("2014");
+  await expect(
+    page.getByRole("list", { name: "Fontes do caso" }).getByRole("link"),
+  ).toHaveAttribute("href", /stj.jus.br/);
+  await page.goto("/casos/declaracao-adolescentes-venezuelanas/");
+  await expect(page.locator("blockquote")).toHaveText("“pintou um clima”");
+  await expect(page.locator("time")).toHaveAttribute("datetime", "2022-10");
+  await expect(
+    page.getByText("suas palavras foram distorcidas", { exact: false }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Controvérsia pública", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page
+      .getByRole("list", { name: "Fontes do caso" })
+      .getByRole("link", { name: /Vídeo de referência/ }),
+  ).toHaveAttribute("href", "https://www.youtube.com/watch?v=QPlRVM6s12E");
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const route of [
+    "/casos/ofensas-maria-do-rosario/",
+    "/casos/declaracao-adolescentes-venezuelanas/",
   ]) {
     await page.goto(route);
     expect(

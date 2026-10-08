@@ -2,7 +2,7 @@
   "updatedAt": "2026-10-08",
   "editorial": {
     "name": "Arquivo público",
-    "notice": "Investigação, indiciamento, denúncia, condição de réu e condenação são situações juridicamente diferentes. Nenhuma delas deve ser tratada como equivalente às demais. Condenação definitiva exige trânsito em julgado. O status deve ser lido junto à decisão, à data e às fontes.",
+    "notice": "Investigação, indiciamento, denúncia, condição de réu e condenação são situações juridicamente diferentes. Nenhuma delas deve ser tratada como equivalente às demais. Condenação definitiva exige trânsito em julgado. O status deve ser lido junto à decisão, à data e às fontes. Responsabilidade civil e indenização por danos morais também são distintas de condenação criminal.",
     "publicationNotice": "Conteúdo fornecido e conferido pelo responsável editorial. Os registros distinguem decisões, atos de investigação e controvérsias. As datas indicam os marcos documentados; não afirmam, por si só, a situação processual atual ou o trânsito em julgado.",
     "banner": "ARQUIVO DOCUMENTAL · Decisões, contexto e fontes"
   },
@@ -100,6 +100,10 @@
     {
       "id": "ditadura-tortura",
       "name": "Ditadura e tortura"
+    },
+    {
+      "id": "mulheres-adolescentes",
+      "name": "Mulheres e adolescentes"
     }
   ],
   "legalStatuses": [
@@ -172,6 +176,11 @@
       "id": "anulacao-provas",
       "name": "Anulações de provas e decisões processuais",
       "description": "Registro de invalidação de provas e decisões processuais, sem afirmar anulação integral do processo, absolvição ou condenação."
+    },
+    {
+      "id": "condenacao-civil",
+      "name": "Condenação civil por danos morais",
+      "description": "Decisão de responsabilidade civil e indenização por danos morais. Não equivale a condenação criminal; não presume trânsito em julgado."
     }
   ],
   "sources": [
@@ -520,6 +529,51 @@
       "scope": "case",
       "documentType": "institutional-news",
       "purpose": "Referência fornecida e conferida pelo responsável editorial.",
+      "updatedAt": "2026-10-08",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-08"
+    },
+    {
+      "id": "stj-maria-do-rosario-danos-morais",
+      "name": "STJ",
+      "institution": "STJ",
+      "kind": "primary",
+      "title": "Jair Bolsonaro terá de indenizar deputada Maria do Rosário por danos morais",
+      "url": "https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias-antigas/2017/2017-08-15_18-37_Jair-Bolsonaro-tera-de-indenizar-deputada-Maria-do-Rosario-por-danos-morais.aspx",
+      "scope": "case",
+      "documentType": "institutional-news",
+      "purpose": "Referência institucional fornecida pelo responsável editorial sobre a condenação civil. A data da notícia não é usada como data das ofensas.",
+      "updatedAt": "2026-10-08",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-08"
+    },
+    {
+      "id": "folha-adolescentes-venezuelanas",
+      "name": "Folha de S.Paulo",
+      "institution": "Folha de S.Paulo",
+      "kind": "secondary",
+      "title": "Declaração sobre adolescentes venezuelanas — referência enviada",
+      "url": "https://www1.folha.uol.com.br/poder/2022/10/bolsonaro-diz-que-pintou-um-clima-com-menininhas-de-14-e-15-anos-e-video-vira-municao-de-adversarios.shtml",
+      "scope": "case",
+      "documentType": "news-report",
+      "purpose": "Reportagem fornecida e conferida pelo responsável editorial.",
+      "updatedAt": "2026-10-08",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-08"
+    },
+    {
+      "id": "video-adolescentes-venezuelanas",
+      "name": "Vídeo enviado — YouTube",
+      "institution": "Vídeo enviado — YouTube",
+      "kind": "secondary",
+      "title": "Vídeo de referência sobre a declaração — link enviado pela edição",
+      "url": "https://www.youtube.com/watch?v=QPlRVM6s12E",
+      "scope": "case",
+      "documentType": "video-reference",
+      "purpose": "Não foram fornecidos título, canal, data de publicação ou minutagem. Não é apresentado como gravação integral ou fonte primária verificada.",
       "updatedAt": "2026-10-08",
       "accessedAt": null,
       "verificationMethod": "publisher-confirmed",
@@ -1061,6 +1115,71 @@
       "relatedCaseIds": [],
       "statements": [],
       "otherEpisodes": []
+    },
+    {
+      "id": "ofensas-maria-do-rosario",
+      "slug": "ofensas-maria-do-rosario",
+      "title": "Ofensas a Maria do Rosário — 2014",
+      "summary": "Em 2014, Jair Bolsonaro disse que a deputada Maria do Rosário não mereceria ser estuprada. O STJ manteve uma condenação civil por danos morais, determinando indenização de R$ 10 mil.",
+      "body": "O registro distingue as ofensas de 2014 da responsabilização civil informada pelo responsável editorial. A referência institucional do STJ trata da indenização de R$ 10 mil. Não foi fornecida a data do julgamento para o campo do status registrado.",
+      "personIds": ["jair-bolsonaro"],
+      "categoryId": "mulheres-adolescentes",
+      "statusId": "condenacao-civil",
+      "statusAsOf": null,
+      "statusScope": "historical-decision",
+      "sourceIds": ["stj-maria-do-rosario-danos-morais"],
+      "contextualSourceIds": [],
+      "placeholder": false,
+      "updatedAt": "2026-10-08",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Texto, contextos e referências fornecidos e conferidos pelo responsável editorial. As páginas externas não foram consultadas independentemente nesta publicação.",
+      "defenseNote": null,
+      "sectionId": "falas-controversas",
+      "institutionalSubjects": [],
+      "legalCaveat": "A condenação informada é civil, por danos morais, e não criminal. Este registro não afirma trânsito em julgado nem acrescenta resultado de processo criminal.",
+      "sourceNote": "O ano de 2014 se refere às ofensas. A data presente no endereço da notícia do STJ não é usada como data da fala ou como data presumida da decisão. Não foi enviada transcrição integral da declaração.",
+      "relatedCaseIds": [],
+      "editorialNumber": 16,
+      "statements": [],
+      "otherEpisodes": []
+    },
+    {
+      "id": "declaracao-adolescentes-venezuelanas",
+      "slug": "declaracao-adolescentes-venezuelanas",
+      "title": "Declaração sobre adolescentes venezuelanas — outubro de 2022",
+      "summary": "Em entrevista de outubro de 2022, Jair Bolsonaro relatou ter encontrado adolescentes venezuelanas de 14 e 15 anos e utilizou a expressão “pintou um clima”.",
+      "body": "A declaração gerou críticas e acusações públicas. O registro preserva a expressão fornecida pela edição, o contexto da entrevista e a resposta de Bolsonaro, sem identificar as adolescentes.",
+      "personIds": ["jair-bolsonaro"],
+      "categoryId": "mulheres-adolescentes",
+      "statusId": "controversia",
+      "statusAsOf": "2022-10",
+      "statusScope": "public-statement",
+      "sourceIds": [
+        "folha-adolescentes-venezuelanas",
+        "video-adolescentes-venezuelanas"
+      ],
+      "contextualSourceIds": [],
+      "placeholder": false,
+      "updatedAt": "2026-10-08",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Texto, contextos e referências fornecidos e conferidos pelo responsável editorial. As páginas externas não foram consultadas independentemente nesta publicação.",
+      "defenseNote": "Bolsonaro afirmou que suas palavras foram distorcidas e relacionou o episódio à preocupação com exploração de menores.",
+      "sectionId": "falas-controversas",
+      "institutionalSubjects": [],
+      "legalCaveat": "Críticas e acusações públicas sobre a fala não comprovam, por si só, conduta criminosa. Este registro não afirma abuso, exploração de menores ou condenação de Bolsonaro.",
+      "sourceNote": "Foi informado apenas mês e ano da fala. O link de vídeo foi enviado sem título, canal ou minutagem e não é descrito como entrevista integral ou fonte primária verificada.",
+      "relatedCaseIds": [],
+      "editorialNumber": 17,
+      "statements": [
+        {
+          "id": "expressao-adolescentes-2022-10",
+          "date": "2022-10",
+          "quote": "pintou um clima",
+          "context": "Expressão usada na entrevista ao relatar o encontro com adolescentes venezuelanas de 14 e 15 anos; trecho fornecido pela edição, não uma transcrição integral da entrevista.",
+          "sourceIds": ["folha-adolescentes-venezuelanas"]
+        }
+      ],
+      "otherEpisodes": []
     }
   ],
   "timeline": [
@@ -1289,6 +1408,35 @@
       "description": "Data da fala; a notícia da Câmara é referência para as representações posteriores, sem atribuir ao protocolo uma data não informada.",
       "statusId": "controversia",
       "sourceIds": ["camara-representacoes-ustra"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "public-statement"
+    },
+    {
+      "id": "ofensas-maria-2014",
+      "caseId": "ofensas-maria-do-rosario",
+      "date": "2014",
+      "datePrecision": "year",
+      "title": "Ofensas a Maria do Rosário",
+      "description": "Ano informado para as ofensas. A responsabilização civil pelo STJ é um marco distinto, sem data de julgamento fornecida.",
+      "statusId": "controversia",
+      "sourceIds": ["stj-maria-do-rosario-danos-morais"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "public-statement"
+    },
+    {
+      "id": "fala-adolescentes-2022-10",
+      "caseId": "declaracao-adolescentes-venezuelanas",
+      "date": "2022-10",
+      "datePrecision": "month",
+      "title": "Expressão “pintou um clima” em entrevista",
+      "description": "Mês da fala informado pela edição; críticas e acusações públicas não equivalem a condenação.",
+      "statusId": "controversia",
+      "sourceIds": [
+        "folha-adolescentes-venezuelanas",
+        "video-adolescentes-venezuelanas"
+      ],
       "placeholder": false,
       "verificationMethod": "publisher-confirmed",
       "eventType": "public-statement"

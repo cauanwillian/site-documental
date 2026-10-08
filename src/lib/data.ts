@@ -66,6 +66,7 @@ export const sourceTypeLabel = (type: string) =>
     "institutional-news": "Notícia institucional",
     "news-report": "Reportagem",
     "video-report": "Reportagem em vídeo",
+    "video-reference": "Vídeo de referência",
     "academic-study": "Estudo acadêmico",
     "research-portal": "Portal de pesquisa",
   })[type] ?? "Documento";
