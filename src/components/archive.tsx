@@ -31,19 +31,23 @@ export function CaseCard({ item }: { item: Case }) {
       <p className="text-sm leading-relaxed text-stone-600">{item.summary}</p>
       <div className="mt-6 border-t border-stone-100 pt-4">
         <span className="text-xs uppercase tracking-wider text-stone-500">
-          Status na decisão registrada
+          Status registrado
         </span>
         <p className="mt-1 text-sm font-medium">
           {statusOf(item.statusId).name}
         </p>
         <p className="mt-1 text-xs text-stone-500">
-          {dateLabel(item.statusAsOf)}
+          {item.statusAsOf
+            ? dateLabel(item.statusAsOf)
+            : "Data do marco não informada"}
         </p>
         <p className="mt-3 flex items-center gap-2 text-xs text-stone-500">
           <FileText className="size-3.5" />{" "}
           {item.sourceIds.length
             ? `${item.sourceIds.length} fonte(s)`
-            : "Sem fontes factuais"}{" "}
+            : item.contextualSourceIds.length
+              ? "Referência contextual"
+              : "Referência específica não fornecida"}{" "}
           · {dateLabel(item.updatedAt)}
         </p>
       </div>
@@ -54,6 +58,13 @@ export function Timeline({ caseId }: { caseId?: string }) {
   const events = data.timeline
     .filter((e) => !caseId || e.caseId === caseId)
     .sort((a, b) => b.date.localeCompare(a.date));
+  if (!events.length)
+    return (
+      <p className="rounded-lg border border-stone-200 bg-white p-5 text-sm text-stone-600">
+        Não há marcos com data informada para este registro. A data de
+        atualização editorial não é tratada como data dos fatos.
+      </p>
+    );
   return (
     <ol className="ml-2 border-l border-stone-300">
       {events.map((e) => (

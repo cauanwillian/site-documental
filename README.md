@@ -23,7 +23,7 @@ Importe este repositório, selecione a branch `main` e o preset Next.js. Instala
 
 Edite `src/data/archive.json`. Contém pessoas, casos, categorias, status jurídicos, eventos, fontes e datas editoriais. IDs referenciados devem existir. Slugs devem ser únicos e próprios para URLs. Datas usam `YYYY-MM-DD` ou `YYYY-MM` quando apenas mês e ano foram fornecidos. `statusId` representa o status da decisão na data `statusAsOf`, sem inferir o estado processual atual.
 
-O arquivo contém quatro casos publicados com textos e referências conferidos pelo responsável editorial. `verificationMethod: "publisher-confirmed"` registra essa origem; não indica consulta independente pela ferramenta. As notícias institucionais são distinguidas de acórdãos e reportagens. Os portais genéricos (`scope: "research"`) ficam separados das referências específicas (`scope: "case"`). Os exemplos demonstrativos foram removidos.
+O arquivo contém 15 casos publicados com textos e referências conferidos pelo responsável editorial. `verificationMethod: "publisher-confirmed"` registra essa origem; não indica consulta independente pela ferramenta. As notícias institucionais são distinguidas de acórdãos e reportagens. Os portais genéricos (`scope: "research"`) ficam separados das referências específicas (`scope: "case"`). Os exemplos demonstrativos foram removidos.
 
 Para publicar um caso real, conclua a pesquisa, registre URLs dos documentos específicos nas fontes, preencha `personIds`, `sourceIds`, `statusId` e a cronologia, e altere `placeholder` para `false`. Fontes devem incluir título, instituição, URL do documento, natureza primária/secundária e data da consulta. Não publique alegações apenas com links genéricos para portais. Atualize os textos editoriais e contadores da Home quando houver conteúdo verificado. Prefira fontes primárias e contextualize recursos, anulações e limites das decisões. Os eventos devem informar suas próprias fontes.
 
@@ -34,3 +34,11 @@ Para publicar um caso real, conclua a pesquisa, registre URLs dos documentos esp
 `src/data/submissions.json` preserva o histórico do primeiro material recebido, as tentativas de acesso e sua promoção ao arquivo público. Esse arquivo não é importado pela aplicação. O rascunho foi publicado após confirmação explícita do responsável editorial de que os materiais estavam conferidos. As questões originais permanecem como histórico, sem sugerir que houve consulta independente.
 
 Novos materiais podem ser publicados após confirmação editorial com textos, referências e datas informados, sem criar detalhes ou datas ausentes. `accessedAt: null` evita registrar uma consulta que não ocorreu. O status publicado é histórico; recursos e trânsito em julgado exigem informações próprias. A menção aos pedidos de revisão criminal é atribuída à informação editorial e assinala a ausência de uma referência específica.
+
+## Seções financeiras e institucionais
+
+`sectionId` agrupa os registros; o filtro de seção combina com pessoa, categoria e status. `institutionalSubjects` identifica Governo, Congresso ou Presidência sem associar automaticamente o registro a uma pessoa. Michelle Bolsonaro, Fabrício Queiroz e Márcia Aguiar têm perfis vinculados aos registros em que foram mencionados.
+
+`sourceIds` são referências específicas; `contextualSourceIds` são panoramas gerais, exibidos em uma seção separada. Registros sem links específicos permanecem publicados como texto editorial com essa ausência indicada. Nenhum link genérico é usado como evidência. As cinco novas referências são secundárias, inclusive a Agência Brasil ao noticiar a PGR e o vídeo atribuído à BBC pelo responsável editorial.
+
+`statusAsOf: null` significa data não informada, sem substituição pela data de atualização. A cronologia aceita ano (`YYYY`), mês e ano ou data completa, e não cria eventos para registros sem datas. O status `pedido-arquivamento` não significa arquivamento decidido. `anulacao-provas` não significa anulação de todo o processo. `legalCaveat` preserva os limites e as ressalvas de cada registro.

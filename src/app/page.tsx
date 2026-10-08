@@ -60,27 +60,34 @@ export default function Home() {
           </div>
         ))}
       </section>
-      <section className="mb-14">
-        <div className="mb-6 flex items-end justify-between gap-4">
-          <div>
-            <p className="text-xs uppercase tracking-wider text-stone-500">
-              O arquivo
-            </p>
-            <h2 className="mt-2 text-2xl font-semibold">Casos documentados</h2>
+      {data.sections.map((section) => (
+        <section key={section.id} className="mb-14">
+          <div className="mb-5 flex items-end justify-between gap-4">
+            <div>
+              <p className="text-xs uppercase tracking-wider text-stone-500">
+                O arquivo
+              </p>
+              <h2 className="mt-2 text-2xl font-semibold">{section.name}</h2>
+            </div>
+            <Link
+              href="/casos/"
+              className="shrink-0 text-sm text-teal-800 underline underline-offset-4"
+            >
+              Ver todos
+            </Link>
           </div>
-          <Link
-            href="/casos/"
-            className="text-sm text-teal-800 underline underline-offset-4"
-          >
-            Ver todos
-          </Link>
-        </div>
-        <div className="grid gap-5 md:grid-cols-3">
-          {data.cases.map((c) => (
-            <CaseCard key={c.id} item={c} />
-          ))}
-        </div>
-      </section>
+          <p className="mb-6 max-w-3xl text-sm leading-relaxed text-stone-600">
+            {section.notice}
+          </p>
+          <div className="grid gap-5 md:grid-cols-3">
+            {data.cases
+              .filter((c) => c.sectionId === section.id)
+              .map((c) => (
+                <CaseCard key={c.id} item={c} />
+              ))}
+          </div>
+        </section>
+      ))}
       <section className="mb-14 grid gap-10 md:grid-cols-[1fr_1.5fr]">
         <div>
           <p className="text-xs uppercase tracking-wider text-teal-800">

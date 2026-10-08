@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { data, statusOf, categoryOf, dateLabel } from "@/lib/data";
+import { data, statusOf, categoryOf, sectionOf, dateLabel } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import { EditorialNotice, Timeline } from "@/components/archive";
 export function generateStaticParams() {
@@ -49,6 +49,12 @@ export default async function CasePage({
       <h1 className="my-5 max-w-3xl text-4xl font-semibold">{c.title}</h1>
       <p className="mb-8 max-w-3xl text-lg text-stone-600">{c.summary}</p>
       <EditorialNotice />
+      {c.legalCaveat && (
+        <aside className="mt-5 rounded-lg border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-950">
+          <strong className="block mb-2">Limites do registro</strong>
+          {c.legalCaveat}
+        </aside>
+      )}
       <p className="mt-4 text-xs leading-relaxed text-stone-500">
         {c.editorialNote}
       </p>
@@ -56,6 +62,22 @@ export default async function CasePage({
         <div>
           <h2 className="text-2xl font-semibold">Contexto do registro</h2>
           <p className="mt-4 leading-relaxed text-stone-600">{c.body}</p>
+          {c.relatedCaseIds.length > 0 && (
+            <div className="mt-5">
+              <h3 className="text-sm font-semibold">Registros relacionados</h3>
+              {data.cases
+                .filter((other) => c.relatedCaseIds.includes(other.id))
+                .map((other) => (
+                  <Link
+                    key={other.id}
+                    href={`/casos/${other.slug}/`}
+                    className="mt-2 block text-sm text-teal-800 underline"
+                  >
+                    {other.title}
+                  </Link>
+                ))}
+            </div>
+          )}
           {c.defenseNote && (
             <section className="mt-8 rounded-lg border border-stone-200 bg-white p-5">
               <h2 className="text-xl font-semibold">Posição da defesa</h2>
@@ -90,7 +112,9 @@ export default async function CasePage({
                       ·{" "}
                       {s.documentType === "institutional-news"
                         ? "Notícia institucional"
-                        : "Reportagem"}
+                        : s.documentType === "video-report"
+                          ? "Reportagem em vídeo"
+                          : "Reportagem"}
                     </span>
                     <span className="mt-2 block text-xs">
                       Referência conferida pelo responsável editorial ·{" "}
@@ -102,22 +126,55 @@ export default async function CasePage({
             </ul>
           ) : (
             <p className="mt-4 rounded-lg border border-stone-200 bg-white p-5 text-sm text-stone-600">
-              Nenhuma fonte factual cadastrada. Este placeholder não documenta
-              um processo real. Os portais institucionais da Home servem apenas
-              à pesquisa.
+              Nenhuma referência específica foi fornecida para este registro. O
+              texto foi fornecido pelo responsável editorial. Portais genéricos
+              de pesquisa não são apresentados como comprovação deste caso.
+            </p>
+          )}
+          {c.contextualSourceIds.length > 0 && (
+            <section className="mt-6">
+              <h3 className="text-lg font-semibold">Referências de contexto</h3>
+              <p className="mt-2 text-sm text-stone-600">
+                Material de panorama geral, sem atribuir a essa referência a
+                comprovação de cada detalhe.
+              </p>
+              <ul className="mt-3 space-y-3">
+                {data.sources
+                  .filter((s) => c.contextualSourceIds.includes(s.id))
+                  .map((s) => (
+                    <li key={s.id}>
+                      <a
+                        href={s.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block rounded-md border border-stone-200 bg-white p-4 text-sm text-stone-600"
+                      >
+                        {s.title} · Fonte secundária
+                      </a>
+                    </li>
+                  ))}
+              </ul>
+            </section>
+          )}
+          {c.sourceNote && (
+            <p className="mt-4 text-xs leading-relaxed text-stone-500">
+              {c.sourceNote}
             </p>
           )}
         </div>
         <aside className="h-fit rounded-lg border border-stone-200 bg-white p-6">
           <p className="text-xs uppercase tracking-wider text-stone-500">
-            Status na decisão registrada
+            Status registrado
           </p>
           <h2 className="mt-3 text-xl font-semibold">{status.name}</h2>
           <p className="mt-3 text-sm leading-relaxed text-stone-600">
             {status.description}
           </p>
           <p className="mt-3 text-sm font-medium">
-            Decisão registrada: {dateLabel(c.statusAsOf)}
+            {c.statusScope === "historical-decision"
+              ? "Decisão registrada"
+              : "Marco registrado"}
+            : {c.statusAsOf ? dateLabel(c.statusAsOf) : "data não informada"}
           </p>
           <p className="mt-2 text-xs leading-relaxed text-stone-500">
             A situação processual atual e eventual trânsito em julgado não são
@@ -142,9 +199,22 @@ export default async function CasePage({
             </ul>
           ) : (
             <p className="mt-2 text-sm text-stone-500">
-              Nenhuma pessoa associada a este exemplo.
+              Nenhuma pessoa individualizada como envolvida neste registro.
             </p>
           )}
+          {c.institutionalSubjects.length > 0 && (
+            <section className="mt-5">
+              <h3 className="text-sm font-semibold">Instituições e contexto</h3>
+              <ul className="mt-2 space-y-2 text-sm text-stone-600">
+                {c.institutionalSubjects.map((name) => (
+                  <li key={name}>{name}</li>
+                ))}
+              </ul>
+            </section>
+          )}
+          <hr className="my-6 border-stone-200" />
+          <p className="text-xs text-stone-500">Seção</p>
+          <p className="mt-2 text-sm">{sectionOf(c.sectionId).name}</p>
           <hr className="my-6 border-stone-200" />
           <p className="text-xs text-stone-500">Última atualização editorial</p>
           <p className="mt-2 text-sm">{dateLabel(c.updatedAt)}</p>

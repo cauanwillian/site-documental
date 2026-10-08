@@ -16,13 +16,13 @@ test("published cases, combined filters and primary sources", async ({
     page.getByText("VERSÃO DEMONSTRATIVA", { exact: false }),
   ).toHaveCount(0);
   await page.getByRole("link", { name: "Explorar o arquivo" }).click();
-  await expect(page.getByText("4 registros encontrados")).toBeVisible();
+  await expect(page.getByText("15 registros encontrados")).toBeVisible();
   await page
     .getByLabel("Pessoa", { exact: true })
     .selectOption("jair-bolsonaro");
   await page.getByLabel("Categoria", { exact: true }).selectOption("eleitoral");
   await page
-    .getByLabel("Status na decisão", { exact: true })
+    .getByLabel("Status jurídico", { exact: true })
     .selectOption("inelegibilidade");
   await expect(page.getByText("2 registros encontrados")).toBeVisible();
   await page
@@ -47,17 +47,20 @@ test("published cases, combined filters and primary sources", async ({
   await page
     .getByLabel("Pessoa", { exact: true })
     .selectOption("flavio-bolsonaro");
+  await page
+    .getByLabel("Status jurídico", { exact: true })
+    .selectOption("condenacao");
   await expect(
     page.getByRole("heading", {
       name: "Nenhum registro corresponde aos filtros",
     }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Limpar filtros" }).click();
-  await expect(page.getByText("4 registros encontrados")).toBeVisible();
+  await expect(page.getByText("15 registros encontrados")).toBeVisible();
   await page.goto("/pessoas/jair-bolsonaro/");
   await expect(
-    page.getByRole("main").getByRole("link", { name: /fonte\(s\)/ }),
-  ).toHaveCount(3);
+    page.getByRole("main").getByRole("heading", { level: 3 }),
+  ).toHaveCount(5);
   await page.goto("/pessoas/eduardo-bolsonaro/");
   await expect(
     page.getByRole("link", { name: /Coação no curso do processo/ }),
@@ -119,4 +122,95 @@ test("mobile published pages fit viewport and research portals stay separate", a
   await expect(
     page.getByRole("link", { name: /Portal primário para pesquisa/ }),
   ).toHaveCount(10);
+});
+
+test("financial section preserves requests, caveats, missing dates and institutional scope", async ({
+  page,
+}) => {
+  await page.goto("/casos/");
+  await page
+    .getByLabel("Seção", { exact: true })
+    .selectOption("financas-maquina-publica");
+  await expect(page.getByText("11 registros encontrados")).toBeVisible();
+  await page
+    .getByLabel("Pessoa", { exact: true })
+    .selectOption("michelle-bolsonaro");
+  await expect(
+    page.getByText("1 registro encontrado", { exact: true }),
+  ).toBeVisible();
+  await page.getByRole("link", { name: /Cheques para Michelle/ }).click();
+  await expect(page.getByText(/27 repasses por cheque/).first()).toBeVisible();
+  await expect(
+    page.getByRole("list", { name: "Fontes do caso" }).getByRole("link"),
+  ).toHaveCount(2);
+  await expect(
+    page.getByText("Marco registrado: data não informada"),
+  ).toBeVisible();
+  await expect(
+    page
+      .getByRole("list", { name: "Fontes do caso" })
+      .getByRole("link", { name: /BBC News Brasil/ }),
+  ).toContainText("Reportagem em vídeo");
+  await page.goto("/casos/joias-sauditas/");
+  await expect(
+    page.getByRole("heading", { name: "Pedido de arquivamento", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByText(
+      "O pedido da PGR não equivale a uma decisão judicial de arquivamento.",
+      { exact: false },
+    ),
+  ).toBeVisible();
+  await expect(page.getByText("Marco registrado: março de 2026")).toBeVisible();
+  await expect(page.locator("main ol > li").last()).toContainText("2024");
+  await page.goto("/casos/rachadinhas-na-alerj/");
+  await expect(
+    page.getByRole("heading", {
+      name: "Anulações de provas e decisões processuais",
+      exact: true,
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Referências de contexto" }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("não apresenta Flávio Bolsonaro como condenado", {
+      exact: false,
+    }),
+  ).toBeVisible();
+  await page.goto("/casos/orcamento-secreto/");
+  await expect(
+    page.getByText("Nenhuma referência específica foi fornecida", {
+      exact: false,
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByText(
+      "Nenhuma pessoa individualizada como envolvida neste registro.",
+    ),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Instituições e contexto" }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Congresso Nacional", { exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Não há marcos com data informada", { exact: false }),
+  ).toBeVisible();
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const route of [
+    "/casos/",
+    "/casos/cheques-para-michelle/",
+    "/casos/rachadinhas-na-alerj/",
+    "/casos/orcamento-secreto/",
+    "/pessoas/michelle-bolsonaro/",
+  ]) {
+    await page.goto(route);
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= window.innerWidth,
+      ),
+    ).toBeTruthy();
+  }
 });
