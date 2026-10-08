@@ -28,3 +28,9 @@ Todos os casos e eventos iniciais são **placeholders não factuais**, sem assoc
 Para publicar um caso real, conclua a pesquisa, registre URLs dos documentos específicos nas fontes, preencha `personIds`, `sourceIds`, `statusId` e a cronologia, e altere `placeholder` para `false`. Fontes devem incluir título, instituição, URL do documento, natureza primária/secundária e data da consulta. Não publique alegações apenas com links genéricos para portais. Atualize os textos editoriais e contadores da Home quando houver conteúdo verificado. Prefira fontes primárias e contextualize recursos, anulações e limites das decisões. Os eventos devem informar suas próprias fontes.
 
 `components.json` configura shadcn/ui; Button e Badge ficam em `src/components/ui`. Cores, tipografia e espaçamento são definidos com Tailwind CSS.
+
+## Material recebido e pendente
+
+`src/data/submissions.json` registra rascunhos enviados para conferência. Esse arquivo não é importado pela aplicação e não gera páginas públicas. O texto recebido não é tratado como fato verificado. Links repetidos são deduplicados; datas de tentativa de acesso são distintas de consultas bem-sucedidas. Status propostos são hipóteses editoriais, separados do status atual não verificado.
+
+O primeiro rascunho reúne os links enviados sobre Jair Bolsonaro e a tentativa de golpe de Estado. O acesso às duas páginas foi bloqueado; o conteúdo ainda precisa ser lido a partir das páginas ou de cópias/PDFs. A alegação de revisão criminal necessita de fonte própria.

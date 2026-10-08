@@ -1,0 +1,110 @@
+{
+  "updatedAt": "2026-10-08",
+  "submissions": [
+    {
+      "id": "jair-bolsonaro-tentativa-golpe-2025",
+      "receivedAt": "2026-10-08",
+      "updatedAt": "2026-10-08",
+      "publicationState": "draft",
+      "verificationState": "awaiting-source-content",
+      "personIds": ["jair-bolsonaro"],
+      "categoryId": "judicial",
+      "proposedSlug": "tentativa-de-golpe-de-estado",
+      "title": "Tentativa de golpe de Estado — material para conferência",
+      "submittedSummary": "Em 11 de setembro de 2025, o STF condenou Jair Bolsonaro a 27 anos e 3 meses de prisão, por cinco crimes relacionados à tentativa de impedir a alternância de poder após as eleições de 2022. Entre eles, golpe de Estado e tentativa de abolição violenta do Estado Democrático de Direito. A defesa contesta a condenação e apresentou pedidos de revisão criminal.",
+      "editorialNote": "Texto recebido do usuário, ainda não conferido no conteúdo das fontes. Não é um placeholder fictício nem um caso factual aprovado para publicação. Os links foram deduplicados. Nenhuma informação de trânsito em julgado, recurso ou revisão criminal foi verificada.",
+      "proposedHistoricalStatusId": "condenacao",
+      "proposedHistoricalStatusDate": "2025-09-11",
+      "currentStatusId": "pendente",
+      "sources": [
+        {
+          "id": "stf-penas-tentativa-golpe-2025",
+          "institution": "STF",
+          "kind": "primary",
+          "documentType": "institutional-news",
+          "url": "https://noticias.stf.jus.br/postsnoticias/stf-fixa-penas-de-16-a-27-anos-para-condenados-por-tentativa-de-golpe-de-estado/",
+          "titleHint": "STF fixa penas de 16 a 27 anos para condenados por tentativa de golpe de Estado",
+          "titleOrigin": "url-slug-not-verified",
+          "verificationState": "access-blocked",
+          "accessAttemptedAt": "2026-10-08",
+          "accessedAt": null,
+          "failure": "HTTP 403 nas tentativas de acesso; navegador também não conseguiu estabelecer conexão. Notícia institucional não substitui a íntegra da decisão."
+        },
+        {
+          "id": "agencia-brasil-condenacao-bolsonaro-2025",
+          "institution": "Agência Brasil / EBC",
+          "kind": "secondary",
+          "documentType": "news-report",
+          "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2025-09/stf-condena-bolsonaro-27-anos-e-tres-meses-de-prisao",
+          "titleHint": "STF condena Bolsonaro a 27 anos e três meses de prisão",
+          "titleOrigin": "url-slug-not-verified",
+          "verificationState": "access-blocked",
+          "accessAttemptedAt": "2026-10-08",
+          "accessedAt": null,
+          "failure": "HTTP 403 nas tentativas de acesso; navegador também não conseguiu estabelecer conexão."
+        }
+      ],
+      "claimsToVerify": [
+        {
+          "id": "decision",
+          "claim": "Condenação pelo STF em 11 de setembro de 2025.",
+          "verificationState": "pending",
+          "candidateSourceIds": [
+            "stf-penas-tentativa-golpe-2025",
+            "agencia-brasil-condenacao-bolsonaro-2025"
+          ]
+        },
+        {
+          "id": "sentence",
+          "claim": "Pena total de 27 anos e 3 meses de prisão.",
+          "verificationState": "pending",
+          "candidateSourceIds": [
+            "stf-penas-tentativa-golpe-2025",
+            "agencia-brasil-condenacao-bolsonaro-2025"
+          ]
+        },
+        {
+          "id": "offenses",
+          "claim": "Condenação por cinco crimes, incluindo golpe de Estado e tentativa de abolição violenta do Estado Democrático de Direito.",
+          "verificationState": "pending",
+          "candidateSourceIds": [
+            "stf-penas-tentativa-golpe-2025",
+            "agencia-brasil-condenacao-bolsonaro-2025"
+          ]
+        },
+        {
+          "id": "defense",
+          "claim": "A defesa contesta a condenação.",
+          "verificationState": "pending",
+          "candidateSourceIds": []
+        },
+        {
+          "id": "criminal-review",
+          "claim": "A defesa apresentou pedidos de revisão criminal.",
+          "verificationState": "pending",
+          "candidateSourceIds": [],
+          "note": "Não confundir recurso, embargos e revisão criminal. Exige documento que identifique o pedido, sua data e o procedimento."
+        }
+      ],
+      "proposedTimeline": [
+        {
+          "date": "2025-09-11",
+          "title": "Condenação e fixação de pena — data informada pelo usuário",
+          "statusId": "condenacao",
+          "verificationState": "pending",
+          "candidateSourceIds": [
+            "stf-penas-tentativa-golpe-2025",
+            "agencia-brasil-condenacao-bolsonaro-2025"
+          ]
+        }
+      ],
+      "publicationRequirements": [
+        "Ler o conteúdo das notícias ou cópias fornecidas pelo usuário e conferir data, pena e crimes.",
+        "Identificar número do processo e obter decisão ou acórdão, quando disponível.",
+        "Distinguir o status histórico de setembro de 2025 do estado processual atual; não presumir trânsito em julgado ou ausência dele.",
+        "Conferir a manifestação da defesa e a alegação de revisão criminal em fonte específica; omitir detalhes não comprovados.",
+        "Após a conferência, promover o caso a archive.json e atualizar os avisos demonstrativos, perfis, cronologia e testes."
+      ]
+    }
+  ]
+}
