@@ -1,0 +1,50 @@
+{
+  "name": "site-documental",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev --hostname 0.0.0.0",
+    "build": "next build",
+    "start": "python3 -m http.server 3000 --bind 0.0.0.0 --directory out",
+    "typecheck": "tsc --noEmit",
+    "test": "playwright test",
+    "format": "prettier --write src tests *.ts *.json *.mjs README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cauanwillian/site-documental.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/cauanwillian/site-documental/issues"
+  },
+  "homepage": "https://github.com/cauanwillian/site-documental#readme",
+  "private": true,
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.4.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.53.0",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tailwind-merge": "^3.7.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "prettier": "^3.9.9",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

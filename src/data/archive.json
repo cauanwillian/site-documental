@@ -1,0 +1,317 @@
+{
+  "updatedAt": "2026-10-08",
+  "editorial": {
+    "name": "Arquivo público",
+    "notice": "Investigação, indiciamento, denúncia, condição de réu e condenação são situações juridicamente diferentes. Nenhuma delas deve ser tratada como equivalente às demais. Condenação definitiva exige trânsito em julgado. O status deve ser lido junto à decisão, à data e às fontes.",
+    "demoNotice": "Versão demonstrativa: todos os casos e eventos são placeholders editoriais. Não descrevem fatos, acusações ou processos reais."
+  },
+  "people": [
+    {
+      "id": "jair-bolsonaro",
+      "slug": "jair-bolsonaro",
+      "name": "Jair Bolsonaro",
+      "description": "Perfil de organização documental. Nenhuma associação factual a casos foi publicada nesta versão.",
+      "placeholder": true,
+      "updatedAt": "2026-10-08"
+    },
+    {
+      "id": "flavio-bolsonaro",
+      "slug": "flavio-bolsonaro",
+      "name": "Flávio Bolsonaro",
+      "description": "Perfil de organização documental. Nenhuma associação factual a casos foi publicada nesta versão.",
+      "placeholder": true,
+      "updatedAt": "2026-10-08"
+    },
+    {
+      "id": "carlos-bolsonaro",
+      "slug": "carlos-bolsonaro",
+      "name": "Carlos Bolsonaro",
+      "description": "Perfil de organização documental. Nenhuma associação factual a casos foi publicada nesta versão.",
+      "placeholder": true,
+      "updatedAt": "2026-10-08"
+    },
+    {
+      "id": "eduardo-bolsonaro",
+      "slug": "eduardo-bolsonaro",
+      "name": "Eduardo Bolsonaro",
+      "description": "Perfil de organização documental. Nenhuma associação factual a casos foi publicada nesta versão.",
+      "placeholder": true,
+      "updatedAt": "2026-10-08"
+    }
+  ],
+  "categories": [
+    {
+      "id": "judicial",
+      "name": "Judicial"
+    },
+    {
+      "id": "eleitoral",
+      "name": "Eleitoral"
+    },
+    {
+      "id": "administrativo",
+      "name": "Administrativo"
+    },
+    {
+      "id": "debate-publico",
+      "name": "Debate público"
+    }
+  ],
+  "legalStatuses": [
+    {
+      "id": "investigacao",
+      "name": "Investigação",
+      "description": "Apuração de fatos; não equivale a acusação formal ou condenação."
+    },
+    {
+      "id": "indiciamento",
+      "name": "Indiciamento",
+      "description": "Ato fundamentado da autoridade policial; não equivale ao recebimento de denúncia."
+    },
+    {
+      "id": "denuncia",
+      "name": "Denúncia apresentada",
+      "description": "Acusação formal apresentada pelo Ministério Público, ainda sujeita à apreciação judicial."
+    },
+    {
+      "id": "reu",
+      "name": "Réu",
+      "description": "Denúncia ou queixa recebida pelo órgão judicial competente; não implica culpa."
+    },
+    {
+      "id": "condenacao",
+      "name": "Condenação",
+      "description": "Decisão condenatória que pode estar sujeita a recursos."
+    },
+    {
+      "id": "condenacao-definitiva",
+      "name": "Condenação definitiva",
+      "description": "Condenação com trânsito em julgado, sem recurso cabível."
+    },
+    {
+      "id": "arquivamento",
+      "name": "Arquivamento",
+      "description": "Encerramento da apuração ou procedimento conforme os fundamentos da decisão."
+    },
+    {
+      "id": "absolvicao",
+      "name": "Absolvição",
+      "description": "Decisão absolutória, com alcance e possibilidade de recurso conforme o processo."
+    },
+    {
+      "id": "anulacao",
+      "name": "Anulação",
+      "description": "Invalidação de ato ou decisão; não equivale automaticamente a absolvição."
+    },
+    {
+      "id": "controversia",
+      "name": "Controvérsia pública",
+      "description": "Registro documental de debate público, sem afirmar existência de processo judicial."
+    },
+    {
+      "id": "inelegibilidade",
+      "name": "Inelegibilidade",
+      "description": "Restrição eleitoral, distinta de condenação criminal."
+    },
+    {
+      "id": "pendente",
+      "name": "Sem classificação verificada",
+      "description": "Estado não verificado; exige consulta à documentação primária."
+    }
+  ],
+  "sources": [
+    {
+      "id": "stf",
+      "name": "STF",
+      "url": "https://portal.stf.jus.br/",
+      "kind": "primary",
+      "purpose": "Portal institucional para pesquisa; não comprova os placeholders.",
+      "updatedAt": "2026-10-08",
+      "institution": "STF",
+      "title": "Portal institucional — STF",
+      "scope": "research",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "id": "tse",
+      "name": "TSE",
+      "url": "https://www.tse.jus.br/",
+      "kind": "primary",
+      "purpose": "Portal institucional para pesquisa; não comprova os placeholders.",
+      "updatedAt": "2026-10-08",
+      "institution": "TSE",
+      "title": "Portal institucional — TSE",
+      "scope": "research",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "id": "stj",
+      "name": "STJ",
+      "url": "https://www.stj.jus.br/",
+      "kind": "primary",
+      "purpose": "Portal institucional para pesquisa; não comprova os placeholders.",
+      "updatedAt": "2026-10-08",
+      "institution": "STJ",
+      "title": "Portal institucional — STJ",
+      "scope": "research",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "id": "pgr",
+      "name": "PGR",
+      "url": "https://www.mpf.mp.br/pgr",
+      "kind": "primary",
+      "purpose": "Portal institucional para pesquisa; não comprova os placeholders.",
+      "updatedAt": "2026-10-08",
+      "institution": "PGR",
+      "title": "Portal institucional — PGR",
+      "scope": "research",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "id": "mpf",
+      "name": "MPF",
+      "url": "https://www.mpf.mp.br/",
+      "kind": "primary",
+      "purpose": "Portal institucional para pesquisa; não comprova os placeholders.",
+      "updatedAt": "2026-10-08",
+      "institution": "MPF",
+      "title": "Portal institucional — MPF",
+      "scope": "research",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "id": "pf",
+      "name": "PF",
+      "url": "https://www.gov.br/pf/pt-br",
+      "kind": "primary",
+      "purpose": "Portal institucional para pesquisa; não comprova os placeholders.",
+      "updatedAt": "2026-10-08",
+      "institution": "PF",
+      "title": "Portal institucional — PF",
+      "scope": "research",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "id": "câmara",
+      "name": "Câmara",
+      "url": "https://www.camara.leg.br/",
+      "kind": "primary",
+      "purpose": "Portal institucional para pesquisa; não comprova os placeholders.",
+      "updatedAt": "2026-10-08",
+      "institution": "Câmara",
+      "title": "Portal institucional — Câmara",
+      "scope": "research",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "id": "senado",
+      "name": "Senado",
+      "url": "https://www.senado.leg.br/",
+      "kind": "primary",
+      "purpose": "Portal institucional para pesquisa; não comprova os placeholders.",
+      "updatedAt": "2026-10-08",
+      "institution": "Senado",
+      "title": "Portal institucional — Senado",
+      "scope": "research",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "id": "tcu",
+      "name": "TCU",
+      "url": "https://portal.tcu.gov.br/",
+      "kind": "primary",
+      "purpose": "Portal institucional para pesquisa; não comprova os placeholders.",
+      "updatedAt": "2026-10-08",
+      "institution": "TCU",
+      "title": "Portal institucional — TCU",
+      "scope": "research",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "id": "diário oficial",
+      "name": "Diário Oficial",
+      "url": "https://www.in.gov.br/",
+      "kind": "primary",
+      "purpose": "Portal institucional para pesquisa; não comprova os placeholders.",
+      "updatedAt": "2026-10-08",
+      "institution": "Diário Oficial",
+      "title": "Portal institucional — Diário Oficial",
+      "scope": "research",
+      "accessedAt": "2026-10-08"
+    }
+  ],
+  "cases": [
+    {
+      "id": "registro-judicial-demonstrativo",
+      "slug": "registro-judicial-demonstrativo",
+      "title": "Registro judicial demonstrativo",
+      "summary": "Espaço reservado para documentação após pesquisa e verificação das fontes primárias. Este registro não corresponde a um caso real.",
+      "body": "A publicação de conteúdo factual dependerá da identificação do procedimento, leitura das decisões, conferência de datas e delimitação da participação de cada pessoa. Nenhuma acusação ou conclusão é apresentada neste exemplo.",
+      "personIds": [],
+      "categoryId": "judicial",
+      "statusId": "pendente",
+      "sourceIds": [],
+      "placeholder": true,
+      "updatedAt": "2026-10-08"
+    },
+    {
+      "id": "registro-eleitoral-demonstrativo",
+      "slug": "registro-eleitoral-demonstrativo",
+      "title": "Registro eleitoral demonstrativo",
+      "summary": "Espaço reservado para documentação após pesquisa e verificação das fontes primárias. Este registro não corresponde a um caso real.",
+      "body": "A publicação de conteúdo factual dependerá da identificação do procedimento, leitura das decisões, conferência de datas e delimitação da participação de cada pessoa. Nenhuma acusação ou conclusão é apresentada neste exemplo.",
+      "personIds": [],
+      "categoryId": "eleitoral",
+      "statusId": "pendente",
+      "sourceIds": [],
+      "placeholder": true,
+      "updatedAt": "2026-10-08"
+    },
+    {
+      "id": "registro-administrativo-demonstrativo",
+      "slug": "registro-administrativo-demonstrativo",
+      "title": "Registro administrativo demonstrativo",
+      "summary": "Espaço reservado para documentação após pesquisa e verificação das fontes primárias. Este registro não corresponde a um caso real.",
+      "body": "A publicação de conteúdo factual dependerá da identificação do procedimento, leitura das decisões, conferência de datas e delimitação da participação de cada pessoa. Nenhuma acusação ou conclusão é apresentada neste exemplo.",
+      "personIds": [],
+      "categoryId": "administrativo",
+      "statusId": "pendente",
+      "sourceIds": [],
+      "placeholder": true,
+      "updatedAt": "2026-10-08"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "demo-0",
+      "caseId": "registro-judicial-demonstrativo",
+      "date": "2026-10-08",
+      "title": "Placeholder criado para demonstração",
+      "description": "Marco editorial de criação do exemplo; não é um evento judicial.",
+      "statusId": "pendente",
+      "sourceIds": [],
+      "placeholder": true
+    },
+    {
+      "id": "demo-1",
+      "caseId": "registro-eleitoral-demonstrativo",
+      "date": "2026-10-08",
+      "title": "Placeholder criado para demonstração",
+      "description": "Marco editorial de criação do exemplo; não é um evento judicial.",
+      "statusId": "pendente",
+      "sourceIds": [],
+      "placeholder": true
+    },
+    {
+      "id": "demo-2",
+      "caseId": "registro-administrativo-demonstrativo",
+      "date": "2026-10-08",
+      "title": "Placeholder criado para demonstração",
+      "description": "Marco editorial de criação do exemplo; não é um evento judicial.",
+      "statusId": "pendente",
+      "sourceIds": [],
+      "placeholder": true
+    }
+  ]
+}
