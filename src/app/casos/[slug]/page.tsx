@@ -1,6 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { data, statusOf, categoryOf, sectionOf, dateLabel } from "@/lib/data";
+import {
+  data,
+  statusOf,
+  categoryOf,
+  sectionOf,
+  dateLabel,
+  sourceTypeLabel,
+} from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import { EditorialNotice, Timeline } from "@/components/archive";
 export function generateStaticParams() {
@@ -62,6 +69,84 @@ export default async function CasePage({
         <div>
           <h2 className="text-2xl font-semibold">Contexto do registro</h2>
           <p className="mt-4 leading-relaxed text-stone-600">{c.body}</p>
+
+          {c.statements && c.statements.length > 0 && (
+            <section className="mt-8" aria-label="Declarações documentadas">
+              <h2 className="text-2xl font-semibold">Declarações e contexto</h2>
+              <p className="mt-3 text-sm text-stone-600">
+                As datas abaixo são as datas das falas. As citações são
+                transcrições fornecidas pela edição.
+              </p>
+              <ol className="mt-5 space-y-5">
+                {c.statements.map((statement) => (
+                  <li
+                    key={statement.id}
+                    className="rounded-lg border border-stone-200 bg-white p-5"
+                  >
+                    <time
+                      dateTime={statement.date}
+                      className="text-xs uppercase tracking-wider text-teal-800"
+                    >
+                      {dateLabel(statement.date)}
+                    </time>
+                    <blockquote className="my-4 border-l-2 border-teal-700 pl-4 text-xl font-medium leading-relaxed">
+                      “{statement.quote}”
+                    </blockquote>
+                    <p className="text-sm leading-relaxed text-stone-600">
+                      <strong>Contexto: </strong>
+                      {statement.context}
+                    </p>
+                    <ul className="mt-3 space-y-2 text-xs text-teal-800">
+                      {data.sources
+                        .filter((source) =>
+                          statement.sourceIds.includes(source.id),
+                        )
+                        .map((source) => (
+                          <li key={source.id}>
+                            <a
+                              href={source.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="underline underline-offset-4"
+                            >
+                              {source.title} ·{" "}
+                              {source.kind === "primary"
+                                ? "Fonte primária"
+                                : "Fonte secundária"}
+                            </a>
+                          </li>
+                        ))}
+                    </ul>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          )}
+          {c.otherEpisodes && c.otherEpisodes.length > 0 && (
+            <section className="mt-8">
+              <h2 className="text-2xl font-semibold">
+                Outros episódios mencionados pela edição
+              </h2>
+              <ul className="mt-5 space-y-4">
+                {c.otherEpisodes.map((episode) => (
+                  <li
+                    key={episode.id}
+                    className="rounded-lg border border-stone-200 bg-white p-5"
+                  >
+                    <p className="text-sm leading-relaxed">
+                      {episode.description}
+                    </p>
+                    <p className="mt-3 text-xs text-stone-500">
+                      {episode.date
+                        ? `Data informada: ${dateLabel(episode.date)} (somente o ano)`
+                        : "Data não informada"}{" "}
+                      · Referência específica não fornecida
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
           {c.relatedCaseIds.length > 0 && (
             <div className="mt-5">
               <h3 className="text-sm font-semibold">Registros relacionados</h3>
@@ -109,12 +194,7 @@ export default async function CasePage({
                       {s.kind === "primary"
                         ? "Fonte primária"
                         : "Fonte secundária"}{" "}
-                      ·{" "}
-                      {s.documentType === "institutional-news"
-                        ? "Notícia institucional"
-                        : s.documentType === "video-report"
-                          ? "Reportagem em vídeo"
-                          : "Reportagem"}
+                      · {sourceTypeLabel(s.documentType)}
                     </span>
                     <span className="mt-2 block text-xs">
                       Referência conferida pelo responsável editorial ·{" "}
@@ -149,7 +229,8 @@ export default async function CasePage({
                         rel="noopener noreferrer"
                         className="block rounded-md border border-stone-200 bg-white p-4 text-sm text-stone-600"
                       >
-                        {s.title} · Fonte secundária
+                        {s.title} · Fonte secundária ·{" "}
+                        {sourceTypeLabel(s.documentType)}
                       </a>
                     </li>
                   ))}
@@ -164,7 +245,9 @@ export default async function CasePage({
         </div>
         <aside className="h-fit rounded-lg border border-stone-200 bg-white p-6">
           <p className="text-xs uppercase tracking-wider text-stone-500">
-            Status registrado
+            {c.statusScope === "public-statement"
+              ? "Natureza do registro"
+              : "Status registrado"}
           </p>
           <h2 className="mt-3 text-xl font-semibold">{status.name}</h2>
           <p className="mt-3 text-sm leading-relaxed text-stone-600">
@@ -174,11 +257,17 @@ export default async function CasePage({
             {c.statusScope === "historical-decision"
               ? "Decisão registrada"
               : "Marco registrado"}
-            : {c.statusAsOf ? dateLabel(c.statusAsOf) : "data não informada"}
+            :{" "}
+            {c.statusAsOf
+              ? dateLabel(c.statusAsOf)
+              : c.statements?.length
+                ? "várias datas; consulte as declarações"
+                : "data não informada"}
           </p>
           <p className="mt-2 text-xs leading-relaxed text-stone-500">
-            A situação processual atual e eventual trânsito em julgado não são
-            afirmados neste registro.
+            {c.statusScope === "public-statement"
+              ? "As datas se referem às falas, não às publicações que as reuniram. Controvérsia pública não equivale a condenação criminal."
+              : "A situação processual atual e eventual trânsito em julgado não são afirmados neste registro."}
           </p>
           <hr className="my-6 border-stone-200" />
           <h3 className="text-sm font-semibold">Pessoas relacionadas</h3>

@@ -42,7 +42,7 @@ export default function Home() {
         {[
           [
             String(data.cases.filter((c) => !c.placeholder).length),
-            "Casos publicados",
+            "Registros publicados",
           ],
           [
             String(data.sources.filter((s) => s.scope === "case").length),

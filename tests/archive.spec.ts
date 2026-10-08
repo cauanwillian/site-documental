@@ -10,13 +10,13 @@ test("published cases, combined filters and primary sources", async ({
     "Os documentos.",
   );
   await expect(
-    page.getByText("Casos publicados", { exact: true }),
+    page.getByText("Registros publicados", { exact: true }),
   ).toBeVisible();
   await expect(
     page.getByText("VERSÃO DEMONSTRATIVA", { exact: false }),
   ).toHaveCount(0);
   await page.getByRole("link", { name: "Explorar o arquivo" }).click();
-  await expect(page.getByText("15 registros encontrados")).toBeVisible();
+  await expect(page.getByText("18 registros encontrados")).toBeVisible();
   await page
     .getByLabel("Pessoa", { exact: true })
     .selectOption("jair-bolsonaro");
@@ -56,11 +56,11 @@ test("published cases, combined filters and primary sources", async ({
     }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Limpar filtros" }).click();
-  await expect(page.getByText("15 registros encontrados")).toBeVisible();
+  await expect(page.getByText("18 registros encontrados")).toBeVisible();
   await page.goto("/pessoas/jair-bolsonaro/");
   await expect(
     page.getByRole("main").getByRole("heading", { level: 3 }),
-  ).toHaveCount(5);
+  ).toHaveCount(8);
   await page.goto("/pessoas/eduardo-bolsonaro/");
   await expect(
     page.getByRole("link", { name: /Coação no curso do processo/ }),
@@ -205,6 +205,86 @@ test("financial section preserves requests, caveats, missing dates and instituti
     "/casos/rachadinhas-na-alerj/",
     "/casos/orcamento-secreto/",
     "/pessoas/michelle-bolsonaro/",
+  ]) {
+    await page.goto(route);
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= window.innerWidth,
+      ),
+    ).toBeTruthy();
+  }
+});
+
+test("statements preserve quotes, speech dates and source scope", async ({
+  page,
+}) => {
+  await page.goto("/casos/");
+  await page
+    .getByLabel("Seção", { exact: true })
+    .selectOption("falas-controversas");
+  await expect(page.getByText("3 registros encontrados")).toBeVisible();
+  await page
+    .getByRole("link", { name: /Pandemia, vacinas e mortes por covid-19/ })
+    .click();
+  const declarations = page.getByRole("region", {
+    name: "Declarações documentadas",
+  });
+  await expect(declarations.locator("blockquote")).toHaveCount(7);
+  await expect(declarations.locator("blockquote").first()).toHaveText(
+    "“Gripezinha”",
+  );
+  await expect(declarations.locator("time").first()).toHaveAttribute(
+    "datetime",
+    "2020-03-24",
+  );
+  await expect(declarations.locator("time").last()).toHaveAttribute(
+    "datetime",
+    "2021-03-04",
+  );
+  await expect(
+    page.getByRole("heading", { name: "Natureza do registro", exact: true }),
+  ).toHaveCount(0);
+  await expect(
+    page.getByRole("heading", { name: "Controvérsia pública", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: /Tese no repositório da USP/ }),
+  ).toContainText("Estudo acadêmico");
+  await page.goto("/casos/falas-povos-indigenas-racismo/");
+  await expect(page.locator("blockquote")).toHaveText(
+    "“Cada vez mais o índio é um ser humano igual a nós.”",
+  );
+  await expect(
+    page.getByRole("heading", {
+      name: "Outros episódios mencionados pela edição",
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Data não informada · Referência específica não fornecida", {
+      exact: true,
+    }),
+  ).toHaveCount(3);
+  await page.goto("/casos/homenagem-ustra-impeachment/");
+  await expect(
+    page.getByText("Marco registrado: 17 de abril de 2016"),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("list", { name: "Fontes do caso" }).getByRole("link"),
+  ).toHaveAttribute("href", /camara.leg.br/);
+  await expect(
+    page.getByText(
+      "As representações na Câmara não são apresentadas como denúncia criminal",
+      { exact: false },
+    ),
+  ).toBeVisible();
+  await expect(
+    page.getByText("protegida pela imunidade parlamentar", { exact: false }),
+  ).toBeVisible();
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const route of [
+    "/casos/falas-pandemia-vacinas-mortes/",
+    "/casos/falas-povos-indigenas-racismo/",
+    "/casos/homenagem-ustra-impeachment/",
   ]) {
     await page.goto(route);
     expect(

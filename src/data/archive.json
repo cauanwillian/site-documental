@@ -88,6 +88,18 @@
     {
       "id": "maquina-publica",
       "name": "Uso da máquina pública"
+    },
+    {
+      "id": "pandemia-saude",
+      "name": "Pandemia e saúde"
+    },
+    {
+      "id": "povos-tradicionais",
+      "name": "Povos indígenas e populações tradicionais"
+    },
+    {
+      "id": "ditadura-tortura",
+      "name": "Ditadura e tortura"
     }
   ],
   "legalStatuses": [
@@ -448,6 +460,66 @@
       "scope": "case",
       "documentType": "news-report",
       "purpose": "Referência fornecida pelo responsável editorial; alcance indicado no registro.",
+      "updatedAt": "2026-10-08",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-08"
+    },
+    {
+      "id": "folha-falas-pandemia",
+      "name": "Folha de S.Paulo",
+      "institution": "Folha de S.Paulo",
+      "kind": "secondary",
+      "title": "Relembre o que Bolsonaro já disse sobre a pandemia — referência enviada",
+      "url": "https://www1.folha.uol.com.br/poder/2021/03/relembre-o-que-bolsonaro-ja-disse-sobre-a-pandemia-de-gripezinha-e-pais-de-maricas-a-frescura-e-mimimi.shtml",
+      "scope": "case",
+      "documentType": "news-report",
+      "purpose": "Referência fornecida e conferida pelo responsável editorial.",
+      "updatedAt": "2026-10-08",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-08"
+    },
+    {
+      "id": "usp-estudo-falas-pandemia",
+      "name": "Universidade de São Paulo (USP)",
+      "institution": "Universidade de São Paulo (USP)",
+      "kind": "secondary",
+      "title": "Tese no repositório da USP — referência acadêmica enviada",
+      "url": "https://teses.usp.br/teses/disponiveis/6/6140/tde-29012026-143105/publico/PompeuELT_DR_R.pdf",
+      "scope": "case",
+      "documentType": "academic-study",
+      "purpose": "Referência fornecida e conferida pelo responsável editorial.",
+      "updatedAt": "2026-10-08",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-08"
+    },
+    {
+      "id": "folha-declaracao-indigenas",
+      "name": "Folha de S.Paulo",
+      "institution": "Folha de S.Paulo",
+      "kind": "secondary",
+      "title": "Cada vez mais o índio é um ser humano igual a nós, diz Bolsonaro — referência enviada",
+      "url": "https://www1.folha.uol.com.br/poder/2020/01/cada-vez-mais-o-indio-e-um-ser-humano-igual-a-nos-diz-bolsonaro.shtml",
+      "scope": "case",
+      "documentType": "news-report",
+      "purpose": "Referência fornecida e conferida pelo responsável editorial.",
+      "updatedAt": "2026-10-08",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-08"
+    },
+    {
+      "id": "camara-representacoes-ustra",
+      "name": "Câmara dos Deputados",
+      "institution": "Câmara dos Deputados",
+      "kind": "primary",
+      "title": "PV e OAB-RJ protocolam denúncias na Câmara contra deputado Bolsonaro",
+      "url": "https://www.camara.leg.br/noticias/486449-pv-e-oab-rj-protocolam-denuncias-na-camara-contra-deputado-bolsonaro",
+      "scope": "case",
+      "documentType": "institutional-news",
+      "purpose": "Referência fornecida e conferida pelo responsável editorial.",
       "updatedAt": "2026-10-08",
       "accessedAt": null,
       "verificationMethod": "publisher-confirmed",
@@ -828,6 +900,167 @@
       "sourceNote": "",
       "relatedCaseIds": [],
       "editorialNumber": 15
+    },
+    {
+      "id": "falas-pandemia-vacinas-mortes",
+      "slug": "falas-pandemia-vacinas-mortes",
+      "title": "Pandemia, vacinas e mortes por covid-19",
+      "summary": "Sete declarações de Jair Bolsonaro sobre a pandemia, as vacinas e as mortes por covid-19, entre março de 2020 e março de 2021.",
+      "body": "As declarações foram registradas pela imprensa durante o governo Bolsonaro, conforme o material editorial enviado. As transcrições abaixo preservam as formulações fornecidas; os contextos são apresentados separadamente.",
+      "personIds": ["jair-bolsonaro"],
+      "categoryId": "pandemia-saude",
+      "statusId": "controversia",
+      "statusAsOf": null,
+      "statusScope": "public-statement",
+      "sourceIds": ["folha-falas-pandemia"],
+      "contextualSourceIds": ["usp-estudo-falas-pandemia"],
+      "placeholder": false,
+      "updatedAt": "2026-10-08",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Transcrições, contextos e referências fornecidos e conferidos pelo responsável editorial. As páginas externas não foram consultadas independentemente nesta publicação.",
+      "defenseNote": null,
+      "sectionId": "falas-controversas",
+      "institutionalSubjects": [],
+      "legalCaveat": "Este registro reúne falas e críticas públicas. Não descreve uma condenação criminal ou um parecer médico.",
+      "sourceNote": "As datas são as das falas. O mês de publicação da reportagem e a data indicada no endereço do repositório acadêmico não são usados como datas das declarações. Não foram fornecidas páginas ou trechos específicos da tese; ela é apresentada como referência acadêmica de contexto.",
+      "relatedCaseIds": [],
+      "statements": [
+        {
+          "id": "pandemia-2020-03-24",
+          "date": "2020-03-24",
+          "quote": "Gripezinha",
+          "context": "Minimização da gravidade da covid-19 em pronunciamento nacional.",
+          "sourceIds": ["folha-falas-pandemia"]
+        },
+        {
+          "id": "pandemia-2020-04-20",
+          "date": "2020-04-20",
+          "quote": "Eu não sou coveiro.",
+          "context": "Resposta a questionamento sobre as mortes pela doença.",
+          "sourceIds": ["folha-falas-pandemia"]
+        },
+        {
+          "id": "pandemia-2020-04-28",
+          "date": "2020-04-28",
+          "quote": "E daí? Lamento. Quer que eu faça o quê?",
+          "context": "Questionado sobre recorde de mortes.",
+          "sourceIds": ["folha-falas-pandemia"]
+        },
+        {
+          "id": "pandemia-2020-06-02",
+          "date": "2020-06-02",
+          "quote": "É o destino de todo mundo.",
+          "context": "Comentário ao tratar de mortes pela pandemia.",
+          "sourceIds": ["folha-falas-pandemia"]
+        },
+        {
+          "id": "pandemia-2020-11-10",
+          "date": "2020-11-10",
+          "quote": "Tem que deixar de ser um país de maricas.",
+          "context": "Crítica às preocupações e medidas de proteção sanitária.",
+          "sourceIds": ["folha-falas-pandemia"]
+        },
+        {
+          "id": "pandemia-2020-12-17",
+          "date": "2020-12-17",
+          "quote": "Se tomar vacina e virar jacaré não tenho nada a ver com isso.",
+          "context": "Declaração sobre possíveis efeitos da vacina.",
+          "sourceIds": ["folha-falas-pandemia"]
+        },
+        {
+          "id": "pandemia-2021-03-04",
+          "date": "2021-03-04",
+          "quote": "Chega de frescura e mimimi.",
+          "context": "Crítica às medidas e preocupações com a pandemia.",
+          "sourceIds": ["folha-falas-pandemia"]
+        }
+      ],
+      "otherEpisodes": []
+    },
+    {
+      "id": "falas-povos-indigenas-racismo",
+      "slug": "falas-povos-indigenas-racismo",
+      "title": "Povos indígenas e racismo",
+      "summary": "Em 23 de janeiro de 2020, Jair Bolsonaro declarou: “Cada vez mais o índio é um ser humano igual a nós.”",
+      "body": "Bolsonaro utilizou essa formulação ao defender maior integração dos povos indígenas à sociedade. A declaração foi criticada por pressupor uma diferença de humanidade entre indígenas e não indígenas, conforme o contexto editorial fornecido.",
+      "personIds": ["jair-bolsonaro"],
+      "categoryId": "povos-tradicionais",
+      "statusId": "controversia",
+      "statusAsOf": "2020-01-23",
+      "statusScope": "public-statement",
+      "sourceIds": ["folha-declaracao-indigenas"],
+      "contextualSourceIds": [],
+      "placeholder": false,
+      "updatedAt": "2026-10-08",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Transcrições, contextos e referências fornecidos e conferidos pelo responsável editorial. As páginas externas não foram consultadas independentemente nesta publicação.",
+      "defenseNote": null,
+      "sectionId": "falas-controversas",
+      "institutionalSubjects": [],
+      "legalCaveat": "A classificação temática reúne controvérsias sobre povos indígenas e racismo; não afirma uma condenação de Jair Bolsonaro por racismo.",
+      "sourceNote": "A reportagem enviada é vinculada à fala de 23 de janeiro de 2020. Os outros episódios são resumos fornecidos pela edição, sem referências específicas, transcrições integrais ou datas completas; não são atribuídos automaticamente a essa reportagem.",
+      "relatedCaseIds": [],
+      "statements": [
+        {
+          "id": "indigenas-2020-01-23",
+          "date": "2020-01-23",
+          "quote": "Cada vez mais o índio é um ser humano igual a nós.",
+          "context": "Declaração ao defender maior integração dos povos indígenas à sociedade. A crítica à formulação é uma interpretação apresentada no contexto editorial.",
+          "sourceIds": ["folha-declaracao-indigenas"]
+        }
+      ],
+      "otherEpisodes": [
+        {
+          "id": "quilombolas-2017",
+          "date": "2017",
+          "description": "Comparação de quilombolas a unidades de peso animal, em discurso de 2017.",
+          "sourceIds": []
+        },
+        {
+          "id": "demarcacoes",
+          "date": null,
+          "description": "Declarações questionando demarcações de terras indígenas.",
+          "sourceIds": []
+        },
+        {
+          "id": "exploracao-terras",
+          "date": null,
+          "description": "Defesa da exploração mineral e agropecuária em terras indígenas.",
+          "sourceIds": []
+        },
+        {
+          "id": "comentarios-populacoes",
+          "date": null,
+          "description": "Comentários sobre populações tradicionais considerados discriminatórios por críticos e entidades de direitos humanos.",
+          "sourceIds": []
+        }
+      ]
+    },
+    {
+      "id": "homenagem-ustra-impeachment",
+      "slug": "homenagem-ustra-impeachment",
+      "title": "Defesa da ditadura e da tortura",
+      "summary": "Em 17 de abril de 2016, durante a votação do impeachment de Dilma Rousseff, Jair Bolsonaro homenageou o coronel Carlos Alberto Brilhante Ustra.",
+      "body": "Segundo o material editorial fornecido, Ustra foi reconhecido judicialmente como torturador durante a ditadura militar. A declaração de Bolsonaro provocou representações do PV e da OAB-RJ na Câmara dos Deputados. O registro distingue a homenagem, as representações e a resposta de Bolsonaro.",
+      "personIds": ["jair-bolsonaro"],
+      "categoryId": "ditadura-tortura",
+      "statusId": "controversia",
+      "statusAsOf": "2016-04-17",
+      "statusScope": "public-statement",
+      "sourceIds": ["camara-representacoes-ustra"],
+      "contextualSourceIds": [],
+      "placeholder": false,
+      "updatedAt": "2026-10-08",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Transcrições, contextos e referências fornecidos e conferidos pelo responsável editorial. As páginas externas não foram consultadas independentemente nesta publicação.",
+      "defenseNote": "Bolsonaro alegou que sua fala estava protegida pela imunidade parlamentar.",
+      "sectionId": "falas-controversas",
+      "institutionalSubjects": [],
+      "legalCaveat": "As representações na Câmara não são apresentadas como denúncia criminal do Ministério Público, decisão de recebimento de denúncia ou condenação de Bolsonaro. Não foi informado o resultado dessas representações.",
+      "sourceNote": "A data de 17 de abril de 2016 é a data da fala durante a votação, não uma data atribuída à publicação da notícia ou ao protocolo das representações. A referência específica do reconhecimento judicial de Ustra não foi fornecida; essa informação é atribuída ao material editorial.",
+      "relatedCaseIds": [],
+      "statements": [],
+      "otherEpisodes": []
     }
   ],
   "timeline": [
@@ -929,6 +1162,136 @@
       "sourceIds": ["folha-abin-indiciamento"],
       "placeholder": false,
       "verificationMethod": "publisher-confirmed"
+    },
+    {
+      "id": "fala-pandemia-2020-03-24",
+      "caseId": "falas-pandemia-vacinas-mortes",
+      "date": "2020-03-24",
+      "datePrecision": "day",
+      "title": "“Gripezinha”",
+      "description": "Minimização da gravidade da covid-19 em pronunciamento nacional.",
+      "statusId": "controversia",
+      "sourceIds": ["folha-falas-pandemia"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "public-statement"
+    },
+    {
+      "id": "fala-pandemia-2020-04-20",
+      "caseId": "falas-pandemia-vacinas-mortes",
+      "date": "2020-04-20",
+      "datePrecision": "day",
+      "title": "“Eu não sou coveiro.”",
+      "description": "Resposta a questionamento sobre as mortes pela doença.",
+      "statusId": "controversia",
+      "sourceIds": ["folha-falas-pandemia"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "public-statement"
+    },
+    {
+      "id": "fala-pandemia-2020-04-28",
+      "caseId": "falas-pandemia-vacinas-mortes",
+      "date": "2020-04-28",
+      "datePrecision": "day",
+      "title": "“E daí? Lamento. Quer que eu faça o quê?”",
+      "description": "Questionado sobre recorde de mortes.",
+      "statusId": "controversia",
+      "sourceIds": ["folha-falas-pandemia"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "public-statement"
+    },
+    {
+      "id": "fala-pandemia-2020-06-02",
+      "caseId": "falas-pandemia-vacinas-mortes",
+      "date": "2020-06-02",
+      "datePrecision": "day",
+      "title": "“É o destino de todo mundo.”",
+      "description": "Comentário ao tratar de mortes pela pandemia.",
+      "statusId": "controversia",
+      "sourceIds": ["folha-falas-pandemia"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "public-statement"
+    },
+    {
+      "id": "fala-pandemia-2020-11-10",
+      "caseId": "falas-pandemia-vacinas-mortes",
+      "date": "2020-11-10",
+      "datePrecision": "day",
+      "title": "“Tem que deixar de ser um país de maricas.”",
+      "description": "Crítica às preocupações e medidas de proteção sanitária.",
+      "statusId": "controversia",
+      "sourceIds": ["folha-falas-pandemia"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "public-statement"
+    },
+    {
+      "id": "fala-pandemia-2020-12-17",
+      "caseId": "falas-pandemia-vacinas-mortes",
+      "date": "2020-12-17",
+      "datePrecision": "day",
+      "title": "“Se tomar vacina e virar jacaré não tenho nada a ver com isso.”",
+      "description": "Declaração sobre possíveis efeitos da vacina.",
+      "statusId": "controversia",
+      "sourceIds": ["folha-falas-pandemia"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "public-statement"
+    },
+    {
+      "id": "fala-pandemia-2021-03-04",
+      "caseId": "falas-pandemia-vacinas-mortes",
+      "date": "2021-03-04",
+      "datePrecision": "day",
+      "title": "“Chega de frescura e mimimi.”",
+      "description": "Crítica às medidas e preocupações com a pandemia.",
+      "statusId": "controversia",
+      "sourceIds": ["folha-falas-pandemia"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "public-statement"
+    },
+    {
+      "id": "fala-indigenas-2020-01-23",
+      "caseId": "falas-povos-indigenas-racismo",
+      "date": "2020-01-23",
+      "datePrecision": "day",
+      "title": "“Cada vez mais o índio é um ser humano igual a nós.”",
+      "description": "Declaração e contexto fornecidos pela edição; data da fala.",
+      "statusId": "controversia",
+      "sourceIds": ["folha-declaracao-indigenas"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "public-statement"
+    },
+    {
+      "id": "quilombolas-discurso-2017",
+      "caseId": "falas-povos-indigenas-racismo",
+      "date": "2017",
+      "datePrecision": "year",
+      "title": "Discurso sobre quilombolas",
+      "description": "Comparação a unidades de peso animal, conforme resumo editorial. Somente o ano foi informado; não foi fornecida referência específica.",
+      "statusId": "controversia",
+      "sourceIds": [],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "public-statement"
+    },
+    {
+      "id": "homenagem-ustra-2016",
+      "caseId": "homenagem-ustra-impeachment",
+      "date": "2016-04-17",
+      "datePrecision": "day",
+      "title": "Homenagem a Ustra durante votação do impeachment",
+      "description": "Data da fala; a notícia da Câmara é referência para as representações posteriores, sem atribuir ao protocolo uma data não informada.",
+      "statusId": "controversia",
+      "sourceIds": ["camara-representacoes-ustra"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "public-statement"
     }
   ],
   "sections": [
@@ -941,6 +1304,11 @@
       "id": "financas-maquina-publica",
       "name": "Escândalos financeiros, suspeitas de corrupção e uso da máquina pública",
       "notice": "Investigações e suspeitas não devem ser confundidas com culpa criminal comprovada. Pedido de arquivamento não é arquivamento decidido; transações e despesas divulgadas não comprovam, por si só, irregularidades."
+    },
+    {
+      "id": "falas-controversas",
+      "name": "Falas controversas de Jair Bolsonaro",
+      "notice": "As datas são as datas das declarações, não das reportagens que as reuniram. Citações, contexto e críticas são apresentados separadamente; o registro de uma controvérsia não equivale a condenação criminal."
     }
   ]
 }

@@ -31,7 +31,9 @@ export function CaseCard({ item }: { item: Case }) {
       <p className="text-sm leading-relaxed text-stone-600">{item.summary}</p>
       <div className="mt-6 border-t border-stone-100 pt-4">
         <span className="text-xs uppercase tracking-wider text-stone-500">
-          Status registrado
+          {item.statusScope === "public-statement"
+            ? "Natureza do registro"
+            : "Status registrado"}
         </span>
         <p className="mt-1 text-sm font-medium">
           {statusOf(item.statusId).name}
@@ -39,7 +41,9 @@ export function CaseCard({ item }: { item: Case }) {
         <p className="mt-1 text-xs text-stone-500">
           {item.statusAsOf
             ? dateLabel(item.statusAsOf)
-            : "Data do marco não informada"}
+            : item.statements?.length
+              ? "Várias datas · Consulte as declarações"
+              : "Data do marco não informada"}
         </p>
         <p className="mt-3 flex items-center gap-2 text-xs text-stone-500">
           <FileText className="size-3.5" />{" "}

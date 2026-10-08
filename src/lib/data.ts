@@ -23,6 +23,19 @@ export type Case = {
   sourceNote: string;
   relatedCaseIds: string[];
   editorialNumber?: number;
+  statements?: {
+    id: string;
+    date: string;
+    quote: string;
+    context: string;
+    sourceIds: string[];
+  }[];
+  otherEpisodes?: {
+    id: string;
+    date: string | null;
+    description: string;
+    sourceIds: string[];
+  }[];
 };
 export const data = { ...archive, cases: archive.cases as Case[] };
 export const statusOf = (id: string) =>
@@ -47,3 +60,12 @@ export const dateLabel = (date: string) => {
     ),
   );
 };
+
+export const sourceTypeLabel = (type: string) =>
+  ({
+    "institutional-news": "Notícia institucional",
+    "news-report": "Reportagem",
+    "video-report": "Reportagem em vídeo",
+    "academic-study": "Estudo acadêmico",
+    "research-portal": "Portal de pesquisa",
+  })[type] ?? "Documento";
