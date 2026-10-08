@@ -30,7 +30,7 @@ export default async function PersonPage({
   return (
     <>
       <p className="text-xs uppercase tracking-wider text-teal-800">
-        Perfil documental · Estrutura demonstrativa
+        Perfil documental
       </p>
       <h1 className="mt-4 text-4xl font-semibold">{person.name}</h1>
       <p className="mb-8 mt-5 text-stone-600">{person.description}</p>
@@ -46,8 +46,7 @@ export default async function PersonPage({
         </div>
       ) : (
         <p className="rounded-lg border border-stone-200 bg-white p-8 text-stone-600">
-          Nenhum caso verificado publicado para este perfil. Os exemplos não
-          foram associados a pessoas reais.
+          Nenhum caso publicado neste arquivo para este perfil.
         </p>
       )}
     </>

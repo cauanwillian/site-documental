@@ -3,39 +3,40 @@
   "editorial": {
     "name": "Arquivo público",
     "notice": "Investigação, indiciamento, denúncia, condição de réu e condenação são situações juridicamente diferentes. Nenhuma delas deve ser tratada como equivalente às demais. Condenação definitiva exige trânsito em julgado. O status deve ser lido junto à decisão, à data e às fontes.",
-    "demoNotice": "Versão demonstrativa: todos os casos e eventos são placeholders editoriais. Não descrevem fatos, acusações ou processos reais."
+    "publicationNotice": "Conteúdo e referências conferidos e fornecidos pelo responsável editorial. Os status retratam as decisões nas datas indicadas; não afirmam, por si só, a situação processual atual ou o trânsito em julgado.",
+    "banner": "ARQUIVO DOCUMENTAL · Decisões, contexto e fontes"
   },
   "people": [
     {
       "id": "jair-bolsonaro",
       "slug": "jair-bolsonaro",
       "name": "Jair Bolsonaro",
-      "description": "Perfil de organização documental. Nenhuma associação factual a casos foi publicada nesta versão.",
-      "placeholder": true,
+      "description": "Perfil documental com os registros publicados neste arquivo. Consulte cada caso para conhecer a decisão, a data e as referências.",
+      "placeholder": false,
       "updatedAt": "2026-10-08"
     },
     {
       "id": "flavio-bolsonaro",
       "slug": "flavio-bolsonaro",
       "name": "Flávio Bolsonaro",
-      "description": "Perfil de organização documental. Nenhuma associação factual a casos foi publicada nesta versão.",
-      "placeholder": true,
+      "description": "Perfil documental. Nenhum caso publicado neste arquivo para esta pessoa.",
+      "placeholder": false,
       "updatedAt": "2026-10-08"
     },
     {
       "id": "carlos-bolsonaro",
       "slug": "carlos-bolsonaro",
       "name": "Carlos Bolsonaro",
-      "description": "Perfil de organização documental. Nenhuma associação factual a casos foi publicada nesta versão.",
-      "placeholder": true,
+      "description": "Perfil documental. Nenhum caso publicado neste arquivo para esta pessoa.",
+      "placeholder": false,
       "updatedAt": "2026-10-08"
     },
     {
       "id": "eduardo-bolsonaro",
       "slug": "eduardo-bolsonaro",
       "name": "Eduardo Bolsonaro",
-      "description": "Perfil de organização documental. Nenhuma associação factual a casos foi publicada nesta versão.",
-      "placeholder": true,
+      "description": "Perfil documental com os registros publicados neste arquivo. Consulte cada caso para conhecer a decisão, a data e as referências.",
+      "placeholder": false,
       "updatedAt": "2026-10-08"
     }
   ],
@@ -130,7 +131,9 @@
       "institution": "STF",
       "title": "Portal institucional — STF",
       "scope": "research",
-      "accessedAt": "2026-10-08"
+      "accessedAt": null,
+      "documentType": "research-portal",
+      "verificationMethod": "research-directory"
     },
     {
       "id": "tse",
@@ -142,7 +145,9 @@
       "institution": "TSE",
       "title": "Portal institucional — TSE",
       "scope": "research",
-      "accessedAt": "2026-10-08"
+      "accessedAt": null,
+      "documentType": "research-portal",
+      "verificationMethod": "research-directory"
     },
     {
       "id": "stj",
@@ -154,7 +159,9 @@
       "institution": "STJ",
       "title": "Portal institucional — STJ",
       "scope": "research",
-      "accessedAt": "2026-10-08"
+      "accessedAt": null,
+      "documentType": "research-portal",
+      "verificationMethod": "research-directory"
     },
     {
       "id": "pgr",
@@ -166,7 +173,9 @@
       "institution": "PGR",
       "title": "Portal institucional — PGR",
       "scope": "research",
-      "accessedAt": "2026-10-08"
+      "accessedAt": null,
+      "documentType": "research-portal",
+      "verificationMethod": "research-directory"
     },
     {
       "id": "mpf",
@@ -178,7 +187,9 @@
       "institution": "MPF",
       "title": "Portal institucional — MPF",
       "scope": "research",
-      "accessedAt": "2026-10-08"
+      "accessedAt": null,
+      "documentType": "research-portal",
+      "verificationMethod": "research-directory"
     },
     {
       "id": "pf",
@@ -190,7 +201,9 @@
       "institution": "PF",
       "title": "Portal institucional — PF",
       "scope": "research",
-      "accessedAt": "2026-10-08"
+      "accessedAt": null,
+      "documentType": "research-portal",
+      "verificationMethod": "research-directory"
     },
     {
       "id": "câmara",
@@ -202,7 +215,9 @@
       "institution": "Câmara",
       "title": "Portal institucional — Câmara",
       "scope": "research",
-      "accessedAt": "2026-10-08"
+      "accessedAt": null,
+      "documentType": "research-portal",
+      "verificationMethod": "research-directory"
     },
     {
       "id": "senado",
@@ -214,7 +229,9 @@
       "institution": "Senado",
       "title": "Portal institucional — Senado",
       "scope": "research",
-      "accessedAt": "2026-10-08"
+      "accessedAt": null,
+      "documentType": "research-portal",
+      "verificationMethod": "research-directory"
     },
     {
       "id": "tcu",
@@ -226,7 +243,9 @@
       "institution": "TCU",
       "title": "Portal institucional — TCU",
       "scope": "research",
-      "accessedAt": "2026-10-08"
+      "accessedAt": null,
+      "documentType": "research-portal",
+      "verificationMethod": "research-directory"
     },
     {
       "id": "diário oficial",
@@ -238,80 +257,226 @@
       "institution": "Diário Oficial",
       "title": "Portal institucional — Diário Oficial",
       "scope": "research",
-      "accessedAt": "2026-10-08"
+      "accessedAt": null,
+      "documentType": "research-portal",
+      "verificationMethod": "research-directory"
+    },
+    {
+      "id": "stf-penas-tentativa-golpe-2025",
+      "name": "STF",
+      "institution": "STF",
+      "kind": "primary",
+      "title": "STF fixa penas de 16 a 27 anos para condenados por tentativa de golpe de Estado",
+      "url": "https://noticias.stf.jus.br/postsnoticias/stf-fixa-penas-de-16-a-27-anos-para-condenados-por-tentativa-de-golpe-de-estado/",
+      "scope": "case",
+      "documentType": "institutional-news",
+      "purpose": "Referência fornecida e conferida pelo responsável editorial.",
+      "updatedAt": "2026-10-08",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-08"
+    },
+    {
+      "id": "agencia-brasil-condenacao-bolsonaro-2025",
+      "name": "Agência Brasil / EBC",
+      "institution": "Agência Brasil / EBC",
+      "kind": "secondary",
+      "title": "STF condena Bolsonaro a 27 anos e três meses de prisão",
+      "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2025-09/stf-condena-bolsonaro-27-anos-e-tres-meses-de-prisao",
+      "scope": "case",
+      "documentType": "news-report",
+      "purpose": "Referência fornecida e conferida pelo responsável editorial.",
+      "updatedAt": "2026-10-08",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-08"
+    },
+    {
+      "id": "tse-embaixadores-2023",
+      "name": "TSE",
+      "institution": "TSE",
+      "kind": "primary",
+      "title": "Por maioria de votos, TSE declara Bolsonaro inelegível por 8 anos",
+      "url": "https://www.tse.jus.br/comunicacao/noticias/2023/Junho/por-maioria-de-votos-tse-declara-bolsonaro-inelegivel-por-8-anos",
+      "scope": "case",
+      "documentType": "institutional-news",
+      "purpose": "Referência fornecida e conferida pelo responsável editorial.",
+      "updatedAt": "2026-10-08",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-08"
+    },
+    {
+      "id": "tse-bicentenario-2023",
+      "name": "TSE",
+      "institution": "TSE",
+      "kind": "primary",
+      "title": "TSE declara inelegíveis Bolsonaro e Braga Netto por abuso de poder no Bicentenário da Independência",
+      "url": "https://www.tse.jus.br/comunicacao/noticias/2023/Outubro/tse-declara-inelegiveis-bolsonaro-e-braga-netto-por-abuso-de-poder-no-bicentenario-da-independencia",
+      "scope": "case",
+      "documentType": "institutional-news",
+      "purpose": "Referência fornecida e conferida pelo responsável editorial.",
+      "updatedAt": "2026-10-08",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-08"
+    },
+    {
+      "id": "stf-eduardo-coacao-2026",
+      "name": "STF",
+      "institution": "STF",
+      "kind": "primary",
+      "title": "STF condena Eduardo Bolsonaro a 4 anos e 2 meses de reclusão por tentar interferir no processo sobre tentativa de golpe",
+      "url": "https://noticias.stf.jus.br/postsnoticias/stf-condena-eduardo-bolsonaro-a-4-anos-e-2-meses-de-reclusao-por-tentar-interferir-no-processo-sobre-tentativa-de-golpe/",
+      "scope": "case",
+      "documentType": "institutional-news",
+      "purpose": "Referência fornecida e conferida pelo responsável editorial.",
+      "updatedAt": "2026-10-08",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-08"
     }
   ],
   "cases": [
     {
-      "id": "registro-judicial-demonstrativo",
-      "slug": "registro-judicial-demonstrativo",
-      "title": "Registro judicial demonstrativo",
-      "summary": "Espaço reservado para documentação após pesquisa e verificação das fontes primárias. Este registro não corresponde a um caso real.",
-      "body": "A publicação de conteúdo factual dependerá da identificação do procedimento, leitura das decisões, conferência de datas e delimitação da participação de cada pessoa. Nenhuma acusação ou conclusão é apresentada neste exemplo.",
-      "personIds": [],
+      "id": "tentativa-de-golpe-de-estado",
+      "slug": "tentativa-de-golpe-de-estado",
+      "title": "Tentativa de golpe de Estado",
+      "summary": "Em 11 de setembro de 2025, o STF condenou Jair Bolsonaro a 27 anos e 3 meses de prisão por cinco crimes relacionados à tentativa de impedir a alternância de poder após as eleições de 2022.",
+      "body": "Entre os crimes informados estão golpe de Estado e tentativa de abolição violenta do Estado Democrático de Direito. O registro documenta a condenação anunciada em setembro de 2025, com referência à notícia institucional do STF e à reportagem da Agência Brasil. Não há neste registro documentação suficiente para classificar a situação processual atual como condenação definitiva.",
+      "personIds": ["jair-bolsonaro"],
       "categoryId": "judicial",
-      "statusId": "pendente",
-      "sourceIds": [],
-      "placeholder": true,
-      "updatedAt": "2026-10-08"
+      "statusId": "condenacao",
+      "statusAsOf": "2025-09-11",
+      "statusScope": "historical-decision",
+      "sourceIds": [
+        "stf-penas-tentativa-golpe-2025",
+        "agencia-brasil-condenacao-bolsonaro-2025"
+      ],
+      "placeholder": false,
+      "updatedAt": "2026-10-08",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Texto e referências conferidos pelo responsável editorial. As páginas externas não foram consultadas independentemente nesta publicação.",
+      "defenseNote": "Segundo informação fornecida e conferida pelo responsável editorial, a defesa contesta a condenação e apresentou pedidos de revisão criminal. Não foi fornecida referência específica para esses pedidos, suas datas ou seus resultados; essa informação não altera o status histórico registrado."
     },
     {
-      "id": "registro-eleitoral-demonstrativo",
-      "slug": "registro-eleitoral-demonstrativo",
-      "title": "Registro eleitoral demonstrativo",
-      "summary": "Espaço reservado para documentação após pesquisa e verificação das fontes primárias. Este registro não corresponde a um caso real.",
-      "body": "A publicação de conteúdo factual dependerá da identificação do procedimento, leitura das decisões, conferência de datas e delimitação da participação de cada pessoa. Nenhuma acusação ou conclusão é apresentada neste exemplo.",
-      "personIds": [],
+      "id": "reuniao-com-embaixadores",
+      "slug": "reuniao-com-embaixadores",
+      "title": "Desinformação eleitoral em reunião com embaixadores",
+      "summary": "Em junho de 2023, o TSE declarou Jair Bolsonaro inelegível por oito anos contados das eleições de 2022, em razão de uma reunião oficial com diplomatas estrangeiros.",
+      "body": "Segundo o material editorial fornecido, Bolsonaro utilizou a reunião de julho de 2022 para desacreditar as urnas eletrônicas. O TSE reconheceu abuso de poder político e uso indevido dos meios de comunicação. A inelegibilidade é uma consequência eleitoral, distinta de condenação criminal. O registro não afirma a situação atual de eventuais recursos.",
+      "personIds": ["jair-bolsonaro"],
       "categoryId": "eleitoral",
-      "statusId": "pendente",
-      "sourceIds": [],
-      "placeholder": true,
-      "updatedAt": "2026-10-08"
+      "statusId": "inelegibilidade",
+      "statusAsOf": "2023-06",
+      "statusScope": "historical-decision",
+      "sourceIds": ["tse-embaixadores-2023"],
+      "placeholder": false,
+      "updatedAt": "2026-10-08",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Texto e referências conferidos pelo responsável editorial. As páginas externas não foram consultadas independentemente nesta publicação.",
+      "defenseNote": null
     },
     {
-      "id": "registro-administrativo-demonstrativo",
-      "slug": "registro-administrativo-demonstrativo",
-      "title": "Registro administrativo demonstrativo",
-      "summary": "Espaço reservado para documentação após pesquisa e verificação das fontes primárias. Este registro não corresponde a um caso real.",
-      "body": "A publicação de conteúdo factual dependerá da identificação do procedimento, leitura das decisões, conferência de datas e delimitação da participação de cada pessoa. Nenhuma acusação ou conclusão é apresentada neste exemplo.",
-      "personIds": [],
-      "categoryId": "administrativo",
-      "statusId": "pendente",
-      "sourceIds": [],
-      "placeholder": true,
-      "updatedAt": "2026-10-08"
+      "id": "bicentenario-da-independencia",
+      "slug": "bicentenario-da-independencia",
+      "title": "Uso eleitoral das comemorações de 7 de Setembro",
+      "summary": "Em outubro de 2023, o TSE reconheceu abuso de poder político e econômico na utilização das comemorações do Bicentenário da Independência para fins eleitorais.",
+      "body": "O registro trata da decisão de inelegibilidade relativa ao Bicentenário da Independência. Conforme o material fornecido pelo responsável editorial, Jair Bolsonaro também recebeu multa de R$ 425.640. A referência institucional informa a decisão envolvendo Bolsonaro e Braga Netto; este perfil documental associa o caso apenas a Jair Bolsonaro. Não há afirmação sobre a situação atual de recursos.",
+      "personIds": ["jair-bolsonaro"],
+      "categoryId": "eleitoral",
+      "statusId": "inelegibilidade",
+      "statusAsOf": "2023-10",
+      "statusScope": "historical-decision",
+      "sourceIds": ["tse-bicentenario-2023"],
+      "placeholder": false,
+      "updatedAt": "2026-10-08",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Texto e referências conferidos pelo responsável editorial. As páginas externas não foram consultadas independentemente nesta publicação.",
+      "defenseNote": null
+    },
+    {
+      "id": "eduardo-bolsonaro-coacao-no-curso-do-processo",
+      "slug": "eduardo-bolsonaro-coacao-no-curso-do-processo",
+      "title": "Coação no curso do processo — Eduardo Bolsonaro",
+      "summary": "Em junho de 2026, a Primeira Turma do STF condenou Eduardo Bolsonaro a 4 anos e 2 meses de reclusão pelo crime de coação no curso do processo.",
+      "body": "Segundo a decisão descrita no material fornecido pelo responsável editorial, Eduardo Bolsonaro atuou para pressionar o tribunal durante o julgamento do pai por meio de ações envolvendo autoridades norte-americanas. O registro se refere à condenação informada para junho de 2026 e não afirma trânsito em julgado ou o estado atual de recursos.",
+      "personIds": ["eduardo-bolsonaro"],
+      "categoryId": "judicial",
+      "statusId": "condenacao",
+      "statusAsOf": "2026-06",
+      "statusScope": "historical-decision",
+      "sourceIds": ["stf-eduardo-coacao-2026"],
+      "placeholder": false,
+      "updatedAt": "2026-10-08",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Texto e referências conferidos pelo responsável editorial. As páginas externas não foram consultadas independentemente nesta publicação.",
+      "defenseNote": null
     }
   ],
   "timeline": [
     {
-      "id": "demo-0",
-      "caseId": "registro-judicial-demonstrativo",
-      "date": "2026-10-08",
-      "title": "Placeholder criado para demonstração",
-      "description": "Marco editorial de criação do exemplo; não é um evento judicial.",
-      "statusId": "pendente",
-      "sourceIds": [],
-      "placeholder": true
+      "id": "embaixadores-reuniao-2022",
+      "caseId": "reuniao-com-embaixadores",
+      "date": "2022-07",
+      "datePrecision": "month",
+      "title": "Reunião oficial com embaixadores",
+      "description": "Reunião com diplomatas estrangeiros na qual, segundo o material editorial, Bolsonaro desacreditou as urnas eletrônicas. Este marco contextual não é uma decisão judicial.",
+      "statusId": "controversia",
+      "sourceIds": ["tse-embaixadores-2023"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed"
     },
     {
-      "id": "demo-1",
-      "caseId": "registro-eleitoral-demonstrativo",
-      "date": "2026-10-08",
-      "title": "Placeholder criado para demonstração",
-      "description": "Marco editorial de criação do exemplo; não é um evento judicial.",
-      "statusId": "pendente",
-      "sourceIds": [],
-      "placeholder": true
+      "id": "tentativa-de-golpe-de-estado-decisao",
+      "caseId": "tentativa-de-golpe-de-estado",
+      "date": "2025-09-11",
+      "datePrecision": "day",
+      "title": "Condenação — Tentativa de golpe de Estado",
+      "description": "Em 11 de setembro de 2025, o STF condenou Jair Bolsonaro a 27 anos e 3 meses de prisão por cinco crimes relacionados à tentativa de impedir a alternância de poder após as eleições de 2022.",
+      "statusId": "condenacao",
+      "sourceIds": [
+        "stf-penas-tentativa-golpe-2025",
+        "agencia-brasil-condenacao-bolsonaro-2025"
+      ],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed"
     },
     {
-      "id": "demo-2",
-      "caseId": "registro-administrativo-demonstrativo",
-      "date": "2026-10-08",
-      "title": "Placeholder criado para demonstração",
-      "description": "Marco editorial de criação do exemplo; não é um evento judicial.",
-      "statusId": "pendente",
-      "sourceIds": [],
-      "placeholder": true
+      "id": "reuniao-com-embaixadores-decisao",
+      "caseId": "reuniao-com-embaixadores",
+      "date": "2023-06",
+      "datePrecision": "month",
+      "title": "Inelegibilidade declarada — Desinformação eleitoral em reunião com embaixadores",
+      "description": "Em junho de 2023, o TSE declarou Jair Bolsonaro inelegível por oito anos contados das eleições de 2022, em razão de uma reunião oficial com diplomatas estrangeiros.",
+      "statusId": "inelegibilidade",
+      "sourceIds": ["tse-embaixadores-2023"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed"
+    },
+    {
+      "id": "bicentenario-da-independencia-decisao",
+      "caseId": "bicentenario-da-independencia",
+      "date": "2023-10",
+      "datePrecision": "month",
+      "title": "Inelegibilidade declarada — Uso eleitoral das comemorações de 7 de Setembro",
+      "description": "Em outubro de 2023, o TSE reconheceu abuso de poder político e econômico na utilização das comemorações do Bicentenário da Independência para fins eleitorais.",
+      "statusId": "inelegibilidade",
+      "sourceIds": ["tse-bicentenario-2023"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed"
+    },
+    {
+      "id": "eduardo-bolsonaro-coacao-no-curso-do-processo-decisao",
+      "caseId": "eduardo-bolsonaro-coacao-no-curso-do-processo",
+      "date": "2026-06",
+      "datePrecision": "month",
+      "title": "Condenação — Coação no curso do processo — Eduardo Bolsonaro",
+      "description": "Em junho de 2026, a Primeira Turma do STF condenou Eduardo Bolsonaro a 4 anos e 2 meses de reclusão pelo crime de coação no curso do processo.",
+      "statusId": "condenacao",
+      "sourceIds": ["stf-eduardo-coacao-2026"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed"
     }
   ]
 }

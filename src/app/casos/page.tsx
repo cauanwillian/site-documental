@@ -9,8 +9,8 @@ export default function Cases() {
       </p>
       <h1 className="mt-3 text-4xl font-semibold">Casos e registros</h1>
       <p className="mb-8 mt-4 text-stone-600">
-        Consulte por pessoa, categoria e etapa jurídica. Todos os registros
-        atuais são demonstrativos.
+        Consulte por pessoa, categoria e status na decisão registrada. Cada caso
+        informa a data e as referências.
       </p>
       <EditorialNotice />
       <CaseFilters />

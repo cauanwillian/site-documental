@@ -49,15 +49,26 @@ export default async function CasePage({
       <h1 className="my-5 max-w-3xl text-4xl font-semibold">{c.title}</h1>
       <p className="mb-8 max-w-3xl text-lg text-stone-600">{c.summary}</p>
       <EditorialNotice />
+      <p className="mt-4 text-xs leading-relaxed text-stone-500">
+        {c.editorialNote}
+      </p>
       <div className="mt-10 grid gap-10 md:grid-cols-[2fr_1fr]">
         <div>
           <h2 className="text-2xl font-semibold">Contexto do registro</h2>
           <p className="mt-4 leading-relaxed text-stone-600">{c.body}</p>
+          {c.defenseNote && (
+            <section className="mt-8 rounded-lg border border-stone-200 bg-white p-5">
+              <h2 className="text-xl font-semibold">Posição da defesa</h2>
+              <p className="mt-3 text-sm leading-relaxed text-stone-600">
+                {c.defenseNote}
+              </p>
+            </section>
+          )}
           <h2 className="mb-6 mt-10 text-2xl font-semibold">Linha do tempo</h2>
           <Timeline caseId={c.id} />
           <h2 className="text-2xl font-semibold">Fontes do caso</h2>
           {sources.length ? (
-            <ul className="mt-4 space-y-3">
+            <ul aria-label="Fontes do caso" className="mt-4 space-y-3">
               {sources.map((s) => (
                 <li key={s.id}>
                   <a
@@ -76,7 +87,14 @@ export default async function CasePage({
                       {s.kind === "primary"
                         ? "Fonte primária"
                         : "Fonte secundária"}{" "}
-                      · Consulta: {dateLabel(s.accessedAt)}
+                      ·{" "}
+                      {s.documentType === "institutional-news"
+                        ? "Notícia institucional"
+                        : "Reportagem"}
+                    </span>
+                    <span className="mt-2 block text-xs">
+                      Referência conferida pelo responsável editorial ·{" "}
+                      {dateLabel(s.updatedAt)}
                     </span>
                   </a>
                 </li>
@@ -92,11 +110,18 @@ export default async function CasePage({
         </div>
         <aside className="h-fit rounded-lg border border-stone-200 bg-white p-6">
           <p className="text-xs uppercase tracking-wider text-stone-500">
-            Status jurídico
+            Status na decisão registrada
           </p>
           <h2 className="mt-3 text-xl font-semibold">{status.name}</h2>
           <p className="mt-3 text-sm leading-relaxed text-stone-600">
             {status.description}
+          </p>
+          <p className="mt-3 text-sm font-medium">
+            Decisão registrada: {dateLabel(c.statusAsOf)}
+          </p>
+          <p className="mt-2 text-xs leading-relaxed text-stone-500">
+            A situação processual atual e eventual trânsito em julgado não são
+            afirmados neste registro.
           </p>
           <hr className="my-6 border-stone-200" />
           <h3 className="text-sm font-semibold">Pessoas relacionadas</h3>

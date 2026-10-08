@@ -42,14 +42,17 @@ export default function Home() {
         {[
           [
             String(data.cases.filter((c) => !c.placeholder).length),
-            "Casos verificados",
+            "Casos publicados",
           ],
           [
-            String(data.cases.filter((c) => c.placeholder).length),
-            "Registros demonstrativos",
+            String(data.sources.filter((s) => s.scope === "case").length),
+            "Referências dos casos",
           ],
           [String(data.people.length), "Perfis disponíveis"],
-          [String(data.sources.length), "Portais primários"],
+          [
+            String(data.sources.filter((s) => s.scope === "research").length),
+            "Portais primários",
+          ],
         ].map(([n, label]) => (
           <div key={label}>
             <p className="text-3xl font-semibold">{n}</p>
@@ -63,9 +66,7 @@ export default function Home() {
             <p className="text-xs uppercase tracking-wider text-stone-500">
               O arquivo
             </p>
-            <h2 className="mt-2 text-2xl font-semibold">
-              Registros demonstrativos
-            </h2>
+            <h2 className="mt-2 text-2xl font-semibold">Casos documentados</h2>
           </div>
           <Link
             href="/casos/"
@@ -87,8 +88,8 @@ export default function Home() {
           </p>
           <h2 className="mt-3 text-3xl font-semibold">Linha do tempo</h2>
           <p className="mt-4 leading-relaxed text-stone-600">
-            Cada etapa deve ser lida em seu contexto. Nesta versão, a cronologia
-            mostra apenas marcos editoriais de demonstração.
+            Cada etapa deve ser lida em seu contexto. Consulte as decisões e os
+            acontecimentos nas datas documentadas, com suas referências.
           </p>
         </div>
         <Timeline />
@@ -110,7 +111,8 @@ export default function Home() {
               </span>
               <h3 className="font-medium">{p.name}</h3>
               <p className="mt-2 text-xs text-stone-500">
-                Perfil · Sem casos associados
+                {data.cases.filter((c) => c.personIds.includes(p.id)).length}{" "}
+                registro(s) relacionado(s)
               </p>
             </Link>
           ))}
@@ -119,8 +121,8 @@ export default function Home() {
       <section>
         <h2 className="text-2xl font-semibold">A fonte vem primeiro</h2>
         <p className="mb-6 mt-3 text-sm text-stone-600">
-          Portais institucionais para pesquisa. Estes links não são evidências
-          dos registros demonstrativos.
+          Portais institucionais para pesquisa. As referências específicas de
+          cada decisão estão nas páginas dos casos.
         </p>
         <ResearchSources />
       </section>

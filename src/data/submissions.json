@@ -5,14 +5,14 @@
       "id": "jair-bolsonaro-tentativa-golpe-2025",
       "receivedAt": "2026-10-08",
       "updatedAt": "2026-10-08",
-      "publicationState": "draft",
-      "verificationState": "awaiting-source-content",
+      "publicationState": "published",
+      "verificationState": "publisher-confirmed",
       "personIds": ["jair-bolsonaro"],
       "categoryId": "judicial",
       "proposedSlug": "tentativa-de-golpe-de-estado",
       "title": "Tentativa de golpe de Estado — material para conferência",
       "submittedSummary": "Em 11 de setembro de 2025, o STF condenou Jair Bolsonaro a 27 anos e 3 meses de prisão, por cinco crimes relacionados à tentativa de impedir a alternância de poder após as eleições de 2022. Entre eles, golpe de Estado e tentativa de abolição violenta do Estado Democrático de Direito. A defesa contesta a condenação e apresentou pedidos de revisão criminal.",
-      "editorialNote": "Texto recebido do usuário, ainda não conferido no conteúdo das fontes. Não é um placeholder fictício nem um caso factual aprovado para publicação. Os links foram deduplicados. Nenhuma informação de trânsito em julgado, recurso ou revisão criminal foi verificada.",
+      "editorialNote": "Publicado por instrução explícita do responsável editorial, que confirmou a conferência dos materiais. O acesso independente às páginas permaneceu indisponível. Histórico de tentativas de acesso e questões originais preservado para rastreabilidade. A situação processual atual não foi inferida.",
       "proposedHistoricalStatusId": "condenacao",
       "proposedHistoricalStatusDate": "2025-09-11",
       "currentStatusId": "pendente",
@@ -98,13 +98,8 @@
           ]
         }
       ],
-      "publicationRequirements": [
-        "Ler o conteúdo das notícias ou cópias fornecidas pelo usuário e conferir data, pena e crimes.",
-        "Identificar número do processo e obter decisão ou acórdão, quando disponível.",
-        "Distinguir o status histórico de setembro de 2025 do estado processual atual; não presumir trânsito em julgado ou ausência dele.",
-        "Conferir a manifestação da defesa e a alegação de revisão criminal em fonte específica; omitir detalhes não comprovados.",
-        "Após a conferência, promover o caso a archive.json e atualizar os avisos demonstrativos, perfis, cronologia e testes."
-      ]
+      "publicationRequirements": [],
+      "publishedCaseId": "tentativa-de-golpe-de-estado"
     }
   ]
 }

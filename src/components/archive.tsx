@@ -6,7 +6,7 @@ export function EditorialNotice() {
   return (
     <aside className="rounded-lg border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-950">
       <strong className="block mb-1">Leia antes de consultar</strong>
-      {data.editorial.demoNotice}
+      {data.editorial.publicationNotice}
       <p className="mt-2">{data.editorial.notice}</p>
     </aside>
   );
@@ -31,10 +31,13 @@ export function CaseCard({ item }: { item: Case }) {
       <p className="text-sm leading-relaxed text-stone-600">{item.summary}</p>
       <div className="mt-6 border-t border-stone-100 pt-4">
         <span className="text-xs uppercase tracking-wider text-stone-500">
-          Status jurídico
+          Status na decisão registrada
         </span>
         <p className="mt-1 text-sm font-medium">
           {statusOf(item.statusId).name}
+        </p>
+        <p className="mt-1 text-xs text-stone-500">
+          {dateLabel(item.statusAsOf)}
         </p>
         <p className="mt-3 flex items-center gap-2 text-xs text-stone-500">
           <FileText className="size-3.5" />{" "}
@@ -104,23 +107,25 @@ export function Timeline({ caseId }: { caseId?: string }) {
 export function ResearchSources() {
   return (
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-      {data.sources.map((s) => (
-        <a
-          key={s.id}
-          href={s.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-md border border-stone-200 bg-white p-4 hover:border-teal-700"
-        >
-          <ShieldCheck className="mb-3 size-5 text-teal-800" />
-          <span className="font-semibold">
-            {s.name} <ArrowUpRight className="inline size-3" />
-          </span>
-          <p className="mt-2 text-xs text-stone-500">
-            Portal primário para pesquisa
-          </p>
-        </a>
-      ))}
+      {data.sources
+        .filter((s) => s.scope === "research")
+        .map((s) => (
+          <a
+            key={s.id}
+            href={s.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-md border border-stone-200 bg-white p-4 hover:border-teal-700"
+          >
+            <ShieldCheck className="mb-3 size-5 text-teal-800" />
+            <span className="font-semibold">
+              {s.name} <ArrowUpRight className="inline size-3" />
+            </span>
+            <p className="mt-2 text-xs text-stone-500">
+              Portal primário para pesquisa
+            </p>
+          </a>
+        ))}
     </div>
   );
 }

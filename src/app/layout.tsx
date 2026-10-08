@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Arquivo público",
   },
   description:
-    "Arquivo documental sobre integrantes da família Bolsonaro. Versão demonstrativa com placeholders explícitos e distinção de status jurídicos.",
+    "Arquivo documental sobre integrantes da família Bolsonaro. Casos, fontes e distinção de status jurídicos.",
 };
 export default function RootLayout({
   children,
@@ -24,7 +24,7 @@ export default function RootLayout({
           Ir para o conteúdo
         </a>
         <div className="border-b border-amber-200 bg-amber-50 py-2 text-center text-xs text-amber-950">
-          VERSÃO DEMONSTRATIVA · Sem casos factuais publicados
+          {data.editorial.banner}
         </div>
         <header className="border-b border-stone-200 bg-white">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-5 px-6 py-6">
@@ -49,7 +49,7 @@ export default function RootLayout({
             <p className="font-semibold text-stone-700">
               Documentação, contexto e transparência.
             </p>
-            <p className="mt-2">{data.editorial.demoNotice}</p>
+            <p className="mt-2">{data.editorial.publicationNotice}</p>
             <p className="mt-3 text-xs">
               Última atualização editorial: {dateLabel(data.updatedAt)} · Dados
               versionados em JSON

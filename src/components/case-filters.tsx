@@ -33,7 +33,7 @@ export function CaseFilters() {
           },
           {
             id: "status",
-            name: "Status jurídico",
+            name: "Status na decisão",
             value: status,
             set: setStatus,
             options: data.legalStatuses,
@@ -84,8 +84,8 @@ export function CaseFilters() {
             Nenhum registro corresponde aos filtros
           </h2>
           <p className="mt-3 text-sm text-stone-600">
-            Os placeholders não estão associados a pessoas reais. Limpe os
-            filtros para consultar os exemplos.
+            Tente outra combinação de pessoa, categoria e status, ou limpe os
+            filtros para consultar todo o arquivo.
           </p>
         </div>
       )}

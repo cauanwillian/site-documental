@@ -9,8 +9,8 @@ export default function TimelinePage() {
       </p>
       <h1 className="mt-3 text-4xl font-semibold">Linha do tempo</h1>
       <p className="mb-8 mt-4 text-stone-600">
-        Marcos em ordem cronológica, do mais recente ao mais antigo. Nesta
-        versão, apenas eventos editoriais demonstrativos.
+        Decisões e acontecimentos do mais recente ao mais antigo. Quando o
+        material informa apenas mês e ano, a cronologia preserva essa precisão.
       </p>
       <EditorialNotice />
       <div className="mt-10 grid gap-10 md:grid-cols-[1.5fr_1fr]">
