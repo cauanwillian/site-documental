@@ -93,12 +93,18 @@ export default async function CasePage({
                     key={statement.id}
                     className="rounded-lg border border-stone-200 bg-white p-5"
                   >
-                    <time
-                      dateTime={statement.date}
-                      className="text-xs uppercase tracking-wider text-red-800"
-                    >
-                      {dateLabel(statement.date)}
-                    </time>
+                    {statement.date ? (
+                      <time
+                        dateTime={statement.date}
+                        className="text-xs uppercase tracking-wider text-red-800"
+                      >
+                        {dateLabel(statement.date)}
+                      </time>
+                    ) : (
+                      <span className="text-xs uppercase tracking-wider text-stone-500">
+                        Data da fala não informada
+                      </span>
+                    )}
                     <blockquote className="my-4 border-l-2 border-red-700 pl-4 text-xl font-medium leading-relaxed">
                       “{statement.quote}”
                     </blockquote>
@@ -270,7 +276,7 @@ export default async function CasePage({
             :{" "}
             {c.statusAsOf
               ? dateLabel(c.statusAsOf)
-              : c.statements?.length
+              : c.statements?.some((statement) => statement.date)
                 ? "várias datas; consulte as declarações"
                 : "data não informada"}
           </p>

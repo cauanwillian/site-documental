@@ -107,6 +107,10 @@
     {
       "id": "jornalistas-imprensa",
       "name": "Jornalistas e imprensa"
+    },
+    {
+      "id": "homossexualidade-racismo",
+      "name": "Homossexualidade e racismo"
     }
   ],
   "legalStatuses": [
@@ -657,6 +661,21 @@
       "scope": "case",
       "documentType": "video-reference",
       "purpose": "Vídeo fornecido pelo responsável editorial com indicação do trecho entre 0:07 e 0:17. Canal e data de upload não foram fornecidos.",
+      "updatedAt": "2026-10-09",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-09"
+    },
+    {
+      "id": "video-declaracoes-preta-gil",
+      "name": "Vídeo enviado — YouTube",
+      "institution": "Vídeo enviado — YouTube",
+      "kind": "secondary",
+      "title": "Declarações sobre Preta Gil, homossexualidade e ditadura — vídeo enviado",
+      "url": "https://www.youtube.com/watch?v=l3m4nhtxLl4",
+      "scope": "case",
+      "documentType": "video-reference",
+      "purpose": "Referência enviada com trecho entre 0:57 e 3:51. Data da fala, canal e data de upload não foram informados.",
       "updatedAt": "2026-10-09",
       "accessedAt": null,
       "verificationMethod": "publisher-confirmed",
@@ -1434,6 +1453,56 @@
           "sourceId": "video-jornalista-2020"
         }
       ]
+    },
+    {
+      "id": "declaracoes-preta-gil-homossexualidade-ditadura",
+      "slug": "declaracoes-preta-gil-homossexualidade-ditadura",
+      "title": "Declarações sobre Preta Gil, homossexualidade e ditadura militar",
+      "summary": "Vídeo de declarações de Jair Bolsonaro sobre Preta Gil, homossexualidade, cotas raciais e presidentes do período militar. Trecho enviado: de 0:57 a 3:51.",
+      "body": "Segundo o texto enviado pela edição, após o programa Preta Gil afirmou no Twitter que pretendia processar Bolsonaro. O material também relata que ele se declarou contrário às cotas raciais em universidades, chamou os presidentes do período militar de seus “gurus” na política e afirmou que Dilma Rousseff “jamais” seria presidente se dependesse dele. A frase sobre o passado de Dilma — “O passado dela é de sequestros e roubos” — é apresentada como alegação de Bolsonaro, não como conclusão factual do site. O texto editorial relaciona essa fala à participação de Dilma em organizações armadas que combateram a ditadura e relata que ela foi presa e torturada.",
+      "personIds": ["jair-bolsonaro"],
+      "categoryId": "homossexualidade-racismo",
+      "statusId": "controversia",
+      "statusAsOf": null,
+      "statusScope": "public-statement",
+      "sourceIds": ["video-declaracoes-preta-gil"],
+      "contextualSourceIds": [],
+      "placeholder": false,
+      "updatedAt": "2026-10-09",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Vídeo, trecho e texto fornecidos pelo responsável editorial. O texto contém citações e passagens narrativas, separadas neste registro. Não foi realizada consulta independente ao conteúdo do vídeo.",
+      "defenseNote": null,
+      "sectionId": "falas-controversas",
+      "institutionalSubjects": [],
+      "legalCaveat": "",
+      "sourceNote": "A data da fala não foi informada. A intenção de processar relatada no texto não é apresentada como ação ajuizada ou decisão judicial. O trecho entre colchetes “de ter um filho gay” é uma explicação presente no texto enviado, não uma citação literal da fala. Não foram fornecidos canal, data de upload ou transcrição integral do programa.",
+      "relatedCaseIds": ["homenagem-ustra-impeachment"],
+      "statements": [
+        {
+          "id": "resposta-preta-gil",
+          "date": null,
+          "quote": "Preta, não vou discutir promiscuidade com quem quer que seja. Eu não corro esse risco porque meus filhos foram muito bem educados e não viveram em ambiente como lamentavelmente é o teu",
+          "context": "Resposta de Bolsonaro a Preta Gil na TV, conforme texto enviado. O contexto completo da pergunta não foi fornecido.",
+          "sourceIds": ["video-declaracoes-preta-gil"]
+        },
+        {
+          "id": "filho-gay",
+          "date": null,
+          "quote": "Eles tiveram uma boa educação. Eu sou um pai presente, então não corro esse risco",
+          "context": "O texto enviado relaciona a expressão “esse risco” a ter um filho gay. Essa explicação é apresentada como contexto editorial, fora da citação literal.",
+          "sourceIds": ["video-declaracoes-preta-gil"]
+        }
+      ],
+      "videos": [
+        {
+          "provider": "youtube",
+          "videoId": "l3m4nhtxLl4",
+          "title": "Declarações sobre Preta Gil, homossexualidade e ditadura militar",
+          "startSeconds": 57,
+          "endSeconds": 231,
+          "sourceId": "video-declaracoes-preta-gil"
+        }
+      ]
     }
   ],
   "timeline": [
@@ -1871,10 +1940,11 @@
     },
     {
       "id": "homossexualidade",
-      "title": "Manifestações sobre homossexualidade: transcrições a documentar",
+      "title": "Manifestações sobre homossexualidade — declarações na TV",
       "personId": "jair-bolsonaro",
-      "publicationState": "research-only",
-      "requirements": "Vídeo ou transcrição original, data e contexto exatos, referência específica e resposta do envolvido quando disponível."
+      "publicationState": "published",
+      "requirements": "Vídeo ou transcrição original, data e contexto exatos, referência específica e resposta do envolvido quando disponível.",
+      "publishedCaseId": "declaracoes-preta-gil-homossexualidade-ditadura"
     },
     {
       "id": "eduardo-ai5",

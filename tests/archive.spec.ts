@@ -16,7 +16,7 @@ test("published cases, combined filters and primary sources", async ({
     page.getByText("VERSÃO DEMONSTRATIVA", { exact: false }),
   ).toHaveCount(0);
   await page.getByRole("link", { name: "Explorar o arquivo" }).click();
-  await expect(page.getByText("26 registros encontrados")).toBeVisible();
+  await expect(page.getByText("27 registros encontrados")).toBeVisible();
   await page
     .getByLabel("Pessoa", { exact: true })
     .selectOption("jair-bolsonaro");
@@ -56,11 +56,11 @@ test("published cases, combined filters and primary sources", async ({
     }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Limpar filtros" }).click();
-  await expect(page.getByText("26 registros encontrados")).toBeVisible();
+  await expect(page.getByText("27 registros encontrados")).toBeVisible();
   await page.goto("/pessoas/jair-bolsonaro/");
   await expect(
     page.getByRole("main").getByRole("heading", { level: 3 }),
-  ).toHaveCount(12);
+  ).toHaveCount(13);
   await page.goto("/pessoas/eduardo-bolsonaro/");
   await expect(
     page.getByRole("link", { name: /Coação no curso do processo/ }),
@@ -222,7 +222,7 @@ test("statements preserve quotes, speech dates and source scope", async ({
   await page
     .getByLabel("Seção", { exact: true })
     .selectOption("falas-controversas");
-  await expect(page.getByText("6 registros encontrados")).toBeVisible();
+  await expect(page.getByText("7 registros encontrados")).toBeVisible();
   await page
     .getByRole("link", { name: /Pandemia, vacinas e mortes por covid-19/ })
     .click();
@@ -440,7 +440,15 @@ test("video is promoted from research and embeds the selected excerpt on demand"
     }),
   );
   await page.goto("/");
-  const agenda = page.getByRole("region", { name: "Pautas em pesquisa" });
+  const agenda = page
+    .getByRole("region", { name: "Pautas em pesquisa" })
+    .getByRole("listitem")
+    .filter({
+      has: page.getByRole("heading", {
+        name: "Ataque verbal a jornalista — 23 de agosto de 2020",
+        exact: true,
+      }),
+    });
   await expect(
     agenda.getByRole("button", {
       name: /Carregar vídeo: Ataque verbal a jornalista/,
@@ -484,4 +492,56 @@ test("video is promoted from research and embeds the selected excerpt on demand"
       () => document.documentElement.scrollWidth <= window.innerWidth,
     ),
   ).toBeTruthy();
+});
+
+test("second video keeps unknown speech date and separates contextual explanation", async ({
+  page,
+}) => {
+  await page.route("https://www.youtube-nocookie.com/**", (route) =>
+    route.fulfill({
+      status: 200,
+      contentType: "text/html",
+      body: "<html><body>Player de teste</body></html>",
+    }),
+  );
+  await page.goto("/casos/declaracoes-preta-gil-homossexualidade-ditadura/");
+  const videos = page.getByRole("region", { name: "Vídeos do registro" });
+  await videos.getByRole("button", { name: /Carregar vídeo:/ }).click();
+  await expect(videos.locator("iframe")).toHaveAttribute(
+    "src",
+    "https://www.youtube-nocookie.com/embed/l3m4nhtxLl4?start=57&end=231&rel=0",
+  );
+  await expect(
+    videos.getByRole("link", { name: "Assistir no YouTube" }),
+  ).toHaveAttribute(
+    "href",
+    "https://www.youtube.com/watch?v=l3m4nhtxLl4&t=57s",
+  );
+  const declarations = page.getByRole("region", {
+    name: "Declarações documentadas",
+  });
+  await expect(declarations.locator("time")).toHaveCount(0);
+  await expect(
+    declarations.getByText("Data da fala não informada", { exact: true }),
+  ).toHaveCount(2);
+  await expect(declarations.locator("blockquote").nth(1)).not.toContainText(
+    "[de ter um filho gay]",
+  );
+  await expect(
+    page.getByText("Marco registrado: data não informada"),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Não há marcos com data informada", { exact: false }),
+  ).toBeVisible();
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth,
+    ),
+  ).toBeTruthy();
+  await page.goto("/");
+  const agenda = page.getByRole("region", { name: "Pautas em pesquisa" });
+  await expect(
+    agenda.getByRole("button", { name: /Carregar vídeo:/ }),
+  ).toHaveCount(2);
 });

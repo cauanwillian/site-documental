@@ -32,7 +32,7 @@ export function CaseCard({ item }: { item: Case }) {
         <p className="mt-1 text-xs text-stone-500">
           {item.statusAsOf
             ? dateLabel(item.statusAsOf)
-            : item.statements?.length
+            : item.statements?.some((statement) => statement.date)
               ? "Várias datas · Consulte as declarações"
               : "Data do marco não informada"}
         </p>

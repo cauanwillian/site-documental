@@ -108,7 +108,7 @@ export default function Home() {
                       Registro publicado ·{" "}
                       {published.statusAsOf
                         ? dateLabel(published.statusAsOf)
-                        : ""}
+                        : "Data da fala não informada"}
                     </p>
                     {published.videos?.map((video) => (
                       <VideoPlayer key={video.videoId} video={video} />

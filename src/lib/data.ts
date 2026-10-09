@@ -34,7 +34,7 @@ export type Case = {
   videos?: Video[];
   statements?: {
     id: string;
-    date: string;
+    date: string | null;
     quote: string;
     context: string;
     sourceIds: string[];
