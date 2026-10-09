@@ -16,7 +16,7 @@ test("published cases, combined filters and primary sources", async ({
     page.getByText("VERSÃO DEMONSTRATIVA", { exact: false }),
   ).toHaveCount(0);
   await page.getByRole("link", { name: "Explorar o arquivo" }).click();
-  await expect(page.getByText("28 registros encontrados")).toBeVisible();
+  await expect(page.getByText("29 registros encontrados")).toBeVisible();
   await page
     .getByLabel("Pessoa", { exact: true })
     .selectOption("jair-bolsonaro");
@@ -56,11 +56,11 @@ test("published cases, combined filters and primary sources", async ({
     }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Limpar filtros" }).click();
-  await expect(page.getByText("28 registros encontrados")).toBeVisible();
+  await expect(page.getByText("29 registros encontrados")).toBeVisible();
   await page.goto("/pessoas/jair-bolsonaro/");
   await expect(
     page.getByRole("main").getByRole("heading", { level: 3 }),
-  ).toHaveCount(14);
+  ).toHaveCount(15);
   await page.goto("/pessoas/eduardo-bolsonaro/");
   await expect(
     page.getByRole("link", { name: /Coação no curso do processo/ }),
@@ -222,7 +222,7 @@ test("statements preserve quotes, speech dates and source scope", async ({
   await page
     .getByLabel("Seção", { exact: true })
     .selectOption("falas-controversas");
-  await expect(page.getByText("8 registros encontrados")).toBeVisible();
+  await expect(page.getByText("9 registros encontrados")).toBeVisible();
   await page
     .getByRole("link", { name: /Pandemia, vacinas e mortes por covid-19/ })
     .click();

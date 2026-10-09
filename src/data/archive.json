@@ -695,6 +695,21 @@
       "accessedAt": null,
       "verificationMethod": "publisher-confirmed",
       "editoriallyConfirmedAt": "2026-10-09"
+    },
+    {
+      "id": "video-urnas-2026",
+      "name": "Vídeo enviado — YouTube",
+      "institution": "Vídeo enviado — YouTube",
+      "kind": "secondary",
+      "title": "Questionamentos sobre as urnas eletrônicas — vídeo enviado",
+      "url": "https://www.youtube.com/watch?v=AG1__Mbc_2c",
+      "scope": "case",
+      "documentType": "video-reference",
+      "purpose": "Vídeo e transcrição enviados com data da fala de 22 de julho de 2026. Minutagem não informada.",
+      "updatedAt": "2026-10-09",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-09"
     }
   ],
   "cases": [
@@ -1561,6 +1576,49 @@
           "sourceId": "video-fraquejada-2017"
         }
       ]
+    },
+    {
+      "id": "questionamentos-urnas-eletronicas-2026",
+      "slug": "questionamentos-urnas-eletronicas-2026",
+      "title": "Questionamentos sobre as urnas eletrônicas",
+      "summary": "Declaração sobre a origem de máquinas utilizadas nas eleições brasileiras, conforme transcrição enviada pela edição.",
+      "body": "O registro documenta a declaração atribuída a Jair Bolsonaro no material enviado. A afirmação sobre a origem das máquinas é apresentada como fala do envolvido.",
+      "personIds": ["jair-bolsonaro"],
+      "categoryId": "eleitoral",
+      "statusId": "controversia",
+      "statusAsOf": "2026-07-22",
+      "statusScope": "public-statement",
+      "sourceIds": ["video-urnas-2026"],
+      "contextualSourceIds": [],
+      "placeholder": false,
+      "updatedAt": "2026-10-09",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Vídeo, data e transcrição fornecidos pelo responsável editorial.",
+      "defenseNote": null,
+      "sectionId": "falas-controversas",
+      "institutionalSubjects": [],
+      "legalCaveat": "",
+      "sourceNote": "A minutagem do trecho não foi informada; o player disponibiliza o vídeo completo.",
+      "relatedCaseIds": [],
+      "statements": [
+        {
+          "id": "fala-urnas-2026",
+          "date": "2026-07-22",
+          "quote": "Muitas dessas máquinas utilizadas nas eleições brasileiras têm a mesma origem dessa empresa venezuelana",
+          "context": "Questionamento sobre as urnas eletrônicas, conforme pauta enviada pela edição.",
+          "sourceIds": ["video-urnas-2026"]
+        }
+      ],
+      "videos": [
+        {
+          "provider": "youtube",
+          "videoId": "AG1__Mbc_2c",
+          "title": "Questionamentos sobre as urnas eletrônicas",
+          "startSeconds": null,
+          "endSeconds": null,
+          "sourceId": "video-urnas-2026"
+        }
+      ]
     }
   ],
   "timeline": [
@@ -1909,6 +1967,19 @@
       "description": "Foram quatro homens, a quinta eu dei uma fraquejada e veio uma mulher",
       "statusId": "controversia",
       "sourceIds": ["video-fraquejada-2017"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "public-statement"
+    },
+    {
+      "id": "fala-urnas-2026-07-22",
+      "caseId": "questionamentos-urnas-eletronicas-2026",
+      "date": "2026-07-22",
+      "datePrecision": "day",
+      "title": "Questionamentos sobre as urnas eletrônicas",
+      "description": "“Muitas dessas máquinas utilizadas nas eleições brasileiras têm a mesma origem dessa empresa venezuelana”",
+      "statusId": "controversia",
+      "sourceIds": ["video-urnas-2026"],
       "placeholder": false,
       "verificationMethod": "publisher-confirmed",
       "eventType": "public-statement"
