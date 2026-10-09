@@ -75,7 +75,9 @@ export function Timeline({ caseId }: { caseId?: string }) {
             <Badge className="mb-2 bg-red-50 text-red-900">Placeholder</Badge>
           )}
           <h3 className="font-semibold">{e.title}</h3>
-          <p className="mt-2 text-sm text-stone-600">{e.description}</p>
+          {e.description && (
+            <p className="mt-2 text-sm text-stone-600">{e.description}</p>
+          )}
           {e.sourceIds.length > 0 && (
             <ul className="mt-3 text-xs text-red-800">
               {data.sources
