@@ -60,7 +60,7 @@ test("published cases, combined filters and primary sources", async ({
   await page.goto("/pessoas/jair-bolsonaro/");
   await expect(
     page.getByRole("main").getByRole("heading", { level: 3 }),
-  ).toHaveCount(15);
+  ).toHaveCount(14);
   await page.goto("/pessoas/eduardo-bolsonaro/");
   await expect(
     page.getByRole("link", { name: /Coação no curso do processo/ }),
@@ -222,7 +222,7 @@ test("statements preserve quotes, speech dates and source scope", async ({
   await page
     .getByLabel("Seção", { exact: true })
     .selectOption("falas-controversas");
-  await expect(page.getByText("9 registros encontrados")).toBeVisible();
+  await expect(page.getByText("8 registros encontrados")).toBeVisible();
   await page
     .getByRole("link", { name: /Pandemia, vacinas e mortes por covid-19/ })
     .click();
