@@ -70,9 +70,6 @@ export default function Home() {
               Ver todos
             </Link>
           </div>
-          <p className="mb-6 max-w-3xl text-sm leading-relaxed text-stone-600">
-            {section.notice}
-          </p>
           <div className="grid gap-5 md:grid-cols-3">
             {data.cases
               .filter((c) => c.sectionId === section.id)
@@ -108,10 +105,6 @@ export default function Home() {
             A sequência importa
           </p>
           <h2 className="mt-3 text-3xl font-semibold">Linha do tempo</h2>
-          <p className="mt-4 leading-relaxed text-stone-600">
-            Cada etapa deve ser lida em seu contexto. Consulte as decisões e os
-            acontecimentos nas datas documentadas, com suas referências.
-          </p>
         </div>
         <Timeline />
       </section>
