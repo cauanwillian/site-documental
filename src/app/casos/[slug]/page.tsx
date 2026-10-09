@@ -9,7 +9,7 @@ import {
   sourceTypeLabel,
 } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
-import { EditorialNotice, Timeline } from "@/components/archive";
+import { Timeline } from "@/components/archive";
 export function generateStaticParams() {
   return data.cases.map((c) => ({ slug: c.slug }));
 }
@@ -55,7 +55,6 @@ export default async function CasePage({
       </div>
       <h1 className="my-5 max-w-3xl text-4xl font-semibold">{c.title}</h1>
       <p className="mb-8 max-w-3xl text-lg text-stone-600">{c.summary}</p>
-      <EditorialNotice />
       {c.legalCaveat && (
         <aside className="mt-5 rounded-lg border border-red-200 bg-red-50 p-5 text-sm leading-relaxed text-red-950">
           <strong className="block mb-2">Limites do registro</strong>

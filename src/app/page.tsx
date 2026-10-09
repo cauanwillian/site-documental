@@ -1,12 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  CaseCard,
-  EditorialNotice,
-  Timeline,
-  ResearchSources,
-} from "@/components/archive";
+import { CaseCard, Timeline, ResearchSources } from "@/components/archive";
 import { data } from "@/lib/data";
 export default function Home() {
   return (
@@ -37,7 +32,6 @@ export default function Home() {
           </Button>
         </div>
       </section>
-      <EditorialNotice />
       <section className="my-12 grid grid-cols-2 gap-5 border-y border-stone-200 py-6 md:grid-cols-4">
         {[
           [

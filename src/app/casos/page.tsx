@@ -1,4 +1,3 @@
-import { EditorialNotice } from "@/components/archive";
 import { CaseFilters } from "@/components/case-filters";
 export const metadata = { title: "Casos" };
 export default function Cases() {
@@ -12,7 +11,6 @@ export default function Cases() {
         Consulte por pessoa, categoria e status na decisão registrada. Cada caso
         informa a data e as referências.
       </p>
-      <EditorialNotice />
       <CaseFilters />
     </>
   );

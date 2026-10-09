@@ -2,15 +2,6 @@ import Link from "next/link";
 import { ArrowUpRight, FileText, ShieldCheck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { data, statusOf, categoryOf, dateLabel, type Case } from "@/lib/data";
-export function EditorialNotice() {
-  return (
-    <aside className="rounded-lg border border-red-200 bg-red-50 p-5 text-sm leading-relaxed text-red-950">
-      <strong className="block mb-1">Leia antes de consultar</strong>
-      {data.editorial.publicationNotice}
-      <p className="mt-2">{data.editorial.notice}</p>
-    </aside>
-  );
-}
 export function CaseCard({ item }: { item: Case }) {
   return (
     <Link

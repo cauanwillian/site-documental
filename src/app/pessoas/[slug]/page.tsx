@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { data } from "@/lib/data";
-import { CaseCard, EditorialNotice } from "@/components/archive";
+import { CaseCard } from "@/components/archive";
 export function generateStaticParams() {
   return data.people.map((p) => ({ slug: p.slug }));
 }
@@ -34,7 +34,6 @@ export default async function PersonPage({
       </p>
       <h1 className="mt-4 text-4xl font-semibold">{person.name}</h1>
       <p className="mb-8 mt-5 text-stone-600">{person.description}</p>
-      <EditorialNotice />
       <h2 className="mb-5 mt-10 text-2xl font-semibold">
         Registros relacionados
       </h2>

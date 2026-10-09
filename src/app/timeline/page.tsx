@@ -1,4 +1,4 @@
-import { Timeline, EditorialNotice } from "@/components/archive";
+import { Timeline } from "@/components/archive";
 import { data } from "@/lib/data";
 export const metadata = { title: "Linha do tempo" };
 export default function TimelinePage() {
@@ -12,7 +12,6 @@ export default function TimelinePage() {
         Decisões e acontecimentos do mais recente ao mais antigo. Quando o
         material informa apenas mês e ano, a cronologia preserva essa precisão.
       </p>
-      <EditorialNotice />
       <section className="mt-10" aria-label="Visão editorial por períodos">
         <h2 className="text-2xl font-semibold">Visão editorial por períodos</h2>
         <p className="mt-3 mb-5 text-sm leading-relaxed text-stone-600">
