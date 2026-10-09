@@ -57,13 +57,13 @@ O desfecho das rachadinhas foi atualizado para `rejeicao-denuncia`, com data `20
 
 As posições atribuídas ao livro de Flávio (2017) aparecem com a resposta da assessoria, sem inventar citações ou páginas. A menção ao lobby de Eduardo em documentos aparece com sua negativa de recebimento de recursos. As fontes de Carlos e os portais institucionais foram reutilizados sem duplicação.
 
-`periodOverview` é uma síntese editorial separada da cronologia de eventos. `researchAgenda` reúne cinco pautas para material original, sem publicar transcrições, datas ou resultados processuais não fornecidos. As pautas aparecem na Home com indicação explícita de pesquisa, fora do catálogo, dos perfis e do contador de registros publicados.
+`periodOverview` é uma síntese editorial separada da cronologia de eventos. `researchAgenda` reúne os quatro cartões de vídeos publicados na Home. As pautas pendentes sobre Eduardo e o AI-5 e sobre o fechamento do STF foram removidas; o áudio de Flávio sobre o filme foi incluído nessa seleção.
 
 ## Vídeos incorporados
 
 O campo `videos` de cada caso guarda `videoId`, título acessível, `sourceId`, `startSeconds` e `endSeconds`. O player usa YouTube no domínio `youtube-nocookie.com` e só carrega após clicar em **Carregar vídeo**, sem autoplay. `start` e `end` definem o trecho no player (a plataforma pode permitir navegação além dele). O link externo sempre permanece disponível, inclusive se o canal bloquear a incorporação. Não há hospedagem de vídeo ou backend separado.
 
-A pauta de ataques verbais foi promovida para um registro publicado, exibido também no cartão da Home. Duas pautas continuam em pesquisa; três cartões foram promovidos para registros com vídeo. Datas de falas e upload são distintas; não foram inventados nome de canal, título original ou data de upload do vídeo recebido.
+A pauta de ataques verbais foi promovida para um registro publicado, exibido também no cartão da Home. Quatro cartões exibem registros publicados com vídeo. Datas de falas e upload são distintas; não foram inventados nome de canal, título original ou data de upload do vídeo recebido.
 
 O segundo vídeo usa o trecho `0:57–3:51`. A data da fala é nula e não é substituída pela data de upload ou de atualização. As explicações entre colchetes e as passagens narrativas do material recebido são distinguidas das citações. Não há evento na cronologia para esse registro enquanto a data não for fornecida.
 

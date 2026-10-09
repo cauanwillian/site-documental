@@ -2153,18 +2153,12 @@
       "publishedCaseId": "declaracoes-preta-gil-homossexualidade-ditadura"
     },
     {
-      "id": "eduardo-ai5",
-      "title": "Referências de Eduardo ao AI-5: fala e contexto a documentar",
-      "personId": "eduardo-bolsonaro",
-      "publicationState": "research-only",
-      "requirements": "Vídeo ou transcrição original, data e contexto exatos, referência específica e resposta do envolvido quando disponível."
-    },
-    {
-      "id": "eduardo-fechamento-stf",
-      "title": "Referências de Eduardo ao fechamento do STF: fala e contexto a documentar",
-      "personId": "eduardo-bolsonaro",
-      "publicationState": "research-only",
-      "requirements": "Vídeo ou transcrição original, data e contexto exatos, referência específica e resposta do envolvido quando disponível."
+      "id": "flavio-filme-jair",
+      "title": "Flávio Bolsonaro pede dinheiro a Daniel para filme de Jair",
+      "personId": "flavio-bolsonaro",
+      "publicationState": "published",
+      "requirements": "",
+      "publishedCaseId": "flavio-pedido-dinheiro-filme-jair"
     }
   ]
 }

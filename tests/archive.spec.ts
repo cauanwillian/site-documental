@@ -409,7 +409,7 @@ test("procedural outcome, institutional caveats and editorial period overview", 
     page
       .getByRole("region", { name: "Pautas em pesquisa" })
       .getByRole("listitem"),
-  ).toHaveCount(5);
+  ).toHaveCount(4);
   await page.setViewportSize({ width: 390, height: 844 });
   for (const route of [
     "/",
@@ -543,7 +543,7 @@ test("second video keeps unknown speech date and separates contextual explanatio
   const agenda = page.getByRole("region", { name: "Pautas em pesquisa" });
   await expect(
     agenda.getByRole("button", { name: /Carregar vídeo:/ }),
-  ).toHaveCount(3);
+  ).toHaveCount(4);
 });
 
 test("vídeo completo da expressão fraquejada preserva data e transcrição", async ({
@@ -581,4 +581,30 @@ test("vídeo completo da expressão fraquejada preserva data e transcrição", a
   await expect(
     page.getByText("6 de abril de 2017", { exact: false }).first(),
   ).toBeVisible();
+});
+
+test("home replaces Eduardo research cards with Flavio audio", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const agenda = page.getByRole("region", { name: "Pautas em pesquisa" });
+  await expect(agenda.getByText(/Referências de Eduardo/)).toHaveCount(0);
+  const card = agenda
+    .getByRole("listitem")
+    .filter({
+      has: page.getByRole("heading", {
+        name: "Flávio Bolsonaro pede dinheiro a Daniel para filme de Jair",
+        exact: true,
+      }),
+    });
+  await expect(
+    card.getByRole("button", { name: /Carregar vídeo/ }),
+  ).toBeVisible();
+  await expect(
+    card.getByText("Áudio enviado em 8 de setembro de 2025", { exact: false }),
+  ).toBeVisible();
+  await expect(card.locator("blockquote")).toHaveCount(0);
+  await expect(
+    card.getByRole("link", { name: "Consultar registro completo" }),
+  ).toHaveAttribute("href", "/casos/flavio-pedido-dinheiro-filme-jair/");
 });

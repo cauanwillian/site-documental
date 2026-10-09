@@ -83,8 +83,7 @@ export default function Home() {
       <section className="mb-14" aria-label="Pautas em pesquisa">
         <h2 className="text-2xl font-semibold">Vídeos e pautas em pesquisa</h2>
         <p className="mt-3 mb-5 max-w-3xl text-sm leading-relaxed text-stone-600">
-          Os registros com vídeo podem ser consultados abaixo. As demais pautas
-          aguardam material original.
+          Consulte os vídeos e os registros completos abaixo.
         </p>
         <ul className="grid gap-4 md:grid-cols-2">
           {data.researchAgenda.map((topic) => {
@@ -92,6 +91,13 @@ export default function Home() {
               topic.publicationState === "published"
                 ? data.cases.find((c) => c.id === topic.publishedCaseId)
                 : undefined;
+            const audioSent =
+              published &&
+              data.timeline.find(
+                (event) =>
+                  event.caseId === published.id &&
+                  event.eventType === "audio-sent",
+              );
             return (
               <li
                 key={topic.id}
@@ -106,16 +112,24 @@ export default function Home() {
                   <>
                     <p className="my-3 text-xs text-red-800">
                       Registro publicado ·{" "}
-                      {published.statusAsOf
-                        ? dateLabel(published.statusAsOf)
-                        : "Data da fala não informada"}
+                      {audioSent
+                        ? `Áudio enviado em ${dateLabel(audioSent.date)}`
+                        : published.statusAsOf
+                          ? dateLabel(published.statusAsOf)
+                          : "Data da fala não informada"}
                     </p>
                     {published.videos?.map((video) => (
                       <VideoPlayer key={video.videoId} video={video} />
                     ))}
-                    <blockquote className="mt-4 text-sm font-medium">
-                      “{published.statements?.[0]?.quote}”
-                    </blockquote>
+                    {published.statements?.[0]?.quote ? (
+                      <blockquote className="mt-4 text-sm font-medium">
+                        “{published.statements[0].quote}”
+                      </blockquote>
+                    ) : (
+                      <p className="mt-4 text-sm text-stone-600">
+                        {published.summary}
+                      </p>
+                    )}
                     <Link
                       href={`/casos/${published.slug}/`}
                       className="mt-4 inline-block text-sm text-red-800 underline underline-offset-4"
