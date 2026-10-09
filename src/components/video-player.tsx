@@ -5,16 +5,19 @@ import type { Video } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 export function VideoPlayer({ video }: { video: Video }) {
   const [loaded, setLoaded] = useState(false);
-  if (
-    !/^[A-Za-z0-9_-]{11}$/.test(video.videoId) ||
-    !Number.isInteger(video.startSeconds) ||
-    !Number.isInteger(video.endSeconds) ||
-    video.startSeconds < 0 ||
-    video.endSeconds <= video.startSeconds
-  )
+  const { startSeconds, endSeconds } = video;
+  const fullVideo = startSeconds === null && endSeconds === null;
+  const validClip =
+    startSeconds !== null &&
+    endSeconds !== null &&
+    Number.isInteger(startSeconds) &&
+    Number.isInteger(endSeconds) &&
+    startSeconds >= 0 &&
+    endSeconds > startSeconds;
+  if (!/^[A-Za-z0-9_-]{11}$/.test(video.videoId) || (!fullVideo && !validClip))
     return null;
-  const embed = `https://www.youtube-nocookie.com/embed/${video.videoId}?start=${video.startSeconds}&end=${video.endSeconds}&rel=0`;
-  const external = `https://www.youtube.com/watch?v=${video.videoId}&t=${video.startSeconds}s`;
+  const embed = `https://www.youtube-nocookie.com/embed/${video.videoId}?${fullVideo ? "" : `start=${startSeconds}&end=${endSeconds}&`}rel=0`;
+  const external = `https://www.youtube.com/watch?v=${video.videoId}${fullVideo ? "" : `&t=${startSeconds}s`}`;
   const time = (seconds: number) =>
     `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
   return (
@@ -44,7 +47,9 @@ export function VideoPlayer({ video }: { video: Video }) {
       </div>
       <figcaption className="flex flex-wrap items-center justify-between gap-3 bg-white p-3 text-xs text-stone-600">
         <span>
-          Trecho: {time(video.startSeconds)}–{time(video.endSeconds)}
+          {fullVideo
+            ? "Vídeo completo · Trecho não informado"
+            : `Trecho: ${time(startSeconds!)}–${time(endSeconds!)}`}
         </span>
         <a
           href={external}

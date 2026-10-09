@@ -3,8 +3,8 @@ export type Video = {
   provider: string;
   videoId: string;
   title: string;
-  startSeconds: number;
-  endSeconds: number;
+  startSeconds: number | null;
+  endSeconds: number | null;
   sourceId: string;
 };
 export type Case = {

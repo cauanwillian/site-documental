@@ -680,6 +680,21 @@
       "accessedAt": null,
       "verificationMethod": "publisher-confirmed",
       "editoriallyConfirmedAt": "2026-10-09"
+    },
+    {
+      "id": "video-fraquejada-2017",
+      "name": "Vídeo enviado — YouTube",
+      "institution": "Vídeo enviado — YouTube",
+      "kind": "secondary",
+      "title": "Expressão “fraquejada” — vídeo enviado",
+      "url": "https://www.youtube.com/watch?v=qfC6uaRfVpQ",
+      "scope": "case",
+      "documentType": "video-reference",
+      "purpose": "Vídeo e transcrição enviados com data da fala de 6 de abril de 2017. Minutagem não informada.",
+      "updatedAt": "2026-10-09",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-09"
     }
   ],
   "cases": [
@@ -1503,6 +1518,49 @@
           "sourceId": "video-declaracoes-preta-gil"
         }
       ]
+    },
+    {
+      "id": "expressao-fraquejada",
+      "slug": "expressao-fraquejada",
+      "title": "Expressão “fraquejada” — 6 de abril de 2017",
+      "summary": "Foram quatro homens, a quinta eu dei uma fraquejada e veio uma mulher",
+      "body": "Declaração de Jair Bolsonaro ao se referir ao nascimento de sua filha, conforme material enviado pela edição.",
+      "personIds": ["jair-bolsonaro"],
+      "categoryId": "mulheres-adolescentes",
+      "statusId": "controversia",
+      "statusAsOf": "2017-04-06",
+      "statusScope": "public-statement",
+      "sourceIds": ["video-fraquejada-2017"],
+      "contextualSourceIds": [],
+      "placeholder": false,
+      "updatedAt": "2026-10-09",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Vídeo, data e transcrição fornecidos pelo responsável editorial.",
+      "defenseNote": null,
+      "sectionId": "falas-controversas",
+      "institutionalSubjects": [],
+      "legalCaveat": "",
+      "sourceNote": "A minutagem do trecho não foi informada; o player disponibiliza o vídeo completo.",
+      "relatedCaseIds": [],
+      "statements": [
+        {
+          "id": "fala-fraquejada",
+          "date": "2017-04-06",
+          "quote": "Foram quatro homens, a quinta eu dei uma fraquejada e veio uma mulher",
+          "context": "Referência ao nascimento de sua filha.",
+          "sourceIds": ["video-fraquejada-2017"]
+        }
+      ],
+      "videos": [
+        {
+          "provider": "youtube",
+          "videoId": "qfC6uaRfVpQ",
+          "title": "Expressão “fraquejada”",
+          "startSeconds": null,
+          "endSeconds": null,
+          "sourceId": "video-fraquejada-2017"
+        }
+      ]
     }
   ],
   "timeline": [
@@ -1841,6 +1899,19 @@
       "placeholder": false,
       "verificationMethod": "publisher-confirmed",
       "eventType": "public-statement"
+    },
+    {
+      "id": "fala-fraquejada-2017-04-06",
+      "caseId": "expressao-fraquejada",
+      "date": "2017-04-06",
+      "datePrecision": "day",
+      "title": "Expressão “fraquejada”",
+      "description": "Foram quatro homens, a quinta eu dei uma fraquejada e veio uma mulher",
+      "statusId": "controversia",
+      "sourceIds": ["video-fraquejada-2017"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "public-statement"
     }
   ],
   "sections": [
@@ -1925,10 +1996,11 @@
   "researchAgenda": [
     {
       "id": "fraquejada",
-      "title": "Expressão “fraquejada”: contexto da declaração a documentar",
+      "title": "Expressão “fraquejada” — 6 de abril de 2017",
       "personId": "jair-bolsonaro",
-      "publicationState": "research-only",
-      "requirements": "Vídeo ou transcrição original, data e contexto exatos, referência específica e resposta do envolvido quando disponível."
+      "publicationState": "published",
+      "requirements": "Vídeo ou transcrição original, data e contexto exatos, referência específica e resposta do envolvido quando disponível.",
+      "publishedCaseId": "expressao-fraquejada"
     },
     {
       "id": "ataques-verbais",

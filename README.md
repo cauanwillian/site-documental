@@ -23,7 +23,7 @@ Importe este repositório, selecione a branch `main` e o preset Next.js. Instala
 
 Edite `src/data/archive.json`. Contém pessoas, casos, categorias, status jurídicos, eventos, fontes e datas editoriais. IDs referenciados devem existir. Slugs devem ser únicos e próprios para URLs. Datas usam `YYYY-MM-DD` ou `YYYY-MM` quando apenas mês e ano foram fornecidos. `statusId` representa o status da decisão na data `statusAsOf`, sem inferir o estado processual atual.
 
-O arquivo contém 27 registros publicados com textos e referências conferidos pelo responsável editorial. `verificationMethod: "publisher-confirmed"` registra essa origem; não indica consulta independente pela ferramenta. As notícias institucionais são distinguidas de acórdãos e reportagens. Os portais genéricos (`scope: "research"`) ficam separados das referências específicas (`scope: "case"`). Os exemplos demonstrativos foram removidos.
+O arquivo contém 28 registros publicados com textos e referências conferidos pelo responsável editorial. `verificationMethod: "publisher-confirmed"` registra essa origem; não indica consulta independente pela ferramenta. As notícias institucionais são distinguidas de acórdãos e reportagens. Os portais genéricos (`scope: "research"`) ficam separados das referências específicas (`scope: "case"`). Os exemplos demonstrativos foram removidos.
 
 Para publicar um caso real, conclua a pesquisa, registre URLs dos documentos específicos nas fontes, preencha `personIds`, `sourceIds`, `statusId` e a cronologia, e altere `placeholder` para `false`. Fontes devem incluir título, instituição, URL do documento, natureza primária/secundária e data da consulta. Não publique alegações apenas com links genéricos para portais. Atualize os textos editoriais e contadores da Home quando houver conteúdo verificado. Prefira fontes primárias e contextualize recursos, anulações e limites das decisões. Os eventos devem informar suas próprias fontes.
 
@@ -63,6 +63,8 @@ As posições atribuídas ao livro de Flávio (2017) aparecem com a resposta da 
 
 O campo `videos` de cada caso guarda `videoId`, título acessível, `sourceId`, `startSeconds` e `endSeconds`. O player usa YouTube no domínio `youtube-nocookie.com` e só carrega após clicar em **Carregar vídeo**, sem autoplay. `start` e `end` definem o trecho no player (a plataforma pode permitir navegação além dele). O link externo sempre permanece disponível, inclusive se o canal bloquear a incorporação. Não há hospedagem de vídeo ou backend separado.
 
-A pauta de ataques verbais foi promovida para um registro publicado, exibido também no cartão da Home. Três pautas continuam em pesquisa; dois cartões foram promovidos para registros com vídeo. Datas de falas e upload são distintas; não foram inventados nome de canal, título original ou data de upload do vídeo recebido.
+A pauta de ataques verbais foi promovida para um registro publicado, exibido também no cartão da Home. Duas pautas continuam em pesquisa; três cartões foram promovidos para registros com vídeo. Datas de falas e upload são distintas; não foram inventados nome de canal, título original ou data de upload do vídeo recebido.
 
 O segundo vídeo usa o trecho `0:57–3:51`. A data da fala é nula e não é substituída pela data de upload ou de atualização. As explicações entre colchetes e as passagens narrativas do material recebido são distinguidas das citações. Não há evento na cronologia para esse registro enquanto a data não for fornecida.
+
+Vídeos sem minutagem usam `startSeconds: null` e `endSeconds: null`, exibindo o vídeo completo sem limites de reprodução inventados.

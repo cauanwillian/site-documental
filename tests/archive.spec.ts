@@ -16,7 +16,7 @@ test("published cases, combined filters and primary sources", async ({
     page.getByText("VERSÃO DEMONSTRATIVA", { exact: false }),
   ).toHaveCount(0);
   await page.getByRole("link", { name: "Explorar o arquivo" }).click();
-  await expect(page.getByText("27 registros encontrados")).toBeVisible();
+  await expect(page.getByText("28 registros encontrados")).toBeVisible();
   await page
     .getByLabel("Pessoa", { exact: true })
     .selectOption("jair-bolsonaro");
@@ -56,11 +56,11 @@ test("published cases, combined filters and primary sources", async ({
     }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Limpar filtros" }).click();
-  await expect(page.getByText("27 registros encontrados")).toBeVisible();
+  await expect(page.getByText("28 registros encontrados")).toBeVisible();
   await page.goto("/pessoas/jair-bolsonaro/");
   await expect(
     page.getByRole("main").getByRole("heading", { level: 3 }),
-  ).toHaveCount(13);
+  ).toHaveCount(14);
   await page.goto("/pessoas/eduardo-bolsonaro/");
   await expect(
     page.getByRole("link", { name: /Coação no curso do processo/ }),
@@ -222,7 +222,7 @@ test("statements preserve quotes, speech dates and source scope", async ({
   await page
     .getByLabel("Seção", { exact: true })
     .selectOption("falas-controversas");
-  await expect(page.getByText("7 registros encontrados")).toBeVisible();
+  await expect(page.getByText("8 registros encontrados")).toBeVisible();
   await page
     .getByRole("link", { name: /Pandemia, vacinas e mortes por covid-19/ })
     .click();
@@ -305,7 +305,7 @@ test("civil damages remain distinct from criminal conviction and public accusati
   await page
     .getByLabel("Categoria", { exact: true })
     .selectOption("mulheres-adolescentes");
-  await expect(page.getByText("2 registros encontrados")).toBeVisible();
+  await expect(page.getByText("3 registros encontrados")).toBeVisible();
   await page
     .getByLabel("Status jurídico", { exact: true })
     .selectOption("condenacao-civil");
@@ -543,5 +543,42 @@ test("second video keeps unknown speech date and separates contextual explanatio
   const agenda = page.getByRole("region", { name: "Pautas em pesquisa" });
   await expect(
     agenda.getByRole("button", { name: /Carregar vídeo:/ }),
-  ).toHaveCount(2);
+  ).toHaveCount(3);
+});
+
+test("vídeo completo da expressão fraquejada preserva data e transcrição", async ({
+  page,
+}) => {
+  await page.route("https://www.youtube-nocookie.com/**", (route) =>
+    route.fulfill({ body: "<html></html>", contentType: "text/html" }),
+  );
+  await page.goto("/casos/expressao-fraquejada/");
+  await expect(
+    page
+      .getByText(
+        "Foram quatro homens, a quinta eu dei uma fraquejada e veio uma mulher",
+        { exact: true },
+      )
+      .first(),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Vídeo completo · Trecho não informado"),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Assistir no YouTube" }),
+  ).toHaveAttribute("href", "https://www.youtube.com/watch?v=qfC6uaRfVpQ");
+  await page
+    .getByRole("button", {
+      name: "Carregar vídeo: Expressão “fraquejada”",
+      exact: true,
+    })
+    .click();
+  await expect(page.locator("iframe")).toHaveAttribute(
+    "src",
+    "https://www.youtube-nocookie.com/embed/qfC6uaRfVpQ?rel=0",
+  );
+  await page.goto("/timeline/");
+  await expect(
+    page.getByText("6 de abril de 2017", { exact: false }).first(),
+  ).toBeVisible();
 });
