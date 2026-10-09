@@ -121,14 +121,10 @@ export default function Home() {
                     {published.videos?.map((video) => (
                       <VideoPlayer key={video.videoId} video={video} />
                     ))}
-                    {published.statements?.[0]?.quote ? (
+                    {published.statements?.[0]?.quote && (
                       <blockquote className="mt-4 text-sm font-medium">
                         “{published.statements[0].quote}”
                       </blockquote>
-                    ) : (
-                      <p className="mt-4 text-sm text-stone-600">
-                        {published.summary}
-                      </p>
                     )}
                     <Link
                       href={`/casos/${published.slug}/`}
