@@ -8,6 +8,7 @@ import {
   dateLabel,
   sourceTypeLabel,
 } from "@/lib/data";
+import { VideoPlayer } from "@/components/video-player";
 import { Badge } from "@/components/ui/badge";
 import { Timeline } from "@/components/archive";
 export function generateStaticParams() {
@@ -69,6 +70,16 @@ export default async function CasePage({
           <h2 className="text-2xl font-semibold">Contexto do registro</h2>
           <p className="mt-4 leading-relaxed text-stone-600">{c.body}</p>
 
+          {c.videos && c.videos.length > 0 && (
+            <section className="my-8" aria-label="Vídeos do registro">
+              <h2 className="mb-5 text-2xl font-semibold">
+                Vídeo da declaração
+              </h2>
+              {c.videos.map((video) => (
+                <VideoPlayer key={video.videoId} video={video} />
+              ))}
+            </section>
+          )}
           {c.statements && c.statements.length > 0 && (
             <section className="mt-8" aria-label="Declarações documentadas">
               <h2 className="text-2xl font-semibold">Declarações e contexto</h2>

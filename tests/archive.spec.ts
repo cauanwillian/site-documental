@@ -16,7 +16,7 @@ test("published cases, combined filters and primary sources", async ({
     page.getByText("VERSÃO DEMONSTRATIVA", { exact: false }),
   ).toHaveCount(0);
   await page.getByRole("link", { name: "Explorar o arquivo" }).click();
-  await expect(page.getByText("25 registros encontrados")).toBeVisible();
+  await expect(page.getByText("26 registros encontrados")).toBeVisible();
   await page
     .getByLabel("Pessoa", { exact: true })
     .selectOption("jair-bolsonaro");
@@ -56,11 +56,11 @@ test("published cases, combined filters and primary sources", async ({
     }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Limpar filtros" }).click();
-  await expect(page.getByText("25 registros encontrados")).toBeVisible();
+  await expect(page.getByText("26 registros encontrados")).toBeVisible();
   await page.goto("/pessoas/jair-bolsonaro/");
   await expect(
     page.getByRole("main").getByRole("heading", { level: 3 }),
-  ).toHaveCount(11);
+  ).toHaveCount(12);
   await page.goto("/pessoas/eduardo-bolsonaro/");
   await expect(
     page.getByRole("link", { name: /Coação no curso do processo/ }),
@@ -222,7 +222,7 @@ test("statements preserve quotes, speech dates and source scope", async ({
   await page
     .getByLabel("Seção", { exact: true })
     .selectOption("falas-controversas");
-  await expect(page.getByText("5 registros encontrados")).toBeVisible();
+  await expect(page.getByText("6 registros encontrados")).toBeVisible();
   await page
     .getByRole("link", { name: /Pandemia, vacinas e mortes por covid-19/ })
     .click();
@@ -427,4 +427,61 @@ test("procedural outcome, institutional caveats and editorial period overview", 
       ),
     ).toBeTruthy();
   }
+});
+
+test("video is promoted from research and embeds the selected excerpt on demand", async ({
+  page,
+}) => {
+  await page.route("https://www.youtube-nocookie.com/**", (route) =>
+    route.fulfill({
+      status: 200,
+      contentType: "text/html",
+      body: "<html><body>Player de teste</body></html>",
+    }),
+  );
+  await page.goto("/");
+  const agenda = page.getByRole("region", { name: "Pautas em pesquisa" });
+  await expect(
+    agenda.getByRole("button", {
+      name: /Carregar vídeo: Ataque verbal a jornalista/,
+    }),
+  ).toBeVisible();
+  await expect(agenda.locator("iframe")).toHaveCount(0);
+  await agenda.getByRole("button", { name: /Carregar vídeo:/ }).click();
+  await expect(agenda.locator("iframe")).toHaveAttribute(
+    "src",
+    "https://www.youtube-nocookie.com/embed/ofxjBDSt4CQ?start=7&end=17&rel=0",
+  );
+  await expect(
+    agenda.getByRole("link", { name: "Assistir no YouTube" }),
+  ).toHaveAttribute("href", "https://www.youtube.com/watch?v=ofxjBDSt4CQ&t=7s");
+  await expect(agenda.locator("blockquote")).toHaveText(
+    "“Vontade de encher sua boca de porrada”",
+  );
+  await agenda
+    .getByRole("link", { name: "Consultar registro completo" })
+    .click();
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(
+    "23 de agosto de 2020",
+  );
+  await expect(
+    page
+      .getByRole("region", { name: "Declarações documentadas" })
+      .locator("time"),
+  ).toHaveAttribute("datetime", "2020-08-23");
+  await expect(
+    page
+      .getByRole("region", { name: "Vídeos do registro" })
+      .getByRole("link", { name: "Assistir no YouTube" }),
+  ).toBeVisible();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page
+    .getByRole("region", { name: "Vídeos do registro" })
+    .getByRole("button", { name: /Carregar vídeo:/ })
+    .click();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth,
+    ),
+  ).toBeTruthy();
 });

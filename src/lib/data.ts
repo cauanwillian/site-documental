@@ -1,4 +1,12 @@
 import archive from "@/data/archive.json";
+export type Video = {
+  provider: string;
+  videoId: string;
+  title: string;
+  startSeconds: number;
+  endSeconds: number;
+  sourceId: string;
+};
 export type Case = {
   id: string;
   slug: string;
@@ -23,6 +31,7 @@ export type Case = {
   sourceNote: string;
   relatedCaseIds: string[];
   editorialNumber?: number;
+  videos?: Video[];
   statements?: {
     id: string;
     date: string;

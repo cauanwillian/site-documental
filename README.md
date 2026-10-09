@@ -23,7 +23,7 @@ Importe este repositório, selecione a branch `main` e o preset Next.js. Instala
 
 Edite `src/data/archive.json`. Contém pessoas, casos, categorias, status jurídicos, eventos, fontes e datas editoriais. IDs referenciados devem existir. Slugs devem ser únicos e próprios para URLs. Datas usam `YYYY-MM-DD` ou `YYYY-MM` quando apenas mês e ano foram fornecidos. `statusId` representa o status da decisão na data `statusAsOf`, sem inferir o estado processual atual.
 
-O arquivo contém 25 registros publicados com textos e referências conferidos pelo responsável editorial. `verificationMethod: "publisher-confirmed"` registra essa origem; não indica consulta independente pela ferramenta. As notícias institucionais são distinguidas de acórdãos e reportagens. Os portais genéricos (`scope: "research"`) ficam separados das referências específicas (`scope: "case"`). Os exemplos demonstrativos foram removidos.
+O arquivo contém 26 registros publicados com textos e referências conferidos pelo responsável editorial. `verificationMethod: "publisher-confirmed"` registra essa origem; não indica consulta independente pela ferramenta. As notícias institucionais são distinguidas de acórdãos e reportagens. Os portais genéricos (`scope: "research"`) ficam separados das referências específicas (`scope: "case"`). Os exemplos demonstrativos foram removidos.
 
 Para publicar um caso real, conclua a pesquisa, registre URLs dos documentos específicos nas fontes, preencha `personIds`, `sourceIds`, `statusId` e a cronologia, e altere `placeholder` para `false`. Fontes devem incluir título, instituição, URL do documento, natureza primária/secundária e data da consulta. Não publique alegações apenas com links genéricos para portais. Atualize os textos editoriais e contadores da Home quando houver conteúdo verificado. Prefira fontes primárias e contextualize recursos, anulações e limites das decisões. Os eventos devem informar suas próprias fontes.
 
@@ -58,3 +58,9 @@ O desfecho das rachadinhas foi atualizado para `rejeicao-denuncia`, com data `20
 As posições atribuídas ao livro de Flávio (2017) aparecem com a resposta da assessoria, sem inventar citações ou páginas. A menção ao lobby de Eduardo em documentos aparece com sua negativa de recebimento de recursos. As fontes de Carlos e os portais institucionais foram reutilizados sem duplicação.
 
 `periodOverview` é uma síntese editorial separada da cronologia de eventos. `researchAgenda` reúne cinco pautas para material original, sem publicar transcrições, datas ou resultados processuais não fornecidos. As pautas aparecem na Home com indicação explícita de pesquisa, fora do catálogo, dos perfis e do contador de registros publicados.
+
+## Vídeos incorporados
+
+O campo `videos` de cada caso guarda `videoId`, título acessível, `sourceId`, `startSeconds` e `endSeconds`. O player usa YouTube no domínio `youtube-nocookie.com` e só carrega após clicar em **Carregar vídeo**, sem autoplay. `start` e `end` definem o trecho no player (a plataforma pode permitir navegação além dele). O link externo sempre permanece disponível, inclusive se o canal bloquear a incorporação. Não há hospedagem de vídeo ou backend separado.
+
+A pauta de ataques verbais foi promovida para um registro publicado, exibido também no cartão da Home. As demais quatro pautas continuam em pesquisa. Datas de falas e upload são distintas; não foram inventados nome de canal, título original ou data de upload do vídeo recebido.

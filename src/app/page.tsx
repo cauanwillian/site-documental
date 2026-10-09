@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { VideoPlayer } from "@/components/video-player";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CaseCard, Timeline, ResearchSources } from "@/components/archive";
-import { data } from "@/lib/data";
+import { data, dateLabel } from "@/lib/data";
 export default function Home() {
   return (
     <>
@@ -80,23 +81,56 @@ export default function Home() {
         </section>
       ))}
       <section className="mb-14" aria-label="Pautas em pesquisa">
-        <h2 className="text-2xl font-semibold">Pautas em pesquisa</h2>
+        <h2 className="text-2xl font-semibold">Vídeos e pautas em pesquisa</h2>
         <p className="mt-3 mb-5 max-w-3xl text-sm leading-relaxed text-stone-600">
-          Estes temas aguardam material original para registros separados. Não
-          são citações verificadas, casos publicados ou conclusões jurídicas.
+          Os registros com vídeo podem ser consultados abaixo. As demais pautas
+          aguardam material original.
         </p>
         <ul className="grid gap-4 md:grid-cols-2">
-          {data.researchAgenda.map((topic) => (
-            <li
-              key={topic.id}
-              className="rounded-lg border border-dashed border-stone-300 p-5"
-            >
-              <h3 className="text-sm font-semibold">{topic.title}</h3>
-              <p className="mt-3 text-xs leading-relaxed text-stone-500">
-                {topic.requirements}
-              </p>
-            </li>
-          ))}
+          {data.researchAgenda.map((topic) => {
+            const published =
+              topic.publicationState === "published"
+                ? data.cases.find((c) => c.id === topic.publishedCaseId)
+                : undefined;
+            return (
+              <li
+                key={topic.id}
+                className={
+                  published
+                    ? "rounded-lg border border-stone-200 bg-white p-5"
+                    : "rounded-lg border border-dashed border-stone-300 p-5"
+                }
+              >
+                <h3 className="text-sm font-semibold">{topic.title}</h3>
+                {published ? (
+                  <>
+                    <p className="my-3 text-xs text-red-800">
+                      Registro publicado ·{" "}
+                      {published.statusAsOf
+                        ? dateLabel(published.statusAsOf)
+                        : ""}
+                    </p>
+                    {published.videos?.map((video) => (
+                      <VideoPlayer key={video.videoId} video={video} />
+                    ))}
+                    <blockquote className="mt-4 text-sm font-medium">
+                      “{published.statements?.[0]?.quote}”
+                    </blockquote>
+                    <Link
+                      href={`/casos/${published.slug}/`}
+                      className="mt-4 inline-block text-sm text-red-800 underline underline-offset-4"
+                    >
+                      Consultar registro completo
+                    </Link>
+                  </>
+                ) : (
+                  <p className="mt-3 text-xs leading-relaxed text-stone-500">
+                    {topic.requirements}
+                  </p>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </section>
       <section className="mb-14 grid gap-10 md:grid-cols-[1fr_1.5fr]">

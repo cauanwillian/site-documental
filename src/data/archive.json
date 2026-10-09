@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08",
+  "updatedAt": "2026-10-09",
   "editorial": {
     "name": "Dossiê Bolsonarista",
     "notice": "Investigação, indiciamento, denúncia, condição de réu e condenação são situações juridicamente diferentes. Nenhuma delas deve ser tratada como equivalente às demais. Condenação definitiva exige trânsito em julgado. O status deve ser lido junto à decisão, à data e às fontes. Responsabilidade civil e indenização por danos morais também são distintas de condenação criminal.",
@@ -103,6 +103,10 @@
     {
       "id": "mulheres-adolescentes",
       "name": "Mulheres e adolescentes"
+    },
+    {
+      "id": "jornalistas-imprensa",
+      "name": "Jornalistas e imprensa"
     }
   ],
   "legalStatuses": [
@@ -642,6 +646,21 @@
       "accessedAt": null,
       "verificationMethod": "publisher-confirmed",
       "editoriallyConfirmedAt": "2026-10-08"
+    },
+    {
+      "id": "video-jornalista-2020",
+      "name": "Vídeo enviado — YouTube",
+      "institution": "Vídeo enviado — YouTube",
+      "kind": "secondary",
+      "title": "Declaração a jornalista — vídeo indicado pela edição",
+      "url": "https://www.youtube.com/watch?v=ofxjBDSt4CQ",
+      "scope": "case",
+      "documentType": "video-reference",
+      "purpose": "Vídeo fornecido pelo responsável editorial com indicação do trecho entre 0:07 e 0:17. Canal e data de upload não foram fornecidos.",
+      "updatedAt": "2026-10-09",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-09"
     }
   ],
   "cases": [
@@ -1372,6 +1391,49 @@
       "legalCaveat": "A menção em documentos não comprova recebimento de dinheiro. Este registro não afirma repasse de recursos a Eduardo Bolsonaro.",
       "sourceNote": "Foi informado mês e ano da reportagem. Não são criadas datas para recebimento de dinheiro, pois esse recebimento não é comprovado pelo material.",
       "relatedCaseIds": ["eduardo-bolsonaro-coacao-no-curso-do-processo"]
+    },
+    {
+      "id": "ataque-verbal-jornalista-2020",
+      "slug": "ataque-verbal-jornalista-2020",
+      "title": "Ataque verbal a jornalista — 23 de agosto de 2020",
+      "summary": "Em 23 de agosto de 2020, Jair Bolsonaro disse a um jornalista: “Vontade de encher sua boca de porrada”.",
+      "body": "O registro apresenta a fala e o trecho de vídeo enviados pelo responsável editorial, entre 0:07 e 0:17. Não foram fornecidos o nome do jornalista, a pergunta que antecedeu a fala ou a transcrição integral.",
+      "personIds": ["jair-bolsonaro"],
+      "categoryId": "jornalistas-imprensa",
+      "statusId": "controversia",
+      "statusAsOf": "2020-08-23",
+      "statusScope": "public-statement",
+      "sourceIds": ["video-jornalista-2020"],
+      "contextualSourceIds": [],
+      "placeholder": false,
+      "updatedAt": "2026-10-09",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Data, trecho e transcrição fornecidos pelo responsável editorial. Não foi realizada consulta independente ao conteúdo do vídeo.",
+      "defenseNote": null,
+      "sectionId": "falas-controversas",
+      "institutionalSubjects": [],
+      "legalCaveat": "",
+      "sourceNote": "A data registrada é a da fala, não a data de upload. O vídeo completo permanece disponível no link da fonte. A incorporação depende da disponibilidade e das permissões do canal no YouTube.",
+      "relatedCaseIds": [],
+      "statements": [
+        {
+          "id": "fala-jornalista-2020-08-23",
+          "date": "2020-08-23",
+          "quote": "Vontade de encher sua boca de porrada",
+          "context": "Fala dirigida a um jornalista, conforme material enviado. Trecho indicado: de 0:07 a 0:17.",
+          "sourceIds": ["video-jornalista-2020"]
+        }
+      ],
+      "videos": [
+        {
+          "provider": "youtube",
+          "videoId": "ofxjBDSt4CQ",
+          "title": "Ataque verbal a jornalista — 23 de agosto de 2020",
+          "startSeconds": 7,
+          "endSeconds": 17,
+          "sourceId": "video-jornalista-2020"
+        }
+      ]
     }
   ],
   "timeline": [
@@ -1697,6 +1759,19 @@
       "placeholder": false,
       "verificationMethod": "publisher-confirmed",
       "eventType": "documented-context"
+    },
+    {
+      "id": "fala-jornalista-2020-08-23",
+      "caseId": "ataque-verbal-jornalista-2020",
+      "date": "2020-08-23",
+      "datePrecision": "day",
+      "title": "“Vontade de encher sua boca de porrada”",
+      "description": "Declaração dirigida a um jornalista. Trecho de vídeo indicado: de 0:07 a 0:17.",
+      "statusId": "controversia",
+      "sourceIds": ["video-jornalista-2020"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "public-statement"
     }
   ],
   "sections": [
@@ -1788,10 +1863,11 @@
     },
     {
       "id": "ataques-verbais",
-      "title": "Ataques verbais a adversários e jornalistas: episódios a individualizar",
+      "title": "Ataque verbal a jornalista — 23 de agosto de 2020",
       "personId": "jair-bolsonaro",
-      "publicationState": "research-only",
-      "requirements": "Vídeo ou transcrição original, data e contexto exatos, referência específica e resposta do envolvido quando disponível."
+      "publicationState": "published",
+      "requirements": "Vídeo ou transcrição original, data e contexto exatos, referência específica e resposta do envolvido quando disponível.",
+      "publishedCaseId": "ataque-verbal-jornalista-2020"
     },
     {
       "id": "homossexualidade",
