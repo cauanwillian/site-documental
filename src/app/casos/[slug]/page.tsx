@@ -42,13 +42,13 @@ export default async function CasePage({
     );
   return (
     <>
-      <Link href="/casos/" className="text-sm text-teal-800">
+      <Link href="/casos/" className="text-sm text-red-800">
         ← Todos os casos
       </Link>
       <div className="mt-8 flex gap-2">
         <Badge>{categoryOf(c.categoryId).name}</Badge>
         {c.placeholder && (
-          <Badge className="bg-amber-50 text-amber-900">
+          <Badge className="bg-red-50 text-red-900">
             Placeholder · Não factual
           </Badge>
         )}
@@ -57,7 +57,7 @@ export default async function CasePage({
       <p className="mb-8 max-w-3xl text-lg text-stone-600">{c.summary}</p>
       <EditorialNotice />
       {c.legalCaveat && (
-        <aside className="mt-5 rounded-lg border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-950">
+        <aside className="mt-5 rounded-lg border border-red-200 bg-red-50 p-5 text-sm leading-relaxed text-red-950">
           <strong className="block mb-2">Limites do registro</strong>
           {c.legalCaveat}
         </aside>
@@ -85,18 +85,18 @@ export default async function CasePage({
                   >
                     <time
                       dateTime={statement.date}
-                      className="text-xs uppercase tracking-wider text-teal-800"
+                      className="text-xs uppercase tracking-wider text-red-800"
                     >
                       {dateLabel(statement.date)}
                     </time>
-                    <blockquote className="my-4 border-l-2 border-teal-700 pl-4 text-xl font-medium leading-relaxed">
+                    <blockquote className="my-4 border-l-2 border-red-700 pl-4 text-xl font-medium leading-relaxed">
                       “{statement.quote}”
                     </blockquote>
                     <p className="text-sm leading-relaxed text-stone-600">
                       <strong>Contexto: </strong>
                       {statement.context}
                     </p>
-                    <ul className="mt-3 space-y-2 text-xs text-teal-800">
+                    <ul className="mt-3 space-y-2 text-xs text-red-800">
                       {data.sources
                         .filter((source) =>
                           statement.sourceIds.includes(source.id),
@@ -156,7 +156,7 @@ export default async function CasePage({
                   <Link
                     key={other.id}
                     href={`/casos/${other.slug}/`}
-                    className="mt-2 block text-sm text-teal-800 underline"
+                    className="mt-2 block text-sm text-red-800 underline"
                   >
                     {other.title}
                   </Link>
@@ -184,7 +184,7 @@ export default async function CasePage({
                     target="_blank"
                     className={
                       s.kind === "primary"
-                        ? "block rounded-md border border-teal-200 bg-teal-50 p-4 text-teal-900"
+                        ? "block rounded-md border border-red-200 bg-red-50 p-4 text-red-900"
                         : "block rounded-md border border-stone-200 bg-white p-4 text-stone-600"
                     }
                   >
@@ -278,7 +278,7 @@ export default async function CasePage({
                 .map((p) => (
                   <li key={p.id}>
                     <Link
-                      className="text-sm text-teal-800 underline"
+                      className="text-sm text-red-800 underline"
                       href={`/pessoas/${p.slug}/`}
                     >
                       {p.name}

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 :root {
-  --background: #f8f7f4;
-  --foreground: #242b2a;
+  --background: #fafafa;
+  --foreground: #171717;
 }
 @theme inline {
   --color-background: var(--background);
@@ -19,7 +19,7 @@ h3 {
   letter-spacing: -0.025em;
 }
 ::selection {
-  background: #ccdfda;
+  background: #fee2e2;
 }
 a,
 button,
@@ -30,6 +30,6 @@ input {
 a:focus-visible,
 select:focus-visible,
 input:focus-visible {
-  outline: 2px solid #115e59;
+  outline: 2px solid #b91c1c;
   outline-offset: 4px;
 }

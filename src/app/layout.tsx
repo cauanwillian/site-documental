@@ -5,8 +5,8 @@ import { data, dateLabel } from "@/lib/data";
 import "./globals.css";
 export const metadata: Metadata = {
   title: {
-    default: "Arquivo público | Documentação Bolsonaro",
-    template: "%s | Arquivo público",
+    default: "Dossiê Bolsonarista | Casos, contexto e fontes",
+    template: "%s | Dossiê Bolsonarista",
   },
   description:
     "Arquivo documental sobre integrantes da família Bolsonaro. Casos, fontes e distinção de status jurídicos.",
@@ -23,17 +23,18 @@ export default function RootLayout({
         >
           Ir para o conteúdo
         </a>
-        <div className="border-b border-amber-200 bg-amber-50 py-2 text-center text-xs text-amber-950">
-          {data.editorial.banner}
-        </div>
-        <header className="border-b border-stone-200 bg-white">
+        <header className="border-b border-neutral-800 bg-black text-white">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-5 px-6 py-6">
-            <Link href="/" className="flex items-center gap-3 font-semibold">
-              <Library className="size-6 text-teal-800" /> ARQUIVO PÚBLICO
+            <Link
+              href="/"
+              className="flex items-center gap-3 font-semibold tracking-wide"
+            >
+              <Library className="size-6 shrink-0 text-red-500" /> DOSSIÊ
+              BOLSONARISTA
             </Link>
             <nav
               aria-label="Navegação principal"
-              className="flex gap-6 text-sm text-stone-600"
+              className="flex gap-6 text-sm text-neutral-200 [&_a:hover]:text-red-400"
             >
               <Link href="/">Home</Link>
               <Link href="/casos/">Casos</Link>
@@ -44,9 +45,9 @@ export default function RootLayout({
         <main id="conteudo" className="mx-auto max-w-6xl px-6 py-12 md:py-16">
           {children}
         </main>
-        <footer className="border-t border-stone-200">
-          <div className="mx-auto max-w-6xl px-6 py-8 text-sm text-stone-500">
-            <p className="font-semibold text-stone-700">
+        <footer className="border-t border-neutral-800 bg-black">
+          <div className="mx-auto max-w-6xl px-6 py-8 text-sm text-neutral-400">
+            <p className="font-semibold text-white">
               Documentação, contexto e transparência.
             </p>
             <p className="mt-2">{data.editorial.publicationNotice}</p>

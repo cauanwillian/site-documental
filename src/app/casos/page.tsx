@@ -4,7 +4,7 @@ export const metadata = { title: "Casos" };
 export default function Cases() {
   return (
     <>
-      <p className="text-xs uppercase tracking-wider text-teal-800">
+      <p className="text-xs uppercase tracking-wider text-red-800">
         Índice documental
       </p>
       <h1 className="mt-3 text-4xl font-semibold">Casos e registros</h1>

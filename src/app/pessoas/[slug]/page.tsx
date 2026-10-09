@@ -29,7 +29,7 @@ export default async function PersonPage({
   );
   return (
     <>
-      <p className="text-xs uppercase tracking-wider text-teal-800">
+      <p className="text-xs uppercase tracking-wider text-red-800">
         Perfil documental
       </p>
       <h1 className="mt-4 text-4xl font-semibold">{person.name}</h1>

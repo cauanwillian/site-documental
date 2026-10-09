@@ -79,7 +79,7 @@ export function CaseFilters() {
         </Button>
       </div>
       {section && (
-        <aside className="mb-5 rounded-lg border border-amber-200 bg-amber-50 p-5 text-sm text-amber-950">
+        <aside className="mb-5 rounded-lg border border-red-200 bg-red-50 p-5 text-sm text-red-950">
           {data.sections.find((s) => s.id === section)?.notice}
         </aside>
       )}

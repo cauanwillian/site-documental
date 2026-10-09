@@ -12,14 +12,14 @@ export default function Home() {
   return (
     <>
       <section className="mb-12 max-w-3xl">
-        <p className="mb-5 text-xs font-semibold uppercase tracking-[.2em] text-teal-800">
+        <p className="mb-5 text-xs font-semibold uppercase tracking-[.2em] text-red-800">
           Memória documental · Acesso público
         </p>
         <h1 className="text-4xl font-semibold leading-tight md:text-6xl">
           Os documentos.
           <br />O contexto.
           <br />
-          <span className="text-teal-800">A trajetória dos casos.</span>
+          <span className="text-red-800">A trajetória dos casos.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone-600">
           Um arquivo para consultar casos, investigações, decisões e
@@ -71,7 +71,7 @@ export default function Home() {
             </div>
             <Link
               href="/casos/"
-              className="shrink-0 text-sm text-teal-800 underline underline-offset-4"
+              className="shrink-0 text-sm text-red-800 underline underline-offset-4"
             >
               Ver todos
             </Link>
@@ -110,7 +110,7 @@ export default function Home() {
       </section>
       <section className="mb-14 grid gap-10 md:grid-cols-[1fr_1.5fr]">
         <div>
-          <p className="text-xs uppercase tracking-wider text-teal-800">
+          <p className="text-xs uppercase tracking-wider text-red-800">
             A sequência importa
           </p>
           <h2 className="mt-3 text-3xl font-semibold">Linha do tempo</h2>
@@ -128,7 +128,7 @@ export default function Home() {
             <Link
               key={p.id}
               href={`/pessoas/${p.slug}/`}
-              className="rounded-lg border border-stone-200 bg-white p-5 hover:border-teal-700"
+              className="rounded-lg border border-stone-200 bg-white p-5 hover:border-red-700"
             >
               <span className="mb-4 flex size-10 items-center justify-center rounded-full bg-stone-100 text-xs text-stone-600">
                 {p.name

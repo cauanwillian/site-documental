@@ -4,7 +4,7 @@ export const metadata = { title: "Linha do tempo" };
 export default function TimelinePage() {
   return (
     <>
-      <p className="text-xs uppercase tracking-wider text-teal-800">
+      <p className="text-xs uppercase tracking-wider text-red-800">
         Cronologia documental
       </p>
       <h1 className="mt-3 text-4xl font-semibold">Linha do tempo</h1>
@@ -26,7 +26,7 @@ export default function TimelinePage() {
               key={period.period}
               className="rounded-lg border border-stone-200 bg-white p-5"
             >
-              <dt className="text-sm font-semibold text-teal-800">
+              <dt className="text-sm font-semibold text-red-800">
                 {period.period}
               </dt>
               <dd className="mt-3 text-sm leading-relaxed text-stone-600">

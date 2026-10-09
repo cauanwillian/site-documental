@@ -1,4 +1,4 @@
-# Arquivo público
+# Dossiê Bolsonarista
 
 Site documental estático em Next.js, TypeScript, Tailwind CSS e componentes shadcn/ui. Sem banco, API ou backend separado.
 
