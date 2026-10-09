@@ -16,7 +16,7 @@ test("published cases, combined filters and primary sources", async ({
     page.getByText("VERSÃO DEMONSTRATIVA", { exact: false }),
   ).toHaveCount(0);
   await page.getByRole("link", { name: "Explorar o arquivo" }).click();
-  await expect(page.getByText("29 registros encontrados")).toBeVisible();
+  await expect(page.getByText("30 registros encontrados")).toBeVisible();
   await page
     .getByLabel("Pessoa", { exact: true })
     .selectOption("jair-bolsonaro");
@@ -56,7 +56,7 @@ test("published cases, combined filters and primary sources", async ({
     }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Limpar filtros" }).click();
-  await expect(page.getByText("29 registros encontrados")).toBeVisible();
+  await expect(page.getByText("30 registros encontrados")).toBeVisible();
   await page.goto("/pessoas/jair-bolsonaro/");
   await expect(
     page.getByRole("main").getByRole("heading", { level: 3 }),

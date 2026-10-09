@@ -710,6 +710,21 @@
       "accessedAt": null,
       "verificationMethod": "publisher-confirmed",
       "editoriallyConfirmedAt": "2026-10-09"
+    },
+    {
+      "id": "short-flavio-filme-jair",
+      "name": "Vídeo enviado — YouTube",
+      "institution": "Vídeo enviado — YouTube",
+      "kind": "secondary",
+      "title": "Flávio Bolsonaro pede dinheiro a Daniel para filme de Jair — Short enviado",
+      "url": "https://www.youtube.com/shorts/KIlv-hBkdJ8",
+      "scope": "case",
+      "documentType": "video-reference",
+      "purpose": "Short enviado pela edição. Data de envio do áudio informada: 8 de setembro de 2025. Sem transcrição ou minutagem.",
+      "updatedAt": "2026-10-09",
+      "accessedAt": null,
+      "verificationMethod": "publisher-confirmed",
+      "editoriallyConfirmedAt": "2026-10-09"
     }
   ],
   "cases": [
@@ -1619,6 +1634,41 @@
           "sourceId": "video-urnas-2026"
         }
       ]
+    },
+    {
+      "id": "flavio-pedido-dinheiro-filme-jair",
+      "slug": "flavio-pedido-dinheiro-filme-jair",
+      "title": "Flávio Bolsonaro pede dinheiro a Daniel para filme de Jair",
+      "summary": "Segundo a pauta enviada pela edição, Flávio Bolsonaro pede dinheiro a Daniel para um filme sobre Jair Bolsonaro.",
+      "body": "O material enviado é um YouTube Short relacionado ao pedido descrito na pauta. A edição informa que o áudio foi enviado em 8 de setembro de 2025.",
+      "personIds": ["flavio-bolsonaro"],
+      "categoryId": "financeiro",
+      "statusId": "controversia",
+      "statusAsOf": null,
+      "statusScope": "public-statement",
+      "sourceIds": ["short-flavio-filme-jair"],
+      "contextualSourceIds": [],
+      "placeholder": false,
+      "updatedAt": "2026-10-09",
+      "verificationMethod": "publisher-confirmed",
+      "editorialNote": "Vídeo, pauta e data de envio do áudio fornecidos pelo responsável editorial.",
+      "defenseNote": null,
+      "sectionId": "controversias-filhos",
+      "institutionalSubjects": [],
+      "legalCaveat": "",
+      "sourceNote": "Transcrição e minutagem não foram informadas. A data registrada se refere ao envio do áudio; não foi informada a data de gravação.",
+      "relatedCaseIds": [],
+      "statements": [],
+      "videos": [
+        {
+          "provider": "youtube",
+          "videoId": "KIlv-hBkdJ8",
+          "title": "Flávio Bolsonaro pede dinheiro a Daniel para filme de Jair",
+          "startSeconds": null,
+          "endSeconds": null,
+          "sourceId": "short-flavio-filme-jair"
+        }
+      ]
     }
   ],
   "timeline": [
@@ -1983,6 +2033,19 @@
       "placeholder": false,
       "verificationMethod": "publisher-confirmed",
       "eventType": "public-statement"
+    },
+    {
+      "id": "audio-flavio-filme-jair-2025-09-08",
+      "caseId": "flavio-pedido-dinheiro-filme-jair",
+      "date": "2025-09-08",
+      "datePrecision": "day",
+      "title": "Envio de áudio: pedido de Flávio a Daniel para filme de Jair",
+      "description": "Data de envio do áudio informada pela edição. O Short foi fornecido como referência para a pauta.",
+      "statusId": "controversia",
+      "sourceIds": ["short-flavio-filme-jair"],
+      "placeholder": false,
+      "verificationMethod": "publisher-confirmed",
+      "eventType": "audio-sent"
     }
   ],
   "sections": [
